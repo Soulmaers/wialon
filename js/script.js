@@ -1,3 +1,88 @@
+
+const lft01 = document.getElementById('left_front_tires_01');
+const rft01 = document.getElementById('right_front_tires_01');
+const stat = document.getElementById('obj1');
+
+function math() {
+    randomlft01 = Math.floor(Math.random() * 10);
+    randomrft01 = Math.floor(Math.random() * 10);
+}
+
+
+
+
+
+const func = () => {
+    math();
+    if (randomlft01 >= 7) {
+        lft01.style.background = 'green';
+    }
+    if (randomrft01 >= 7) {
+        rft01.style.background = 'green';
+    }
+    if (randomlft01 >= 4 && randomlft01 < 7) {
+        lft01.style.background = 'yellow';
+    }
+    if (randomrft01 >= 4 && randomrft01 < 7) {
+        rft01.style.background = 'yellow';
+    }
+    if (randomlft01 < 4) {
+        lft01.style.background = 'red';
+    }
+    if (randomrft01 < 4) {
+        rft01.style.background = 'red';
+    }
+    if (randomlft01 || randomrft01 < 7) {
+        stat.style.backgroundImage = "url(image/er.png)";
+    } if (randomlft01 && randomrft01 >= 7) {
+        stat.style.backgroundImage = "url(image/gal.png)";
+    }
+
+}
+func();
+setInterval(func, 700);
+
+
+
+
+
+/*const tires = document.getElementById('left_front_tires_01');
+const stat = document.getElementById('obj1');
+const func = () => {
+    countTires = (Math.floor(Math.random() * 10));
+    if (countTires <= 10 && countTires >= 7) {
+        tires.style.background = 'green';
+        stat.style.backgroundImage = "url(image/gal.png)";
+    }
+    if (countTires < 7 && countTires >= 4) {
+        tires.style.background = 'yellow';
+        stat.style.backgroundImage = "url(image/er.png)";
+    }
+    if (countTires < 4) {
+        tires.style.background = 'red';
+        stat.style.backgroundImage = "url(image/er.png)";
+    }
+}
+func();
+setInterval(func, 1000);*/
+
+
+//let valueTires = parseInt(prompt('Введите значение давления в шине'));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 (function () {
     alert('Привет, Wialon!');
 
@@ -57,3 +142,4 @@
 
 })();
 
+*/
