@@ -8,39 +8,41 @@ function math() {
     randomrft01 = Math.floor(Math.random() * 10);
 }
 
-
-
-
-
 const func = () => {
     math();
     if (randomlft01 >= 7) {
         lft01.style.background = 'green';
+        stat.style.backgroundImage = "url(image/gal.png)";
     }
     if (randomrft01 >= 7) {
         rft01.style.background = 'green';
+        stat.style.backgroundImage = "url(image/gal.png)";
     }
     if (randomlft01 >= 4 && randomlft01 < 7) {
         lft01.style.background = 'yellow';
+        stat.style.backgroundImage = "url(image/er.png)";
     }
     if (randomrft01 >= 4 && randomrft01 < 7) {
         rft01.style.background = 'yellow';
+        stat.style.backgroundImage = "url(image/er.png)";
     }
     if (randomlft01 < 4) {
         lft01.style.background = 'red';
+        stat.style.backgroundImage = "url(image/er.png)";
     }
     if (randomrft01 < 4) {
         rft01.style.background = 'red';
-    }
-    if (randomlft01 || randomrft01 < 7) {
         stat.style.backgroundImage = "url(image/er.png)";
-    } if (randomlft01 && randomrft01 >= 7) {
-        stat.style.backgroundImage = "url(image/gal.png)";
     }
 
 }
 func();
 setInterval(func, 700);
+
+
+
+
+
 
 
 
