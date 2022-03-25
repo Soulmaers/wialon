@@ -2,7 +2,7 @@
 
 //забираем объект
 let alls = document.getElementsByClassName('tires');
-const stat1 = document.getElementsByClassName('bg_stat');
+const stat = document.getElementsByClassName('bg_stat');
 let time1 = document.getElementById('tObj1');
 //Объект 1, 
 
@@ -14,11 +14,11 @@ function math1() {
     randomrrt01 = Math.floor(Math.random() * 10);
 }
 //добавление статуса
-const statGal = () => {
-    stat1[0].style.backgroundImage = "url(image/gal.png)";
+const statGal1 = () => {
+    stat[0].style.backgroundImage = "url(image/gal.png)";
 }
-const statEr = () => {
-    stat1[0].style.backgroundImage = "url(image/er.png)";
+const statEr1 = () => {
+    stat[0].style.backgroundImage = "url(image/er.png)";
 }
 // логика выбора
 const func1 = () => {
@@ -26,59 +26,58 @@ const func1 = () => {
     time1.textContent = getNowtime();
     if (randomlrt01 >= 4) {
         alls[2].style.background = 'green';
-        statGal();
+        statGal1();
 
     }
     if (randomrrt01 >= 4) {
         alls[3].style.background = 'green';
-        statGal();
+        statGal1();
     }
     if (randomlft01 >= 4) {
         alls[0].style.background = 'green';
-        statGal();
+        statGal1();
     }
     if (randomrft01 >= 4) {
         alls[1].style.background = 'green';
-        statGal();
+        statGal1();
     }
     if (randomlrt01 >= 2 && randomlrt01 < 4) {
         alls[2].style.background = 'yellow';
-        statEr();
+        statEr1();
     }
     if (randomrrt01 >= 2 && randomrrt01 < 4) {
         alls[3].style.background = 'yellow';
-        statEr();
+        statEr1();
     }
     if (randomlrt01 < 2) {
         alls[2].style.background = 'red';
-        statEr();
+        statEr1();
     }
     if (randomrrt01 < 2) {
         alls[3].style.background = 'red';
-        statEr();
+        statEr1();
     }
     if (randomlft01 >= 2 && randomlft01 < 4) {
         alls[0].style.background = 'yellow';
-        statEr();
+        statEr1();
     }
     if (randomrft01 >= 2 && randomrft01 < 4) {
         alls[1].style.background = 'yellow';
-        statEr();
+        statEr1();
     }
     if (randomlft01 < 2) {
         alls[0].style.background = 'red';
-        statEr();
+        statEr1();
     }
     if (randomrft01 < 2) {
         alls[1].style.background = 'red';
-        statEr();
+        statEr1();
     }
 }
 func1();
 setInterval(func1, 1000);
 
 //Объект 2
-const stat2 = document.getElementById('obj2');
 let time2 = document.getElementById('tObj2');
 // рандомные значения
 function math2() {
@@ -87,57 +86,64 @@ function math2() {
     randomlrt02 = Math.floor(Math.random() * 10);
     randomrrt02 = Math.floor(Math.random() * 10);
 }
+
+const statGal2 = () => {
+    stat[1].style.backgroundImage = "url(image/gal.png)";
+}
+const statEr2 = () => {
+    stat[1].style.backgroundImage = "url(image/er.png)";
+}
 // логика выбора
 const func2 = () => {
     math2();
     time2.textContent = getNowtime();
     if (randomlrt02 >= 4) {
         alls[6].style.background = 'green';
-        stat2.style.backgroundImage = "url(image/gal.png)";
+        statGal2();
     }
     if (randomrrt02 >= 4) {
         alls[7].style.background = 'green';
-        stat2.style.backgroundImage = "url(image/gal.png)";
+        statGal2();
     }
     if (randomlft02 >= 4) {
         alls[4].style.background = 'green';
-        stat2.style.backgroundImage = "url(image/gal.png)";
+        statGal2();
     }
     if (randomrft02 >= 4) {
         alls[5].style.background = 'green';
-        stat2.style.backgroundImage = "url(image/gal.png)";
+        statGal2();
     }
     if (randomlrt02 >= 2 && randomlrt02 < 4) {
         alls[6].style.background = 'yellow';
-        stat2.style.backgroundImage = "url(image/er.png)";
+        statEr2();
     }
     if (randomrrt02 >= 2 && randomrrt02 < 4) {
         alls[7].style.background = 'yellow';
-        stat2.style.backgroundImage = "url(image/er.png)";
+        statEr2();
     }
     if (randomlrt02 < 2) {
         alls[6].style.background = 'red';
-        stat2.style.backgroundImage = "url(image/er.png)";
+        statEr2();
     }
     if (randomrrt02 < 2) {
         alls[7].style.background = 'red';
-        stat2.style.backgroundImage = "url(image/er.png)";
+        statEr2();
     }
     if (randomlft02 >= 2 && randomlft02 < 4) {
         alls[4].style.background = 'yellow';
-        stat2.style.backgroundImage = "url(image/er.png)";
+        statEr2();
     }
     if (randomrft02 >= 2 && randomrft02 < 4) {
         alls[5].style.background = 'yellow';
-        stat2.style.backgroundImage = "url(image/er.png)";
+        statEr2();
     }
     if (randomlft02 < 2) {
         alls[4].style.background = 'red';
-        stat2.style.backgroundImage = "url(image/er.png)";
+        statEr2();
     }
     if (randomrft02 < 2) {
         alls[5].style.background = 'red';
-        stat2.style.backgroundImage = "url(image/er.png)";
+        statEr2();
     }
 
 }
