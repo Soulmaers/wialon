@@ -66,6 +66,7 @@ border-right: 20px solid lightgray;
     width: 100%;
     padding:0 10px;
     table-layout: fixed;
+    
   }
   .title_table{
     border:1px solid gray;
@@ -79,6 +80,10 @@ border-right: 20px solid lightgray;
   }
   .td{
     height: 20px;
+    background-color: #dfe7edf8;
+    font-family: Roboto;
+    font-weight: 700;
+  
     
    
     
@@ -131,4 +136,5 @@ border-right: 20px solid lightgray;
   }
   .time{
     font-size: 0.75rem;
+   
   }
