@@ -129,4 +129,6 @@ border-right: 20px solid lightgray;
     border-radius: 30%;
     background-color: #fff;
   }
-  
+  .time{
+    font-size: 0.75rem;
+  }

@@ -143,6 +143,16 @@ setInterval(func2, 2000);
 //текущее время
 function getNowtime() {
     let now = new Date();
+    let year = now.getFullYear();
+    let month = now.getMonth();
+    if (now.getMonth() < 10) {
+        month = "0" + month;
+    }
+    let date = now.getDate();
+    if (now.getDate() < 10) {
+        date = "0" + date;
+    }
+
     let hours = now.getHours();
     if (now.getHours() < 10) {
         hours = "0" + hours;
@@ -153,12 +163,11 @@ function getNowtime() {
     }
     let seconds = now.getSeconds();
     if (now.getSeconds() < 10) {
-        seconds = "0" + minutes;
+        seconds = "0" + seconds;
     }
-    let nowTime = (`${hours}:${minutes}:${seconds}`);
+    let nowTime = (`${date}-${month}-${year}   ${hours}:${minutes}:${seconds}`);
     return nowTime;
 }
-
 
 
 
