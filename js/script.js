@@ -2,7 +2,7 @@
 
 //забираем объект
 let alls = document.getElementsByClassName('tires');
-const stat1 = document.getElementById('obj1');
+const stat1 = document.getElementsByClassName('bg_stat');
 let time1 = document.getElementById('tObj1');
 //Объект 1, 
 
@@ -13,58 +13,65 @@ function math1() {
     randomlrt01 = Math.floor(Math.random() * 10);
     randomrrt01 = Math.floor(Math.random() * 10);
 }
+//добавление статуса
+const statGal = () => {
+    stat1[0].style.backgroundImage = "url(image/gal.png)";
+}
+const statEr = () => {
+    stat1[0].style.backgroundImage = "url(image/er.png)";
+}
 // логика выбора
 const func1 = () => {
     math1();
     time1.textContent = getNowtime();
     if (randomlrt01 >= 4) {
         alls[2].style.background = 'green';
-        stat1.style.backgroundImage = "url(image/gal.png)";
+        statGal();
 
     }
     if (randomrrt01 >= 4) {
         alls[3].style.background = 'green';
-        stat1.style.backgroundImage = "url(image/gal.png)";
+        statGal();
     }
     if (randomlft01 >= 4) {
         alls[0].style.background = 'green';
-        stat1.style.backgroundImage = "url(image/gal.png)";
+        statGal();
     }
     if (randomrft01 >= 4) {
         alls[1].style.background = 'green';
-        stat1.style.backgroundImage = "url(image/gal.png)";
+        statGal();
     }
     if (randomlrt01 >= 2 && randomlrt01 < 4) {
         alls[2].style.background = 'yellow';
-        stat1.style.backgroundImage = "url(image/er.png)";
+        statEr();
     }
     if (randomrrt01 >= 2 && randomrrt01 < 4) {
         alls[3].style.background = 'yellow';
-        stat1.style.backgroundImage = "url(image/er.png)";
+        statEr();
     }
     if (randomlrt01 < 2) {
         alls[2].style.background = 'red';
-        stat1.style.backgroundImage = "url(image/er.png)";
+        statEr();
     }
     if (randomrrt01 < 2) {
         alls[3].style.background = 'red';
-        stat1.style.backgroundImage = "url(image/er.png)";
+        statEr();
     }
     if (randomlft01 >= 2 && randomlft01 < 4) {
         alls[0].style.background = 'yellow';
-        stat1.style.backgroundImage = "url(image/er.png)";
+        statEr();
     }
     if (randomrft01 >= 2 && randomrft01 < 4) {
         alls[1].style.background = 'yellow';
-        stat1.style.backgroundImage = "url(image/er.png)";
+        statEr();
     }
     if (randomlft01 < 2) {
         alls[0].style.background = 'red';
-        stat1.style.backgroundImage = "url(image/er.png)";
+        statEr();
     }
     if (randomrft01 < 2) {
         alls[1].style.background = 'red';
-        stat1.style.backgroundImage = "url(image/er.png)";
+        statEr();
     }
 }
 func1();
