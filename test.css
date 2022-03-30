@@ -108,13 +108,14 @@ border-right: 20px solid lightgray;
     margin-left:20px;
   }
 
-  .container{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 350px;
-    background-image: url(../image/bg_shas.png);
-    padding: 0 20px;
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 350px;
+  background-image: url(image/bg_shas.png);
+  padding: 0 20px;
+
 }
 .title{
   font-size: 1rem;
@@ -141,6 +142,8 @@ border-right: 20px solid lightgray;
     display: flex;
     justify-content: center;
     align-items: center;
+   
+    
   }
   .time{
     font-size: 0.75rem;

@@ -23,6 +23,7 @@ const statEr1 = () => {
 // логика выбора
 const func1 = () => {
     math1();
+    time1.textContent = getNowtime();
     if (randomlrt01 >= 4) {
         alls[2].style.background = 'green';
         alls[2].textContent = randomlrt01;
@@ -85,7 +86,6 @@ const func1 = () => {
         statEr1();
     }
 }
-
 func1();
 setInterval(func1, 5000);
 
@@ -111,6 +111,7 @@ const func2 = () => {
     time2.textContent = getNowtime();
     if (randomlrt02 >= 4) {
         alls[6].style.background = 'green';
+        alls[6].textContent = randomlrt02;
         statGal2();
     }
     if (randomrrt02 >= 4) {
