@@ -75,7 +75,7 @@ const func1 = () => {
     }
 }
 func1();
-setInterval(func1, 1000);
+setInterval(func1, 5000);
 
 //Объект 2
 let time2 = document.getElementById('tObj2');
@@ -148,7 +148,7 @@ const func2 = () => {
 
 }
 func2();
-setInterval(func2, 2000);
+setInterval(func2, 5000);
 
 
 
