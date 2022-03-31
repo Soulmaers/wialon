@@ -411,6 +411,36 @@ function getNowtime() {
     let nowTime = (`${date}-${month}-${year}   ${hours}:${minutes}:${seconds}`);
     return nowTime;
 }
+const cardHidden = document.querySelectorAll('.card');
+const input = document.querySelectorAll('.input');
+const arrInput = Array.from(input);
+
+function showHide() {
+    for (let i = 0; i <= arrInput.length; i++) {
+        if (input[0].checked) {
+            cardHidden[1].classList.add('card_hidden');
+        }
+        if (input[1].checked) {
+            cardHidden[0].classList.add('card_hidden');
+        }
+        if (!input[0].checked) {
+            cardHidden[1].classList.remove('card_hidden');
+        }
+        if (!input[1].checked) {
+            cardHidden[0].classList.remove('card_hidden');
+
+        } if (input[0].checked && input[1].checked) {
+            cardHidden[0].classList.remove('card_hidden');
+            cardHidden[1].classList.remove('card_hidden');
+        }
+
+    }
+}
+
+
+
+
+
 
 
 
