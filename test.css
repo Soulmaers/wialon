@@ -49,11 +49,32 @@ border-right: 20px solid lightgray;
 .wrapper_right{
   width: 70%;
   min-height: 600px;
-  display: flex;
-  flex-wrap: wrap;
   padding:30px;
   
   }
+  .wrapper_containt{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top:20px;
+  }
+  .check{
+    width: 70%;
+    display: flex;
+    
+    
+  }
+  .check_box{
+    width: 70%;
+    display: flex;
+    justify-content: space-around;
+    border:2px solid lightgray;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    font-family: Roboto;
+    
+  }
+
   .header_table{
     display: flex;
     justify-content: space-between;
