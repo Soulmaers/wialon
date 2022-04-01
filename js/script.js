@@ -27,11 +27,11 @@ const Obj729 = () => {
     //проверяем условия
     function gener(el) {
         let generatedValue;
-        if (el >= 3)
+        if (el >= 2)
             generatedValue = 3;
-        if (el >= 1 && el < 3)
+        if (el > 0 && el < 2)
             generatedValue = 2;
-        if (el < 1)
+        if (el == 0)
             generatedValue = 1;
         return generatedValue;
     };
@@ -65,8 +65,8 @@ const Obj729 = () => {
     const statEr = () => {
         stat[0].style.backgroundImage = "url(image/er.png)";
     }
-    if (arrD[0] >= 3 && arrD[1] >= 3 && arrD[2] >= 3 && arrD[3] >= 3 &&
-        arrT[0] >= 3 && arrT[1] >= 3 && arrT[2] >= 3 && arrT[3] >= 3) {
+    if (arrD[0] >= 2 && arrD[1] >= 2 && arrD[2] >= 2 && arrD[3] >= 2 &&
+        arrT[0] >= 2 && arrT[1] >= 2 && arrT[2] >= 2 && arrT[3] >= 2) {
         statGal();
     } else {
         statEr();
@@ -100,11 +100,11 @@ const Obj730 = () => {
     mathT();
     function gener(el) {
         let generatedValue;
-        if (el >= 3)
+        if (el >= 2)
             generatedValue = 3;
-        if (el >= 1 && el < 3)
+        if (el > 0 && el < 2)
             generatedValue = 2;
-        if (el < 1)
+        if (el == 0)
             generatedValue = 1;
         return generatedValue;
     };
@@ -143,8 +143,8 @@ const Obj730 = () => {
     const statEr = () => {
         stat[1].style.backgroundImage = "url(image/er.png)";
     }
-    if (arrD[0] >= 3 && arrD[1] >= 3 && arrD[2] >= 3 && arrD[3] >= 3 && arrD[4] >= 3 && arrD[5] >= 3 &&
-        arrT[0] >= 3 && arrT[1] >= 3 && arrT[2] >= 3 && arrT[3] >= 3 && arrT[4] >= 3 && arrT[5] >= 3) {
+    if (arrD[0] >= 2 && arrD[1] >= 2 && arrD[2] >= 2 && arrD[3] >= 2 && arrD[4] >= 2 && arrD[5] >= 2 &&
+        arrT[0] >= 2 && arrT[1] >= 2 && arrT[2] >= 2 && arrT[3] >= 2 && arrT[4] >= 2 && arrT[5] >= 2) {
         statGal();
     } else {
         statEr();
@@ -153,7 +153,7 @@ const Obj730 = () => {
 Obj730();
 setInterval(Obj730, 1000);
 
-//Объект 2
+//Объект 3
 const Obj731 = () => {
     time[2].textContent = getNowtime();
     function mathD() {
@@ -183,11 +183,11 @@ const Obj731 = () => {
     mathT();
     function gener(el) {
         let generatedValue;
-        if (el >= 3)
+        if (el >= 2)
             generatedValue = 3;
-        if (el >= 1 && el < 3)
+        if (el > 0 && el < 2)
             generatedValue = 2;
-        if (el < 1)
+        if (el == 0)
             generatedValue = 1;
         return generatedValue;
     };
@@ -234,10 +234,10 @@ const Obj731 = () => {
     const statEr = () => {
         stat[2].style.backgroundImage = "url(image/er.png)";
     }
-    if (arrD[0] >= 3 && arrD[1] >= 3 && arrD[2] >= 3 && arrD[3] >= 3 && arrD[4] >= 3
-        && arrD[5] >= 3 && arrD[6] >= 3 && arrD[7] >= 3 &&
-        arrT[0] >= 3 && arrT[1] >= 3 && arrT[2] >= 3 && arrT[3] >= 3 && arrT[4] >= 3
-        && arrT[5] >= 3 && arrD[6] >= 3 && arrD[7] >= 3) {
+    if (arrD[0] >= 2 && arrD[1] >= 2 && arrD[2] >= 2 && arrD[3] >= 2 && arrD[4] >= 2
+        && arrD[5] >= 2 && arrD[6] >= 2 && arrD[7] >= 2 &&
+        arrT[0] >= 2 && arrT[1] >= 2 && arrT[2] >= 2 && arrT[3] >= 2 && arrT[4] >= 2
+        && arrT[5] >= 2 && arrD[6] >= 2 && arrD[7] >= 2) {
         statGal();
     } else {
         statEr();
