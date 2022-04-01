@@ -73,7 +73,7 @@ const Obj729 = () => {
     }
 }
 Obj729();
-setInterval(Obj729, 1000);
+setInterval(Obj729, 5000);
 
 //Объект 2
 const Obj730 = () => {
@@ -151,7 +151,7 @@ const Obj730 = () => {
     }
 }
 Obj730();
-setInterval(Obj730, 1000);
+setInterval(Obj730, 5000);
 
 //Объект 3
 const Obj731 = () => {
@@ -244,7 +244,7 @@ const Obj731 = () => {
     }
 }
 Obj731();
-setInterval(Obj731, 1000);
+setInterval(Obj731, 5000);
 //текущее время
 function getNowtime() {
     let now = new Date();
