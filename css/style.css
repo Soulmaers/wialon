@@ -44,7 +44,7 @@ td {
 
 .main {
   display: flex;
-  max-width: 1400px;
+  max-width: 1700px;
 
 }
 
@@ -55,9 +55,10 @@ td {
 }
 
 .wrapper_right {
-  width: 70%;
+  width: 64.5%;
   min-height: 600px;
   padding: 30px;
+
 
 }
 
@@ -68,8 +69,9 @@ td {
 }
 
 .check {
-  width: 70%;
-  display: flex;
+  width: 100%;
+
+  margin: 0 auto;
 
 
 
@@ -80,7 +82,6 @@ td {
 }
 
 .check_box {
-  width: 70%;
   display: flex;
   justify-content: space-around;
   border: 2px solid lightgray;
@@ -169,7 +170,8 @@ td {
   background-image: url(../image/bg_shas3.png);
   padding: 0 20px;
 }
-.container_2_4_2{
+
+.container_2_4_2 {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -177,6 +179,16 @@ td {
   background-image: url(../image/bg_shas3.png);
   padding: 0 20px;
 }
+
+.container_2_2_4 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 350px;
+  background-image: url(../image/bg_shas3.png);
+  padding: 0 20px;
+}
+
 
 
 .title {
@@ -201,10 +213,11 @@ td {
   display: flex;
   justify-content: space-between;
 }
-.tires_center_spark{
+
+.tires_spark {
   display: flex;
 }
-  
+
 
 .rear_axle {
   display: flex;
@@ -259,4 +272,22 @@ td {
 .time {
   font-size: 0.75rem;
 
+}
+
+@media (min-width: 1300px) and (max-width: 1699px) {
+  .card:nth-child(n+4) {
+    margin-top: 10px;
+    margin-left: 0;
+  }
+}
+
+@media (min-width: 270px) and (max-width: 1299px) {
+  .card:nth-child(n+3) {
+    margin-top: 10px;
+    margin-left: 0;
+  }
+
+  .card:nth-child(n+4) {
+    margin-left: 20px;
+  }
 }

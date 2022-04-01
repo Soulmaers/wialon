@@ -172,13 +172,13 @@ const Obj731 = () => {
     function mathT() {
         lft = Math.floor(Math.random() * 10);
         rft = Math.floor(Math.random() * 10);
-        lct = Math.floor(Math.random() * 10);
         lcnt = Math.floor(Math.random() * 10);
         lcvt = Math.floor(Math.random() * 10);
-        rct = Math.floor(Math.random() * 10);
+        rcvt = Math.floor(Math.random() * 10);
+        rcnt = Math.floor(Math.random() * 10);
         lrt = Math.floor(Math.random() * 10);
         rrt = Math.floor(Math.random() * 10);
-        return arrT = [lft, rft, lct, lcnt, lcvt, rct, lrt, rrt];
+        return arrT = [lft, rft, lcnt, lcvt, rcvt, rcnt, lrt, rrt];
     }
     mathT();
     function gener(el) {
@@ -245,6 +245,99 @@ const Obj731 = () => {
 }
 Obj731();
 setInterval(Obj731, 5000);
+
+//Объект 4
+const Obj732 = () => {
+    time[3].textContent = getNowtime();
+    function mathD() {
+        lft = Math.floor(Math.random() * 10);
+        rft = Math.floor(Math.random() * 10);
+        lct = Math.floor(Math.random() * 10);
+        rct = Math.floor(Math.random() * 10);
+        lrnt = Math.floor(Math.random() * 10);
+        lrvt = Math.floor(Math.random() * 10);
+        rrvt = Math.floor(Math.random() * 10);
+        rrnt = Math.floor(Math.random() * 10);
+        return arrD = [lft, rft, lct, rct, lrnt, lrvt, rrvt, rrnt];
+
+    }
+    mathD();
+    function mathT() {
+        lft = Math.floor(Math.random() * 10);
+        rft = Math.floor(Math.random() * 10);
+        lct = Math.floor(Math.random() * 10);
+        rct = Math.floor(Math.random() * 10);
+        lrnt = Math.floor(Math.random() * 10);
+        lrvt = Math.floor(Math.random() * 10);
+        rrvt = Math.floor(Math.random() * 10);
+        rrnt = Math.floor(Math.random() * 10);
+        return arrT = [lft, rft, lct, rct, lrnt, lrvt, rrvt, rrnt];
+    }
+    mathT();
+    function gener(el) {
+        let generatedValue;
+        if (el >= 2)
+            generatedValue = 3;
+        if (el > 0 && el < 2)
+            generatedValue = 2;
+        if (el == 0)
+            generatedValue = 1;
+        return generatedValue;
+    };
+    const objColor = {
+        1: '#e03636',
+        2: '#9ba805',
+        3: '#3eb051'
+    }
+    alls[18].style.background = objColor[gener(arrD[0])];
+    alls[18].textContent = arrD[0] + '\nатм';
+    alls[19].style.background = objColor[gener(arrD[1])];
+    alls[19].textContent = arrD[1] + '\nатм';
+    alls[20].style.background = objColor[gener(arrD[2])];
+    alls[20].textContent = arrD[2] + '\nатм';
+    alls[21].style.background = objColor[gener(arrD[3])];
+    alls[21].textContent = arrD[3] + '\nатм';
+    alls[22].style.background = objColor[gener(arrD[4])];
+    alls[22].textContent = arrD[4] + '\nатм';
+    alls[23].style.background = objColor[gener(arrD[5])];
+    alls[23].textContent = arrD[5] + '\nатм';
+    alls[24].style.background = objColor[gener(arrD[6])];
+    alls[24].textContent = arrD[6] + '\nатм';
+    alls[25].style.background = objColor[gener(arrD[7])];
+    alls[25].textContent = arrD[7] + '\nатм';
+    allsT[18].style.background = objColor[gener(arrT[0])];
+    allsT[18].textContent = arrT[0] + '°C';
+    allsT[19].style.background = objColor[gener(arrT[1])];
+    allsT[19].textContent = arrT[1] + '°C';
+    allsT[20].style.background = objColor[gener(arrT[2])];
+    allsT[20].textContent = arrT[2] + '°C';
+    allsT[21].style.background = objColor[gener(arrT[3])];
+    allsT[21].textContent = arrT[3] + '°C';
+    allsT[22].style.background = objColor[gener(arrT[4])];
+    allsT[22].textContent = arrT[4] + '°C';
+    allsT[23].style.background = objColor[gener(arrT[5])];
+    allsT[23].textContent = arrT[5] + '°C';
+    allsT[24].style.background = objColor[gener(arrD[6])];
+    allsT[24].textContent = arrD[6] + '\nатм';
+    allsT[25].style.background = objColor[gener(arrD[7])];
+    allsT[25].textContent = arrD[7] + '\nатм';
+    const statGal = () => {
+        stat[3].style.backgroundImage = "url(image/gal.png)";
+    }
+    const statEr = () => {
+        stat[3].style.backgroundImage = "url(image/er.png)";
+    }
+    if (arrD[0] >= 2 && arrD[1] >= 2 && arrD[2] >= 2 && arrD[3] >= 2 && arrD[4] >= 2
+        && arrD[5] >= 2 && arrD[6] >= 2 && arrD[7] >= 2 &&
+        arrT[0] >= 2 && arrT[1] >= 2 && arrT[2] >= 2 && arrT[3] >= 2 && arrT[4] >= 2
+        && arrT[5] >= 2 && arrD[6] >= 2 && arrD[7] >= 2) {
+        statGal();
+    } else {
+        statEr();
+    }
+}
+Obj732();
+setInterval(Obj732, 5000);
 //текущее время
 function getNowtime() {
     let now = new Date();
@@ -278,41 +371,96 @@ const input = document.querySelectorAll('.input');
 const arrInput = Array.from(input);
 function showHide() {
     for (let i = 0; i <= arrInput.length; i++) {
-        if (input[0].checked && !input[1].checked && !input[2].checked) {
+        if (input[0].checked && !input[1].checked && !input[2].checked && !input[3].checked) {
+            cardHidden[1].classList.add('card_hidden');
+            cardHidden[2].classList.add('card_hidden');
+            cardHidden[3].classList.add('card_hidden');
+            cardHidden[0].classList.remove('card_hidden');
+        }
+        if (input[1].checked && !input[0].checked && !input[2].checked && !input[3].checked) {
+            cardHidden[0].classList.add('card_hidden');
+            cardHidden[2].classList.add('card_hidden');
+            cardHidden[3].classList.add('card_hidden');
+            cardHidden[1].classList.remove('card_hidden');
+        }
+        if (input[2].checked && !input[0].checked && !input[1].checked && !input[3].checked) {
+            cardHidden[0].classList.add('card_hidden');
+            cardHidden[1].classList.add('card_hidden');
+            cardHidden[3].classList.add('card_hidden');
+            cardHidden[2].classList.remove('card_hidden');
+        }
+        if (input[0].checked && input[1].checked && !input[2].checked && !input[3].checked) {
+            cardHidden[0].classList.remove('card_hidden');
+            cardHidden[1].classList.remove('card_hidden');
+            cardHidden[2].classList.add('card_hidden');
+            cardHidden[3].classList.add('card_hidden');
+        }
+        if (input[0].checked && input[2].checked && !input[1].checked && !input[3].checked) {
+            cardHidden[0].classList.remove('card_hidden');
+            cardHidden[2].classList.remove('card_hidden');
+            cardHidden[1].classList.add('card_hidden');
+            cardHidden[3].classList.add('card_hidden');
+        }
+        if (input[1].checked && input[2].checked && !input[0].checked && !input[3].checked) {
+            cardHidden[1].classList.remove('card_hidden');
+            cardHidden[2].classList.remove('card_hidden');
+            cardHidden[0].classList.add('card_hidden');
+            cardHidden[3].classList.add('card_hidden');
+        }
+        if (input[3].checked && !input[1].checked && !input[2].checked && !input[0].checked) {
+            cardHidden[1].classList.add('card_hidden');
+            cardHidden[2].classList.add('card_hidden');
+            cardHidden[0].classList.add('card_hidden');
+            cardHidden[3].classList.remove('card_hidden');
+        }
+        if (input[3].checked && input[1].checked && !input[2].checked && !input[0].checked) {
+            cardHidden[1].classList.remove('card_hidden');
+            cardHidden[2].classList.add('card_hidden');
+            cardHidden[0].classList.add('card_hidden');
+            cardHidden[3].classList.remove('card_hidden');
+        }
+        if (input[3].checked && input[2].checked && !input[1].checked && !input[0].checked) {
+            cardHidden[1].classList.add('card_hidden');
+            cardHidden[2].classList.remove('card_hidden');
+            cardHidden[0].classList.add('card_hidden');
+            cardHidden[3].classList.remove('card_hidden');
+        }
+        if (input[3].checked && input[0].checked && !input[1].checked && !input[2].checked) {
             cardHidden[1].classList.add('card_hidden');
             cardHidden[2].classList.add('card_hidden');
             cardHidden[0].classList.remove('card_hidden');
+            cardHidden[3].classList.remove('card_hidden');
         }
-        if (input[1].checked && !input[0].checked && !input[2].checked) {
-            cardHidden[0].classList.add('card_hidden');
-            cardHidden[2].classList.add('card_hidden');
+        if (input[0].checked && input[1].checked && input[2].checked && !input[3].checked) {
             cardHidden[1].classList.remove('card_hidden');
+            cardHidden[2].classList.remove('card_hidden');
+            cardHidden[0].classList.remove('card_hidden');
+            cardHidden[3].classList.add('card_hidden');
         }
-        if (input[2].checked && !input[0].checked && !input[1].checked) {
+        if (!input[0].checked && input[1].checked && input[2].checked && input[3].checked) {
+            cardHidden[1].classList.remove('card_hidden');
+            cardHidden[2].classList.remove('card_hidden');
             cardHidden[0].classList.add('card_hidden');
+            cardHidden[3].classList.remove('card_hidden');
+        }
+        if (!input[1].checked && input[0].checked && input[2].checked && input[3].checked) {
             cardHidden[1].classList.add('card_hidden');
             cardHidden[2].classList.remove('card_hidden');
-        }
-        if (input[0].checked && input[1].checked && !input[2].checked) {
             cardHidden[0].classList.remove('card_hidden');
+            cardHidden[3].classList.remove('card_hidden');
+        }
+        if (!input[2].checked && input[0].checked && input[1].checked && input[3].checked) {
             cardHidden[1].classList.remove('card_hidden');
             cardHidden[2].classList.add('card_hidden');
-        }
-        if (input[0].checked && input[2].checked && !input[1].checked) {
             cardHidden[0].classList.remove('card_hidden');
-            cardHidden[2].classList.remove('card_hidden');
-            cardHidden[1].classList.add('card_hidden');
+            cardHidden[3].classList.remove('card_hidden');
         }
-        if (input[1].checked && input[2].checked && !input[0].checked) {
-            cardHidden[1].classList.remove('card_hidden');
-            cardHidden[2].classList.remove('card_hidden');
-            cardHidden[0].classList.add('card_hidden');
-        }
-        if (input[0].checked && input[1].checked && input[2].checked ||
-            !input[0].checked && !input[1].checked && !input[2].checked) {
+        if (input[0].checked && input[1].checked && input[2].checked && input[3].checked ||
+            !input[0].checked && !input[1].checked && !input[2].checked && !input[3].checked) {
             cardHidden[0].classList.remove('card_hidden');
             cardHidden[1].classList.remove('card_hidden');
             cardHidden[2].classList.remove('card_hidden');
+            cardHidden[3].classList.remove('card_hidden');
         }
     }
 }
