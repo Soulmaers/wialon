@@ -6,7 +6,6 @@ let allsT = document.querySelectorAll('.tiresT');
 const stat = document.querySelectorAll('.bg_stat');
 let time1 = document.getElementById('tObj1');
 //Объект 1, 
-
 // рандомные значения
 function mathD1() {
     randomlft01 = Math.floor(Math.random() * 10);
@@ -421,22 +420,43 @@ const input = document.querySelectorAll('.input');
 const arrInput = Array.from(input);
 function showHide() {
     for (let i = 0; i <= arrInput.length; i++) {
-        if (input[0].checked) {
+        if (input[0].checked && !input[1].checked && !input[2].checked) {
+            cardHidden[1].classList.add('card_hidden');
+            cardHidden[2].classList.add('card_hidden');
+            cardHidden[0].classList.remove('card_hidden');
+        }
+        if (input[1].checked && !input[0].checked && !input[2].checked) {
+            cardHidden[0].classList.add('card_hidden');
+            cardHidden[2].classList.add('card_hidden');
+            cardHidden[1].classList.remove('card_hidden');
+        }
+        if (input[2].checked && !input[0].checked && !input[1].checked) {
+            cardHidden[0].classList.add('card_hidden');
+            cardHidden[1].classList.add('card_hidden');
+            cardHidden[2].classList.remove('card_hidden');
+        }
+        if (input[0].checked && input[1].checked && !input[2].checked) {
+            cardHidden[0].classList.remove('card_hidden');
+            cardHidden[1].classList.remove('card_hidden');
+            cardHidden[2].classList.add('card_hidden');
+        }
+        if (input[0].checked && input[2].checked && !input[1].checked) {
+            cardHidden[0].classList.remove('card_hidden');
+            cardHidden[2].classList.remove('card_hidden');
             cardHidden[1].classList.add('card_hidden');
         }
-        if (input[1].checked) {
+        if (input[1].checked && input[2].checked && !input[0].checked) {
+            cardHidden[1].classList.remove('card_hidden');
+            cardHidden[2].classList.remove('card_hidden');
             cardHidden[0].classList.add('card_hidden');
         }
-        if (!input[0].checked) {
-            cardHidden[1].classList.remove('card_hidden');
-        }
-        if (!input[1].checked) {
+        if (input[0].checked && input[1].checked && input[2].checked ||
+            !input[0].checked && !input[1].checked && !input[2].checked) {
             cardHidden[0].classList.remove('card_hidden');
+            cardHidden[1].classList.remove('card_hidden');
+            cardHidden[2].classList.remove('card_hidden');
+        }
 
-        } if (input[0].checked && input[1].checked) {
-            cardHidden[0].classList.remove('card_hidden');
-            cardHidden[1].classList.remove('card_hidden');
-        }
     }
 }
 

@@ -169,6 +169,14 @@ td {
   background-image: url(../image/bg_shas3.png);
   padding: 0 20px;
 }
+.container_2_4_2{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 350px;
+  background-image: url(../image/bg_shas3.png);
+  padding: 0 20px;
+}
 
 
 .title {
@@ -193,6 +201,10 @@ td {
   display: flex;
   justify-content: space-between;
 }
+.tires_center_spark{
+  display: flex;
+}
+  
 
 .rear_axle {
   display: flex;
