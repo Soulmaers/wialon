@@ -1,34 +1,84 @@
 
+const Obj729 = () => {
+    //забираем коллекции
+    let alls = document.getElementsByClassName('tiresD');
+    let allsT = document.getElementsByClassName('tiresT');
+    let time1 = document.getElementById('tObj1');
+    const stat = document.getElementsByClassName('bg_stat');
+    time1.textContent = getNowtime();
+    //запускаем рандом и кладем значения в массив
+    function mathD1() {
+        randomlft01 = Math.floor(Math.random() * 10);
+        randomrft01 = Math.floor(Math.random() * 10);
+        randomlrt01 = Math.floor(Math.random() * 10);
+        randomrrt01 = Math.floor(Math.random() * 10);
+        return arrD = [randomlft01, randomrft01, randomlrt01, randomrrt01];
+    }
+    mathD1()
+    function mathT1() {
+        randomlft01T = Math.floor(Math.random() * 10);
+        randomrft01T = Math.floor(Math.random() * 10);
+        randomlrt01T = Math.floor(Math.random() * 10);
+        randomrrt01T = Math.floor(Math.random() * 10);
+        return arrT = [randomlft01T, randomrft01T, randomlrt01T, randomrrt01T];
+    }
+    mathT1()
+    //проверяем условия
+    function gener(el) {
+        let generatedValue;
+        if (el >= 3)
+            generatedValue = 3;
+        if (el >= 1 && el < 3)
+            generatedValue = 2;
+        if (el < 1)
+            generatedValue = 1;
+        return generatedValue;
+    };
+    //создаем объект где ключ-результат условия, а свойства - соответсующее условию значение
+    const objColor = {
+        1: '#e03636',
+        2: '#9ba805',
+        3: '#3eb051'
+    }
+    //добавляем итог в нужный div
+    alls[0].style.background = objColor[gener(arrD[0])];
+    alls[0].textContent = arrD[0] + '\nатм';
+    alls[1].style.background = objColor[gener(arrD[1])];
+    alls[1].textContent = arrD[1] + '\nатм';
+    alls[2].style.background = objColor[gener(arrD[2])];
+    alls[2].textContent = arrD[2] + '\nатм';
+    alls[3].style.background = objColor[gener(arrD[3])];
+    alls[3].textContent = arrD[3] + '\nатм';
+    allsT[0].style.background = objColor[gener(arrT[0])];
+    allsT[0].textContent = arrT[0] + '°C';
+    allsT[1].style.background = objColor[gener(arrT[1])];
+    allsT[1].textContent = arrT[1] + '°C';
+    allsT[2].style.background = objColor[gener(arrT[2])];
+    allsT[2].textContent = arrT[2] + '°C';
+    allsT[3].style.background = objColor[gener(arrT[3])];
+    allsT[3].textContent = arrT[3] + '°C';
 
-//забираем объект
-let alls = document.getElementsByClassName('tiresD');
-let allsT = document.getElementsByClassName('tiresT');
-const stat = document.getElementsByClassName('bg_stat');
-let time1 = document.getElementById('tObj1');
-//Объект 1, 
+    // добавляем статус машины
+    const statGal1 = () => {
+        stat[0].style.backgroundImage = "url(image/gal.png)";
+    }
+    const statEr1 = () => {
+        stat[0].style.backgroundImage = "url(image/er.png)";
+    }
+    if (arrD[0] >= 3 && arrD[1] >= 3 && arrD[2] >= 3 && arrD[3] >= 3 &&
+        arrT[0] >= 3 && arrT[1] >= 3 && arrT[2] >= 3 && arrT[3] >= 3) {
+        statGal1();
+    } else {
+        statEr1();
+    }
+}
+Obj729();
+setInterval(Obj729, 1000);
 
-// рандомные значения
-function mathD1() {
-    randomlft01 = Math.floor(Math.random() * 10);
-    randomrft01 = Math.floor(Math.random() * 10);
-    randomlrt01 = Math.floor(Math.random() * 10);
-    randomrrt01 = Math.floor(Math.random() * 10);
-}
-function mathT1() {
-    randomlft01T = Math.floor(Math.random() * 10);
-    randomrft01T = Math.floor(Math.random() * 10);
-    randomlrt01T = Math.floor(Math.random() * 10);
-    randomrrt01T = Math.floor(Math.random() * 10);
-}
 //добавление статуса
-const statGal1 = () => {
-    stat[0].style.backgroundImage = "url(image/gal.png)";
-}
-const statEr1 = () => {
-    stat[0].style.backgroundImage = "url(image/er.png)";
-}
+
 // логика выбора
-const func1 = () => {
+/*const func1 = () => {
     mathD1();
     mathT1();
     time1.textContent = getNowtime();
@@ -36,7 +86,6 @@ const func1 = () => {
         alls[2].style.background = '#3eb051';
         alls[2].textContent = randomlrt01 + '\nатм';
         statGal1();
-
     }
     if (randomrrt01 >= 3) {
         alls[3].style.background = '#3eb051';
@@ -93,75 +142,61 @@ const func1 = () => {
         alls[1].textContent = randomrft01 + '\nатм';
         statEr1();
     }
-
     //условия по температуре
     if (randomlrt01T >= 3) {
         allsT[2].style.background = '#3eb051';
         allsT[2].textContent = randomlrt01T + '°C';
-
-
     }
     if (randomrrt01T >= 3) {
         allsT[3].style.background = '#3eb051';
         allsT[3].textContent = randomrrt01T + '°C';
-
     }
     if (randomlft01T >= 3) {
         allsT[0].style.background = '#3eb051';
         allsT[0].textContent = randomlft01T + '°C';
-
     }
     if (randomrft01T >= 3) {
         allsT[1].style.background = '#3eb051';
         allsT[1].textContent = randomrft01T + '°C';
-
     }
     if (randomlrt01T >= 1 && randomlrt01T < 3) {
         allsT[2].style.background = '#9ba805';
         allsT[2].textContent = randomlrt01T + '°C';
-
     }
     if (randomrrt01T >= 1 && randomrrt01T < 3) {
         allsT[3].style.background = '#9ba805';
         allsT[3].textContent = randomrrt01T + '°C';
-
     }
     if (randomlrt01T < 1) {
         allsT[2].style.background = '#e03636';
         allsT[2].textContent = randomlrt01T + '°C';
-
     }
     if (randomrrt01T < 1) {
         allsT[3].style.background = '#e03636';
         allsT[3].textContent = randomrrt01 + '°C';
-
     }
     if (randomlft01T >= 1 && randomlft01T < 3) {
         allsT[0].style.background = '#9ba805';
         allsT[0].textContent = randomlft01T + '°C';
-
     }
     if (randomrft01T >= 1 && randomrft01T < 3) {
         allsT[1].style.background = '#9ba805';
         allsT[1].textContent = randomrft01T + '°C';
-
     }
     if (randomlft01T < 1) {
         allsT[0].style.background = '#e03636';
         allsT[0].textContent = randomlft01T + '°C';
-
     }
     if (randomrft01T < 1) {
         allsT[1].style.background = '#e03636';
         allsT[1].textContent = randomrft01T + '°C';
-
     }
 }
 func1();
 setInterval(func1, 5000);
 
-//Объект 2
-let time2 = document.getElementById('tObj2');
+//Объект 2*/
+/*let time2 = document.getElementById('tObj2');
 // рандомные значения
 function math2() {
     randomlft02 = Math.floor(Math.random() * 10);
@@ -234,7 +269,7 @@ const func2 = () => {
 func2();
 setInterval(func2, 5000);
 
-
+*/
 
 
 //текущее время

@@ -1,392 +1,250 @@
-
-
-//забираем объект
-let alls = document.querySelectorAll('.tiresD');
-let allsT = document.querySelectorAll('.tiresT');
+//забираем коллекции
+const alls = document.querySelectorAll('.tiresD');
+const allsT = document.querySelectorAll('.tiresT');
+const time = document.querySelectorAll('.time');
 const stat = document.querySelectorAll('.bg_stat');
-let time1 = document.getElementById('tObj1');
-//Объект 1, 
-// рандомные значения
-function mathD1() {
-    randomlft01 = Math.floor(Math.random() * 10);
-    randomrft01 = Math.floor(Math.random() * 10);
-    randomlrt01 = Math.floor(Math.random() * 10);
-    randomrrt01 = Math.floor(Math.random() * 10);
-}
-function mathT1() {
-    randomlft01T = Math.floor(Math.random() * 10);
-    randomrft01T = Math.floor(Math.random() * 10);
-    randomlrt01T = Math.floor(Math.random() * 10);
-    randomrrt01T = Math.floor(Math.random() * 10);
-}
-//добавление статуса
-const statGal1 = () => {
-    stat[0].style.backgroundImage = "url(image/gal.png)";
-}
-const statEr1 = () => {
-    stat[0].style.backgroundImage = "url(image/er.png)";
-}
-// логика выбора
-const func1 = () => {
-    mathD1();
-    mathT1();
-    time1.textContent = getNowtime();
-    if (randomlrt01 >= 3) {
-        alls[2].style.background = '#3eb051';
-        alls[2].textContent = randomlrt01 + '\nатм';
-        statGal1();
 
+//Объект1
+const Obj729 = () => {
+    time[0].textContent = getNowtime();
+    //запускаем рандом и кладем значения в массив
+    function mathD() {
+        lft = Math.floor(Math.random() * 10);
+        rft = Math.floor(Math.random() * 10);
+        lrt = Math.floor(Math.random() * 10);
+        rrt = Math.floor(Math.random() * 10);
+        return arrD = [lft, rft, lrt, rrt];
     }
-    if (randomrrt01 >= 3) {
-        alls[3].style.background = '#3eb051';
-        alls[3].textContent = randomrrt01 + '\nатм';
-        statGal1();
+    mathD()
+    function mathT() {
+        lft = Math.floor(Math.random() * 10);
+        rft = Math.floor(Math.random() * 10);
+        lrt = Math.floor(Math.random() * 10);
+        rrt = Math.floor(Math.random() * 10);
+        return arrT = [lft, rft, lrt, rrt];
     }
-    if (randomlft01 >= 3) {
-        alls[0].style.background = '#3eb051';
-        alls[0].textContent = randomlft01 + '\nатм';
-        statGal1();
+    mathT()
+    //проверяем условия
+    function gener(el) {
+        let generatedValue;
+        if (el >= 3)
+            generatedValue = 3;
+        if (el >= 1 && el < 3)
+            generatedValue = 2;
+        if (el < 1)
+            generatedValue = 1;
+        return generatedValue;
+    };
+    //создаем объект где ключ-результат условия, а свойства - соответсующее условию значение
+    const objColor = {
+        1: '#e03636',
+        2: '#9ba805',
+        3: '#3eb051'
     }
-    if (randomrft01 >= 3) {
-        alls[1].style.background = '#3eb051';
-        alls[1].textContent = randomrft01 + '\nатм';
-        statGal1();
+    //добавляем итог в нужный div
+    alls[0].style.background = objColor[gener(arrD[0])];
+    alls[0].textContent = arrD[0] + '\nатм';
+    alls[1].style.background = objColor[gener(arrD[1])];
+    alls[1].textContent = arrD[1] + '\nатм';
+    alls[2].style.background = objColor[gener(arrD[2])];
+    alls[2].textContent = arrD[2] + '\nатм';
+    alls[3].style.background = objColor[gener(arrD[3])];
+    alls[3].textContent = arrD[3] + '\nатм';
+    allsT[0].style.background = objColor[gener(arrT[0])];
+    allsT[0].textContent = arrT[0] + '°C';
+    allsT[1].style.background = objColor[gener(arrT[1])];
+    allsT[1].textContent = arrT[1] + '°C';
+    allsT[2].style.background = objColor[gener(arrT[2])];
+    allsT[2].textContent = arrT[2] + '°C';
+    allsT[3].style.background = objColor[gener(arrT[3])];
+    allsT[3].textContent = arrT[3] + '°C';
+    // добавляем статус машины
+    const statGal = () => {
+        stat[0].style.backgroundImage = "url(image/gal.png)";
     }
-    if (randomlrt01 >= 1 && randomlrt01 < 3) {
-        alls[2].style.background = '#9ba805';
-        alls[2].textContent = randomlrt01 + '\nатм';
-        statEr1();
+    const statEr = () => {
+        stat[0].style.backgroundImage = "url(image/er.png)";
     }
-    if (randomrrt01 >= 1 && randomrrt01 < 3) {
-        alls[3].style.background = '#9ba805';
-        alls[3].textContent = randomrrt01 + '\nатм';
-        statEr1();
-    }
-    if (randomlrt01 < 1) {
-        alls[2].style.background = '#e03636';
-        alls[2].textContent = randomlrt01 + '\nатм';
-        statEr1();
-    }
-    if (randomrrt01 < 1) {
-        alls[3].style.background = '#e03636';
-        alls[3].textContent = randomrrt01 + '\nатм';
-        statEr1();
-    }
-    if (randomlft01 >= 1 && randomlft01 < 3) {
-        alls[0].style.background = '#9ba805';
-        alls[0].textContent = randomlft01 + '\nатм';
-        statEr1();
-    }
-    if (randomrft01 >= 1 && randomrft01 < 3) {
-        alls[1].style.background = '#9ba805';
-        alls[1].textContent = randomrft01 + '\nатм';
-        statEr1();
-    }
-    if (randomlft01 < 1) {
-        alls[0].style.background = '#e03636';
-        alls[0].textContent = randomlft01 + '\nатм';
-        statEr1();
-    }
-    if (randomrft01 < 1) {
-        alls[1].style.background = '#e03636';
-        alls[1].textContent = randomrft01 + '\nатм';
-        statEr1();
-    }
-
-    //условия по температуре
-    if (randomlrt01T >= 3) {
-        allsT[2].style.background = '#3eb051';
-        allsT[2].textContent = randomlrt01T + '°C';
-
-
-    }
-    if (randomrrt01T >= 3) {
-        allsT[3].style.background = '#3eb051';
-        allsT[3].textContent = randomrrt01T + '°C';
-
-    }
-    if (randomlft01T >= 3) {
-        allsT[0].style.background = '#3eb051';
-        allsT[0].textContent = randomlft01T + '°C';
-
-    }
-    if (randomrft01T >= 3) {
-        allsT[1].style.background = '#3eb051';
-        allsT[1].textContent = randomrft01T + '°C';
-
-    }
-    if (randomlrt01T >= 1 && randomlrt01T < 3) {
-        allsT[2].style.background = '#9ba805';
-        allsT[2].textContent = randomlrt01T + '°C';
-
-    }
-    if (randomrrt01T >= 1 && randomrrt01T < 3) {
-        allsT[3].style.background = '#9ba805';
-        allsT[3].textContent = randomrrt01T + '°C';
-
-    }
-    if (randomlrt01T < 1) {
-        allsT[2].style.background = '#e03636';
-        allsT[2].textContent = randomlrt01T + '°C';
-
-    }
-    if (randomrrt01T < 1) {
-        allsT[3].style.background = '#e03636';
-        allsT[3].textContent = randomrrt01T + '°C';
-
-    }
-    if (randomlft01T >= 1 && randomlft01T < 3) {
-        allsT[0].style.background = '#9ba805';
-        allsT[0].textContent = randomlft01T + '°C';
-
-    }
-    if (randomrft01T >= 1 && randomrft01T < 3) {
-        allsT[1].style.background = '#9ba805';
-        allsT[1].textContent = randomrft01T + '°C';
-
-    }
-    if (randomlft01T < 1) {
-        allsT[0].style.background = '#e03636';
-        allsT[0].textContent = randomlft01T + '°C';
-
-    }
-    if (randomrft01T < 1) {
-        allsT[1].style.background = '#e03636';
-        allsT[1].textContent = randomrft01T + '°C';
-
-    }
-    if (randomrrt01T >= 3 && randomlrt01T >= 3 && randomrft01T >= 3 && randomlft01T >= 3
-        && randomrrt01 >= 3 && randomlrt01 >= 3 && randomrft01 >= 3 && randomlft01 >= 3) {
-        statGal1();
+    if (arrD[0] >= 3 && arrD[1] >= 3 && arrD[2] >= 3 && arrD[3] >= 3 &&
+        arrT[0] >= 3 && arrT[1] >= 3 && arrT[2] >= 3 && arrT[3] >= 3) {
+        statGal();
     } else {
-        statEr1();
+        statEr();
     }
 }
-func1();
-setInterval(func1, 5000);
+Obj729();
+setInterval(Obj729, 1000);
 
 //Объект 2
-let time2 = document.getElementById('tObj2');
-// рандомные значения
-function mathD2() {
-    randomlft02 = Math.floor(Math.random() * 10);
-    randomrft02 = Math.floor(Math.random() * 10);
-    randomlct02 = Math.floor(Math.random() * 10);
-    randomrct02 = Math.floor(Math.random() * 10);
-    randomlrt02 = Math.floor(Math.random() * 10);
-    randomrrt02 = Math.floor(Math.random() * 10);
-}
-function mathT2() {
-    randomlft02T = Math.floor(Math.random() * 10);
-    randomrft02T = Math.floor(Math.random() * 10);
-    randomlct02T = Math.floor(Math.random() * 10);
-    randomrct02T = Math.floor(Math.random() * 10);
-    randomlrt02T = Math.floor(Math.random() * 10);
-    randomrrt02T = Math.floor(Math.random() * 10);
-}
-
-const statGal2 = () => {
-    stat[1].style.backgroundImage = "url(image/gal.png)";
-}
-const statEr2 = () => {
-    stat[1].style.backgroundImage = "url(image/er.png)";
-}
-// логика выбора
-const func2 = () => {
-    mathD2();
-    mathT2();
-    time2.textContent = getNowtime();
-
-    if (randomlft02 >= 3) {
-        alls[4].style.background = '#3eb051';
-        alls[4].textContent = randomlft02 + '\nатм';
-
+const Obj730 = () => {
+    time[1].textContent = getNowtime();
+    function mathD() {
+        lft = Math.floor(Math.random() * 10);
+        rft = Math.floor(Math.random() * 10);
+        lct = Math.floor(Math.random() * 10);
+        rct = Math.floor(Math.random() * 10);
+        lrt = Math.floor(Math.random() * 10);
+        rrt = Math.floor(Math.random() * 10);
+        return arrD = [lft, rft, lct, rct, lrt, rrt];
     }
-    if (randomrft02 >= 3) {
-        alls[5].style.background = '#3eb051';
-        alls[5].textContent = randomrft02 + '\nатм';
-
+    mathD();
+    function mathT() {
+        lft = Math.floor(Math.random() * 10);
+        rft = Math.floor(Math.random() * 10);
+        lct = Math.floor(Math.random() * 10);
+        rct = Math.floor(Math.random() * 10);
+        lrt = Math.floor(Math.random() * 10);
+        rrt = Math.floor(Math.random() * 10);
+        return arrT = [lft, rft, lct, rct, lrt, rrt];
     }
-    if (randomlct02 >= 3) {
-        alls[6].style.background = '#3eb051';
-        alls[6].textContent = randomlct02 + '\nатм';
-
+    mathT();
+    function gener(el) {
+        let generatedValue;
+        if (el >= 3)
+            generatedValue = 3;
+        if (el >= 1 && el < 3)
+            generatedValue = 2;
+        if (el < 1)
+            generatedValue = 1;
+        return generatedValue;
+    };
+    const objColor = {
+        1: '#e03636',
+        2: '#9ba805',
+        3: '#3eb051'
     }
-    if (randomrct02 >= 3) {
-        alls[7].style.background = '#3eb051';
-        alls[7].textContent = randomrct02 + '\nатм';
-
+    alls[4].style.background = objColor[gener(arrD[0])];
+    alls[4].textContent = arrD[0] + '\nатм';
+    alls[5].style.background = objColor[gener(arrD[1])];
+    alls[5].textContent = arrD[1] + '\nатм';
+    alls[6].style.background = objColor[gener(arrD[2])];
+    alls[6].textContent = arrD[2] + '\nатм';
+    alls[7].style.background = objColor[gener(arrD[3])];
+    alls[7].textContent = arrD[3] + '\nатм';
+    alls[8].style.background = objColor[gener(arrD[4])];
+    alls[8].textContent = arrD[4] + '\nатм';
+    alls[9].style.background = objColor[gener(arrD[5])];
+    alls[9].textContent = arrD[5] + '\nатм';
+    allsT[4].style.background = objColor[gener(arrT[0])];
+    allsT[4].textContent = arrT[0] + '°C';
+    allsT[5].style.background = objColor[gener(arrT[1])];
+    allsT[5].textContent = arrT[1] + '°C';
+    allsT[6].style.background = objColor[gener(arrT[2])];
+    allsT[6].textContent = arrT[2] + '°C';
+    allsT[7].style.background = objColor[gener(arrT[3])];
+    allsT[7].textContent = arrT[3] + '°C';
+    allsT[8].style.background = objColor[gener(arrT[4])];
+    allsT[8].textContent = arrT[4] + '°C';
+    allsT[9].style.background = objColor[gener(arrT[5])];
+    allsT[9].textContent = arrT[5] + '°C';
+    const statGal = () => {
+        stat[1].style.backgroundImage = "url(image/gal.png)";
     }
-    if (randomlrt02 >= 3) {
-        alls[8].style.background = '#3eb051';
-        alls[8].textContent = randomlrt02 + '\nатм';
-
+    const statEr = () => {
+        stat[1].style.backgroundImage = "url(image/er.png)";
     }
-    if (randomrrt02 >= 3) {
-        alls[9].style.background = '#3eb051';
-        alls[9].textContent = randomrrt02 + '\nатм';
-
-    }
-    if (randomlrt02 >= 1 && randomlrt02 < 3) {
-        alls[8].style.background = '#9ba805';
-        alls[8].textContent = randomlrt02 + '\nатм';
-
-    }
-    if (randomrrt02 >= 1 && randomrrt02 < 3) {
-        alls[9].style.background = '#9ba805';
-        alls[9].textContent = randomrrt02 + '\nатм';
-
-    }
-    if (randomlct02 >= 1 && randomlct02 < 3) {
-        alls[6].style.background = '#9ba805';
-        alls[6].textContent = randomlct02 + '\nатм';
-
-    }
-    if (randomrct02 >= 1 && randomrct02 < 3) {
-        alls[7].style.background = '#9ba805';
-        alls[7].textContent = randomrct02 + '\nатм';
-
-    }
-    if (randomlrt02 < 1) {
-        alls[8].style.background = '#e03636';
-        alls[8].textContent = randomlrt02 + '\nатм';
-
-    }
-    if (randomrrt02 < 1) {
-        alls[9].style.background = '#e03636';
-        alls[9].textContent = randomrrt02 + '\nатм';
-
-    }
-    if (randomlct02 < 1) {
-        alls[6].style.background = '#e03636';
-        alls[6].textContent = randomlct02 + '\nатм';
-
-    }
-    if (randomrct02 < 1) {
-        alls[7].style.background = '#e03636';
-        alls[7].textContent = randomrct02 + '\nатм';
-
-    }
-    if (randomlft02 >= 1 && randomlft02 < 3) {
-        alls[4].style.background = '#9ba805';
-        alls[4].textContent = randomlft02 + '\nатм';
-
-    }
-    if (randomrft02 >= 1 && randomrft02 < 3) {
-        alls[5].style.background = '#9ba805';
-        alls[5].textContent = randomrft02 + '\nатм';
-
-    }
-    if (randomlft02 < 1) {
-        alls[4].style.background = '#e03636';
-        alls[4].textContent = randomlft02 + '\nатм';
-
-    }
-    if (randomrft02 < 1) {
-        alls[5].style.background = '#e03636';
-        alls[5].textContent = randomrft02 + '\nатм';
-
-    }
-    //условия по температуре
-    if (randomlft02T >= 3) {
-        allsT[4].style.background = '#3eb051';
-        allsT[4].textContent = randomlft02T + '°C';
-
-    }
-    if (randomrft02T >= 3) {
-        allsT[5].style.background = '#3eb051';
-        allsT[5].textContent = randomrft02T + '°C';
-
-    }
-    if (randomlct02T >= 3) {
-        allsT[6].style.background = '#3eb051';
-        allsT[6].textContent = randomlct02T + '°C';
-
-    }
-    if (randomrct02T >= 3) {
-        allsT[7].style.background = '#3eb051';
-        allsT[7].textContent = randomrct02T + '°C';
-
-    }
-    if (randomlrt02T >= 3) {
-        allsT[8].style.background = '#3eb051';
-        allsT[8].textContent = randomlrt02T + '°C';
-
-    }
-    if (randomrrt02T >= 3) {
-        allsT[9].style.background = '#3eb051';
-        allsT[9].textContent = randomrrt02T + '°C';
-
-    }
-    if (randomlft02T >= 1 && randomlft02T < 3) {
-        allsT[4].style.background = '#9ba805';
-        allsT[4].textContent = randomlft02T + '°C';
-
-    }
-    if (randomrft02T >= 1 && randomrft02T < 3) {
-        allsT[5].style.background = '#9ba805';
-        allsT[5].textContent = randomrft02T + '°C';
-
-    }
-    if (randomlct02T >= 1 && randomlct02T < 3) {
-        alls[6].style.background = '#9ba805';
-        alls[6].textContent = randomlct02T + '\nатм';
-
-    }
-    if (randomrct02T >= 1 && randomrct02T < 3) {
-        alls[7].style.background = '#9ba805';
-        alls[7].textContent = randomrct02T + '\nатм';
-
-    }
-    if (randomlrt02T >= 1 && randomlrt02T < 3) {
-        allsT[8].style.background = '#9ba805';
-        allsT[8].textContent = randomlrt02T + '°C';
-
-    }
-    if (randomrrt02T >= 1 && randomrrt02T < 3) {
-        allsT[9].style.background = '#9ba805';
-        allsT[9].textContent = randomrrt02T + '°C';
-
-    }
-    if (randomlft02T < 1) {
-        allsT[4].style.background = '#e03636';
-        allsT[4].textContent = randomlft02T + '°C';
-
-    }
-    if (randomrft02T < 1) {
-        allsT[5].style.background = '#e03636';
-        allsT[5].textContent = randomrft02T + '°C';
-
-    }
-    if (randomlct02T < 1) {
-        allsT[6].style.background = '#e03636';
-        allsT[6].textContent = randomlct02T + '°C';
-
-    }
-    if (randomrct02T < 1) {
-        allsT[7].style.background = '#e03636';
-        allsT[7].textContent = randomrct02T + '°C';
-
-    }
-    if (randomlrt02T < 1) {
-        allsT[8].style.background = '#e03636';
-        allsT[8].textContent = randomlrt02T + '°C';
-
-    }
-    if (randomrrt02T < 1) {
-        allsT[9].style.background = '#e03636';
-        allsT[9].textContent = randomrrt02T + '°C';
-
-    }
-    if (randomrrt02T >= 3 && randomrft02T >= 3 && randomrct02T >= 3 && randomlct02T >= 3 && randomrft02T >= 3 && randomlft02T >= 3
-        && randomrrt02 >= 3 && randomrft02 >= 3 && randomrct02 >= 3 && randomlct02 >= 3 && randomrft02 >= 3 && randomlft02 >= 3) {
-        statGal2();
+    if (arrD[0] >= 3 && arrD[1] >= 3 && arrD[2] >= 3 && arrD[3] >= 3 && arrD[4] >= 3 && arrD[5] >= 3 &&
+        arrT[0] >= 3 && arrT[1] >= 3 && arrT[2] >= 3 && arrT[3] >= 3 && arrT[4] >= 3 && arrT[5] >= 3) {
+        statGal();
     } else {
-        statEr2();
+        statEr();
     }
 }
-func2();
-setInterval(func2, 5000);
+Obj730();
+setInterval(Obj730, 1000);
+
+//Объект 2
+const Obj731 = () => {
+    time[2].textContent = getNowtime();
+    function mathD() {
+        lft = Math.floor(Math.random() * 10);
+        rft = Math.floor(Math.random() * 10);
+        lct = Math.floor(Math.random() * 10);
+        lcnt = Math.floor(Math.random() * 10);
+        lcvt = Math.floor(Math.random() * 10);
+        rct = Math.floor(Math.random() * 10);
+        lrt = Math.floor(Math.random() * 10);
+        rrt = Math.floor(Math.random() * 10);
+        return arrD = [lft, rft, lct, lcnt, lcvt, rct, lrt, rrt];
+
+    }
+    mathD();
+    function mathT() {
+        lft = Math.floor(Math.random() * 10);
+        rft = Math.floor(Math.random() * 10);
+        lct = Math.floor(Math.random() * 10);
+        lcnt = Math.floor(Math.random() * 10);
+        lcvt = Math.floor(Math.random() * 10);
+        rct = Math.floor(Math.random() * 10);
+        lrt = Math.floor(Math.random() * 10);
+        rrt = Math.floor(Math.random() * 10);
+        return arrT = [lft, rft, lct, lcnt, lcvt, rct, lrt, rrt];
+    }
+    mathT();
+    function gener(el) {
+        let generatedValue;
+        if (el >= 3)
+            generatedValue = 3;
+        if (el >= 1 && el < 3)
+            generatedValue = 2;
+        if (el < 1)
+            generatedValue = 1;
+        return generatedValue;
+    };
+    const objColor = {
+        1: '#e03636',
+        2: '#9ba805',
+        3: '#3eb051'
+    }
+    alls[10].style.background = objColor[gener(arrD[0])];
+    alls[10].textContent = arrD[0] + '\nатм';
+    alls[11].style.background = objColor[gener(arrD[1])];
+    alls[11].textContent = arrD[1] + '\nатм';
+    alls[12].style.background = objColor[gener(arrD[2])];
+    alls[12].textContent = arrD[2] + '\nатм';
+    alls[13].style.background = objColor[gener(arrD[3])];
+    alls[13].textContent = arrD[3] + '\nатм';
+    alls[14].style.background = objColor[gener(arrD[4])];
+    alls[14].textContent = arrD[4] + '\nатм';
+    alls[15].style.background = objColor[gener(arrD[5])];
+    alls[15].textContent = arrD[5] + '\nатм';
+    alls[16].style.background = objColor[gener(arrD[6])];
+    alls[16].textContent = arrD[6] + '\nатм';
+    alls[17].style.background = objColor[gener(arrD[7])];
+    alls[17].textContent = arrD[7] + '\nатм';
+    allsT[10].style.background = objColor[gener(arrT[0])];
+    allsT[10].textContent = arrT[0] + '°C';
+    allsT[11].style.background = objColor[gener(arrT[1])];
+    allsT[11].textContent = arrT[1] + '°C';
+    allsT[12].style.background = objColor[gener(arrT[2])];
+    allsT[12].textContent = arrT[2] + '°C';
+    allsT[13].style.background = objColor[gener(arrT[3])];
+    allsT[13].textContent = arrT[3] + '°C';
+    allsT[14].style.background = objColor[gener(arrT[4])];
+    allsT[14].textContent = arrT[4] + '°C';
+    allsT[15].style.background = objColor[gener(arrT[5])];
+    allsT[15].textContent = arrT[5] + '°C';
+    allsT[16].style.background = objColor[gener(arrD[6])];
+    allsT[16].textContent = arrD[6] + '\nатм';
+    allsT[17].style.background = objColor[gener(arrD[7])];
+    allsT[17].textContent = arrD[7] + '\nатм';
+    const statGal = () => {
+        stat[2].style.backgroundImage = "url(image/gal.png)";
+    }
+    const statEr = () => {
+        stat[2].style.backgroundImage = "url(image/er.png)";
+    }
+    if (arrD[0] >= 3 && arrD[1] >= 3 && arrD[2] >= 3 && arrD[3] >= 3 && arrD[4] >= 3
+        && arrD[5] >= 3 && arrD[6] >= 3 && arrD[7] >= 3 &&
+        arrT[0] >= 3 && arrT[1] >= 3 && arrT[2] >= 3 && arrT[3] >= 3 && arrT[4] >= 3
+        && arrT[5] >= 3 && arrD[6] >= 3 && arrD[7] >= 3) {
+        statGal();
+    } else {
+        statEr();
+    }
+}
+Obj731();
+setInterval(Obj731, 1000);
 //текущее время
 function getNowtime() {
     let now = new Date();
@@ -456,7 +314,6 @@ function showHide() {
             cardHidden[1].classList.remove('card_hidden');
             cardHidden[2].classList.remove('card_hidden');
         }
-
     }
 }
 
