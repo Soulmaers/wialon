@@ -225,9 +225,9 @@ const Obj731 = () => {
     allsT[15].style.background = objColor[gener(arrT[5])];
     allsT[15].textContent = arrT[5] + '°C';
     allsT[16].style.background = objColor[gener(arrD[6])];
-    allsT[16].textContent = arrD[6] + '\nатм';
+    allsT[16].textContent = arrT[6] + '\nатм';
     allsT[17].style.background = objColor[gener(arrD[7])];
-    allsT[17].textContent = arrD[7] + '\nатм';
+    allsT[17].textContent = arrT[7] + '\nатм';
     const statGal = () => {
         stat[2].style.backgroundImage = "url(image/gal.png)";
     }
@@ -318,9 +318,9 @@ const Obj732 = () => {
     allsT[23].style.background = objColor[gener(arrT[5])];
     allsT[23].textContent = arrT[5] + '°C';
     allsT[24].style.background = objColor[gener(arrD[6])];
-    allsT[24].textContent = arrD[6] + '\nатм';
+    allsT[24].textContent = arrT[6] + '\nатм';
     allsT[25].style.background = objColor[gener(arrD[7])];
-    allsT[25].textContent = arrD[7] + '\nатм';
+    allsT[25].textContent = arrT[7] + '\nатм';
     const statGal = () => {
         stat[3].style.backgroundImage = "url(image/gal.png)";
     }
