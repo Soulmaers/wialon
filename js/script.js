@@ -365,9 +365,11 @@ function getNowtime() {
     let nowTime = (`${date}-${month}-${year}   ${hours}:${minutes}:${seconds}`);
     return nowTime;
 }
-//логика чекбоксов
-const cardHidden = document.querySelectorAll('.card');
+
+
+// логика чекбоксов
 const input = document.querySelectorAll('.input');
+const cardHidden = document.querySelectorAll('.card');
 const arrInput = Array.from(input);
 function showHide() {
     for (let i = 0; i <= arrInput.length; i++) {
@@ -464,9 +466,6 @@ function showHide() {
         }
     }
 }
-
-
-
 
 
 

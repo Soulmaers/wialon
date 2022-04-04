@@ -1,36 +1,37 @@
+//забираем коллекции
+const alls = document.querySelectorAll('.tiresD');
+const allsT = document.querySelectorAll('.tiresT');
+const time = document.querySelectorAll('.time');
+const stat = document.querySelectorAll('.bg_stat');
 
+//Объект1
 const Obj729 = () => {
-    //забираем коллекции
-    let alls = document.getElementsByClassName('tiresD');
-    let allsT = document.getElementsByClassName('tiresT');
-    let time1 = document.getElementById('tObj1');
-    const stat = document.getElementsByClassName('bg_stat');
-    time1.textContent = getNowtime();
+    time[0].textContent = getNowtime();
     //запускаем рандом и кладем значения в массив
-    function mathD1() {
-        randomlft01 = Math.floor(Math.random() * 10);
-        randomrft01 = Math.floor(Math.random() * 10);
-        randomlrt01 = Math.floor(Math.random() * 10);
-        randomrrt01 = Math.floor(Math.random() * 10);
-        return arrD = [randomlft01, randomrft01, randomlrt01, randomrrt01];
+    function mathD() {
+        lft = Math.floor(Math.random() * 10);
+        rft = Math.floor(Math.random() * 10);
+        lrt = Math.floor(Math.random() * 10);
+        rrt = Math.floor(Math.random() * 10);
+        return arrD = [lft, rft, lrt, rrt];
     }
-    mathD1()
-    function mathT1() {
-        randomlft01T = Math.floor(Math.random() * 10);
-        randomrft01T = Math.floor(Math.random() * 10);
-        randomlrt01T = Math.floor(Math.random() * 10);
-        randomrrt01T = Math.floor(Math.random() * 10);
-        return arrT = [randomlft01T, randomrft01T, randomlrt01T, randomrrt01T];
+    mathD()
+    function mathT() {
+        lft = Math.floor(Math.random() * 10);
+        rft = Math.floor(Math.random() * 10);
+        lrt = Math.floor(Math.random() * 10);
+        rrt = Math.floor(Math.random() * 10);
+        return arrT = [lft, rft, lrt, rrt];
     }
-    mathT1()
+    mathT()
     //проверяем условия
     function gener(el) {
         let generatedValue;
-        if (el >= 3)
+        if (el >= 2)
             generatedValue = 3;
-        if (el >= 1 && el < 3)
+        if (el > 0 && el < 2)
             generatedValue = 2;
-        if (el < 1)
+        if (el == 0)
             generatedValue = 1;
         return generatedValue;
     };
@@ -57,221 +58,286 @@ const Obj729 = () => {
     allsT[2].textContent = arrT[2] + '°C';
     allsT[3].style.background = objColor[gener(arrT[3])];
     allsT[3].textContent = arrT[3] + '°C';
-
     // добавляем статус машины
-    const statGal1 = () => {
+    const statGal = () => {
         stat[0].style.backgroundImage = "url(image/gal.png)";
     }
-    const statEr1 = () => {
+    const statEr = () => {
         stat[0].style.backgroundImage = "url(image/er.png)";
     }
-    if (arrD[0] >= 3 && arrD[1] >= 3 && arrD[2] >= 3 && arrD[3] >= 3 &&
-        arrT[0] >= 3 && arrT[1] >= 3 && arrT[2] >= 3 && arrT[3] >= 3) {
-        statGal1();
+    if (arrD[0] >= 2 && arrD[1] >= 2 && arrD[2] >= 2 && arrD[3] >= 2 &&
+        arrT[0] >= 2 && arrT[1] >= 2 && arrT[2] >= 2 && arrT[3] >= 2) {
+        statGal();
     } else {
-        statEr1();
+        statEr();
     }
 }
 Obj729();
-setInterval(Obj729, 1000);
+setInterval(Obj729, 5000);
 
-//добавление статуса
-
-// логика выбора
-/*const func1 = () => {
-    mathD1();
-    mathT1();
-    time1.textContent = getNowtime();
-    if (randomlrt01 >= 3) {
-        alls[2].style.background = '#3eb051';
-        alls[2].textContent = randomlrt01 + '\nатм';
-        statGal1();
+//Объект 2
+const Obj730 = () => {
+    time[1].textContent = getNowtime();
+    function mathD() {
+        lft = Math.floor(Math.random() * 10);
+        rft = Math.floor(Math.random() * 10);
+        lct = Math.floor(Math.random() * 10);
+        rct = Math.floor(Math.random() * 10);
+        lrt = Math.floor(Math.random() * 10);
+        rrt = Math.floor(Math.random() * 10);
+        return arrD = [lft, rft, lct, rct, lrt, rrt];
     }
-    if (randomrrt01 >= 3) {
-        alls[3].style.background = '#3eb051';
-        alls[3].textContent = randomrrt01 + '\nатм';
-        statGal1();
+    mathD();
+    function mathT() {
+        lft = Math.floor(Math.random() * 10);
+        rft = Math.floor(Math.random() * 10);
+        lct = Math.floor(Math.random() * 10);
+        rct = Math.floor(Math.random() * 10);
+        lrt = Math.floor(Math.random() * 10);
+        rrt = Math.floor(Math.random() * 10);
+        return arrT = [lft, rft, lct, rct, lrt, rrt];
     }
-    if (randomlft01 >= 3) {
-        alls[0].style.background = '#3eb051';
-        alls[0].textContent = randomlft01 + '\nатм';
-        statGal1();
+    mathT();
+    function gener(el) {
+        let generatedValue;
+        if (el >= 2)
+            generatedValue = 3;
+        if (el > 0 && el < 2)
+            generatedValue = 2;
+        if (el == 0)
+            generatedValue = 1;
+        return generatedValue;
+    };
+    const objColor = {
+        1: '#e03636',
+        2: '#9ba805',
+        3: '#3eb051'
     }
-    if (randomrft01 >= 3) {
-        alls[1].style.background = '#3eb051';
-        alls[1].textContent = randomrft01 + '\nатм';
-        statGal1();
+    alls[4].style.background = objColor[gener(arrD[0])];
+    alls[4].textContent = arrD[0] + '\nатм';
+    alls[5].style.background = objColor[gener(arrD[1])];
+    alls[5].textContent = arrD[1] + '\nатм';
+    alls[6].style.background = objColor[gener(arrD[2])];
+    alls[6].textContent = arrD[2] + '\nатм';
+    alls[7].style.background = objColor[gener(arrD[3])];
+    alls[7].textContent = arrD[3] + '\nатм';
+    alls[8].style.background = objColor[gener(arrD[4])];
+    alls[8].textContent = arrD[4] + '\nатм';
+    alls[9].style.background = objColor[gener(arrD[5])];
+    alls[9].textContent = arrD[5] + '\nатм';
+    allsT[4].style.background = objColor[gener(arrT[0])];
+    allsT[4].textContent = arrT[0] + '°C';
+    allsT[5].style.background = objColor[gener(arrT[1])];
+    allsT[5].textContent = arrT[1] + '°C';
+    allsT[6].style.background = objColor[gener(arrT[2])];
+    allsT[6].textContent = arrT[2] + '°C';
+    allsT[7].style.background = objColor[gener(arrT[3])];
+    allsT[7].textContent = arrT[3] + '°C';
+    allsT[8].style.background = objColor[gener(arrT[4])];
+    allsT[8].textContent = arrT[4] + '°C';
+    allsT[9].style.background = objColor[gener(arrT[5])];
+    allsT[9].textContent = arrT[5] + '°C';
+    const statGal = () => {
+        stat[1].style.backgroundImage = "url(image/gal.png)";
     }
-    if (randomlrt01 >= 1 && randomlrt01 < 3) {
-        alls[2].style.background = '#9ba805';
-        alls[2].textContent = randomlrt01 + '\nатм';
-        statEr1();
+    const statEr = () => {
+        stat[1].style.backgroundImage = "url(image/er.png)";
     }
-    if (randomrrt01 >= 1 && randomrrt01 < 3) {
-        alls[3].style.background = '#9ba805';
-        alls[3].textContent = randomrrt01 + '\nатм';
-        statEr1();
-    }
-    if (randomlrt01 < 1) {
-        alls[2].style.background = '#e03636';
-        alls[2].textContent = randomlrt01 + '\nатм';
-        statEr1();
-    }
-    if (randomrrt01 < 1) {
-        alls[3].style.background = '#e03636';
-        alls[3].textContent = randomrrt01 + '\nатм';
-        statEr1();
-    }
-    if (randomlft01 >= 1 && randomlft01 < 3) {
-        alls[0].style.background = '#9ba805';
-        alls[0].textContent = randomlft01 + '\nатм';
-        statEr1();
-    }
-    if (randomrft01 >= 1 && randomrft01 < 3) {
-        alls[1].style.background = '#9ba805';
-        alls[1].textContent = randomrft01 + '\nатм';
-        statEr1();
-    }
-    if (randomlft01 < 1) {
-        alls[0].style.background = '#e03636';
-        alls[0].textContent = randomlft01 + '\nатм';
-        statEr1();
-    }
-    if (randomrft01 < 1) {
-        alls[1].style.background = '#e03636';
-        alls[1].textContent = randomrft01 + '\nатм';
-        statEr1();
-    }
-    //условия по температуре
-    if (randomlrt01T >= 3) {
-        allsT[2].style.background = '#3eb051';
-        allsT[2].textContent = randomlrt01T + '°C';
-    }
-    if (randomrrt01T >= 3) {
-        allsT[3].style.background = '#3eb051';
-        allsT[3].textContent = randomrrt01T + '°C';
-    }
-    if (randomlft01T >= 3) {
-        allsT[0].style.background = '#3eb051';
-        allsT[0].textContent = randomlft01T + '°C';
-    }
-    if (randomrft01T >= 3) {
-        allsT[1].style.background = '#3eb051';
-        allsT[1].textContent = randomrft01T + '°C';
-    }
-    if (randomlrt01T >= 1 && randomlrt01T < 3) {
-        allsT[2].style.background = '#9ba805';
-        allsT[2].textContent = randomlrt01T + '°C';
-    }
-    if (randomrrt01T >= 1 && randomrrt01T < 3) {
-        allsT[3].style.background = '#9ba805';
-        allsT[3].textContent = randomrrt01T + '°C';
-    }
-    if (randomlrt01T < 1) {
-        allsT[2].style.background = '#e03636';
-        allsT[2].textContent = randomlrt01T + '°C';
-    }
-    if (randomrrt01T < 1) {
-        allsT[3].style.background = '#e03636';
-        allsT[3].textContent = randomrrt01 + '°C';
-    }
-    if (randomlft01T >= 1 && randomlft01T < 3) {
-        allsT[0].style.background = '#9ba805';
-        allsT[0].textContent = randomlft01T + '°C';
-    }
-    if (randomrft01T >= 1 && randomrft01T < 3) {
-        allsT[1].style.background = '#9ba805';
-        allsT[1].textContent = randomrft01T + '°C';
-    }
-    if (randomlft01T < 1) {
-        allsT[0].style.background = '#e03636';
-        allsT[0].textContent = randomlft01T + '°C';
-    }
-    if (randomrft01T < 1) {
-        allsT[1].style.background = '#e03636';
-        allsT[1].textContent = randomrft01T + '°C';
+    if (arrD[0] >= 2 && arrD[1] >= 2 && arrD[2] >= 2 && arrD[3] >= 2 && arrD[4] >= 2 && arrD[5] >= 2 &&
+        arrT[0] >= 2 && arrT[1] >= 2 && arrT[2] >= 2 && arrT[3] >= 2 && arrT[4] >= 2 && arrT[5] >= 2) {
+        statGal();
+    } else {
+        statEr();
     }
 }
-func1();
-setInterval(func1, 5000);
+Obj730();
+setInterval(Obj730, 5000);
 
-//Объект 2*/
-/*let time2 = document.getElementById('tObj2');
-// рандомные значения
-function math2() {
-    randomlft02 = Math.floor(Math.random() * 10);
-    randomrft02 = Math.floor(Math.random() * 10);
-    randomlrt02 = Math.floor(Math.random() * 10);
-    randomrrt02 = Math.floor(Math.random() * 10);
+//Объект 3
+const Obj731 = () => {
+    time[2].textContent = getNowtime();
+    function mathD() {
+        lft = Math.floor(Math.random() * 10);
+        rft = Math.floor(Math.random() * 10);
+        lct = Math.floor(Math.random() * 10);
+        lcnt = Math.floor(Math.random() * 10);
+        lcvt = Math.floor(Math.random() * 10);
+        rct = Math.floor(Math.random() * 10);
+        lrt = Math.floor(Math.random() * 10);
+        rrt = Math.floor(Math.random() * 10);
+        return arrD = [lft, rft, lct, lcnt, lcvt, rct, lrt, rrt];
+
+    }
+    mathD();
+    function mathT() {
+        lft = Math.floor(Math.random() * 10);
+        rft = Math.floor(Math.random() * 10);
+        lcnt = Math.floor(Math.random() * 10);
+        lcvt = Math.floor(Math.random() * 10);
+        rcvt = Math.floor(Math.random() * 10);
+        rcnt = Math.floor(Math.random() * 10);
+        lrt = Math.floor(Math.random() * 10);
+        rrt = Math.floor(Math.random() * 10);
+        return arrT = [lft, rft, lcnt, lcvt, rcvt, rcnt, lrt, rrt];
+    }
+    mathT();
+    function gener(el) {
+        let generatedValue;
+        if (el >= 2)
+            generatedValue = 3;
+        if (el > 0 && el < 2)
+            generatedValue = 2;
+        if (el == 0)
+            generatedValue = 1;
+        return generatedValue;
+    };
+    const objColor = {
+        1: '#e03636',
+        2: '#9ba805',
+        3: '#3eb051'
+    }
+    alls[10].style.background = objColor[gener(arrD[0])];
+    alls[10].textContent = arrD[0] + '\nатм';
+    alls[11].style.background = objColor[gener(arrD[1])];
+    alls[11].textContent = arrD[1] + '\nатм';
+    alls[12].style.background = objColor[gener(arrD[2])];
+    alls[12].textContent = arrD[2] + '\nатм';
+    alls[13].style.background = objColor[gener(arrD[3])];
+    alls[13].textContent = arrD[3] + '\nатм';
+    alls[14].style.background = objColor[gener(arrD[4])];
+    alls[14].textContent = arrD[4] + '\nатм';
+    alls[15].style.background = objColor[gener(arrD[5])];
+    alls[15].textContent = arrD[5] + '\nатм';
+    alls[16].style.background = objColor[gener(arrD[6])];
+    alls[16].textContent = arrD[6] + '\nатм';
+    alls[17].style.background = objColor[gener(arrD[7])];
+    alls[17].textContent = arrD[7] + '\nатм';
+    allsT[10].style.background = objColor[gener(arrT[0])];
+    allsT[10].textContent = arrT[0] + '°C';
+    allsT[11].style.background = objColor[gener(arrT[1])];
+    allsT[11].textContent = arrT[1] + '°C';
+    allsT[12].style.background = objColor[gener(arrT[2])];
+    allsT[12].textContent = arrT[2] + '°C';
+    allsT[13].style.background = objColor[gener(arrT[3])];
+    allsT[13].textContent = arrT[3] + '°C';
+    allsT[14].style.background = objColor[gener(arrT[4])];
+    allsT[14].textContent = arrT[4] + '°C';
+    allsT[15].style.background = objColor[gener(arrT[5])];
+    allsT[15].textContent = arrT[5] + '°C';
+    allsT[16].style.background = objColor[gener(arrD[6])];
+    allsT[16].textContent = arrT[6] + '°C';
+    allsT[17].style.background = objColor[gener(arrD[7])];
+    allsT[17].textContent = arrT[7] + '°C';
+    const statGal = () => {
+        stat[2].style.backgroundImage = "url(image/gal.png)";
+    }
+    const statEr = () => {
+        stat[2].style.backgroundImage = "url(image/er.png)";
+    }
+    if (arrD[0] >= 2 && arrD[1] >= 2 && arrD[2] >= 2 && arrD[3] >= 2 && arrD[4] >= 2
+        && arrD[5] >= 2 && arrD[6] >= 2 && arrD[7] >= 2 &&
+        arrT[0] >= 2 && arrT[1] >= 2 && arrT[2] >= 2 && arrT[3] >= 2 && arrT[4] >= 2
+        && arrT[5] >= 2 && arrD[6] >= 2 && arrD[7] >= 2) {
+        statGal();
+    } else {
+        statEr();
+    }
 }
+Obj731();
+setInterval(Obj731, 5000);
 
-const statGal2 = () => {
-    stat[1].style.backgroundImage = "url(image/gal.png)";
+//Объект 4
+const Obj732 = () => {
+    time[3].textContent = getNowtime();
+    function mathD() {
+        lft = Math.floor(Math.random() * 10);
+        rft = Math.floor(Math.random() * 10);
+        lct = Math.floor(Math.random() * 10);
+        rct = Math.floor(Math.random() * 10);
+        lrnt = Math.floor(Math.random() * 10);
+        lrvt = Math.floor(Math.random() * 10);
+        rrvt = Math.floor(Math.random() * 10);
+        rrnt = Math.floor(Math.random() * 10);
+        return arrD = [lft, rft, lct, rct, lrnt, lrvt, rrvt, rrnt];
+
+    }
+    mathD();
+    function mathT() {
+        lft = Math.floor(Math.random() * 10);
+        rft = Math.floor(Math.random() * 10);
+        lct = Math.floor(Math.random() * 10);
+        rct = Math.floor(Math.random() * 10);
+        lrnt = Math.floor(Math.random() * 10);
+        lrvt = Math.floor(Math.random() * 10);
+        rrvt = Math.floor(Math.random() * 10);
+        rrnt = Math.floor(Math.random() * 10);
+        return arrT = [lft, rft, lct, rct, lrnt, lrvt, rrvt, rrnt];
+    }
+    mathT();
+    function gener(el) {
+        let generatedValue;
+        if (el >= 2)
+            generatedValue = 3;
+        if (el > 0 && el < 2)
+            generatedValue = 2;
+        if (el == 0)
+            generatedValue = 1;
+        return generatedValue;
+    };
+    const objColor = {
+        1: '#e03636',
+        2: '#9ba805',
+        3: '#3eb051'
+    }
+    alls[18].style.background = objColor[gener(arrD[0])];
+    alls[18].textContent = arrD[0] + '\nатм';
+    alls[19].style.background = objColor[gener(arrD[1])];
+    alls[19].textContent = arrD[1] + '\nатм';
+    alls[20].style.background = objColor[gener(arrD[2])];
+    alls[20].textContent = arrD[2] + '\nатм';
+    alls[21].style.background = objColor[gener(arrD[3])];
+    alls[21].textContent = arrD[3] + '\nатм';
+    alls[22].style.background = objColor[gener(arrD[4])];
+    alls[22].textContent = arrD[4] + '\nатм';
+    alls[23].style.background = objColor[gener(arrD[5])];
+    alls[23].textContent = arrD[5] + '\nатм';
+    alls[24].style.background = objColor[gener(arrD[6])];
+    alls[24].textContent = arrD[6] + '\nатм';
+    alls[25].style.background = objColor[gener(arrD[7])];
+    alls[25].textContent = arrD[7] + '\nатм';
+    allsT[18].style.background = objColor[gener(arrT[0])];
+    allsT[18].textContent = arrT[0] + '°C';
+    allsT[19].style.background = objColor[gener(arrT[1])];
+    allsT[19].textContent = arrT[1] + '°C';
+    allsT[20].style.background = objColor[gener(arrT[2])];
+    allsT[20].textContent = arrT[2] + '°C';
+    allsT[21].style.background = objColor[gener(arrT[3])];
+    allsT[21].textContent = arrT[3] + '°C';
+    allsT[22].style.background = objColor[gener(arrT[4])];
+    allsT[22].textContent = arrT[4] + '°C';
+    allsT[23].style.background = objColor[gener(arrT[5])];
+    allsT[23].textContent = arrT[5] + '°C';
+    allsT[24].style.background = objColor[gener(arrD[6])];
+    allsT[24].textContent = arrT[6] + '°C';
+    allsT[25].style.background = objColor[gener(arrD[7])];
+    allsT[25].textContent = arrT[7] + '°C';
+    const statGal = () => {
+        stat[3].style.backgroundImage = "url(image/gal.png)";
+    }
+    const statEr = () => {
+        stat[3].style.backgroundImage = "url(image/er.png)";
+    }
+    if (arrD[0] >= 2 && arrD[1] >= 2 && arrD[2] >= 2 && arrD[3] >= 2 && arrD[4] >= 2
+        && arrD[5] >= 2 && arrD[6] >= 2 && arrD[7] >= 2 &&
+        arrT[0] >= 2 && arrT[1] >= 2 && arrT[2] >= 2 && arrT[3] >= 2 && arrT[4] >= 2
+        && arrT[5] >= 2 && arrD[6] >= 2 && arrD[7] >= 2) {
+        statGal();
+    } else {
+        statEr();
+    }
 }
-const statEr2 = () => {
-    stat[1].style.backgroundImage = "url(image/er.png)";
-}
-// логика выбора
-const func2 = () => {
-    math2();
-    time2.textContent = getNowtime();
-    if (randomlrt02 >= 3) {
-        alls[6].style.background = 'green';
-        alls[6].textContent = randomlrt02;
-        statGal2();
-    }
-    if (randomrrt02 >= 3) {
-        alls[7].style.background = 'green';
-        statGal2();
-    }
-    if (randomlft02 >= 3) {
-        alls[4].style.background = 'green';
-        statGal2();
-    }
-    if (randomrft02 >= 3) {
-        alls[5].style.background = 'green';
-        statGal2();
-    }
-    if (randomlrt02 >= 1 && randomlrt02 < 3) {
-        alls[6].style.background = 'yellow';
-        statEr2();
-    }
-    if (randomrrt02 >= 1 && randomrrt02 < 3) {
-        alls[7].style.background = 'yellow';
-        statEr2();
-    }
-    if (randomlrt02 < 1) {
-        alls[6].style.background = 'red';
-        statEr2();
-    }
-    if (randomrrt02 < 1) {
-        alls[7].style.background = 'red';
-        statEr2();
-    }
-    if (randomlft02 >= 1 && randomlft02 < 3) {
-        alls[4].style.background = 'yellow';
-        statEr2();
-    }
-    if (randomrft02 >= 1 && randomrft02 < 3) {
-        alls[5].style.background = 'yellow';
-        statEr2();
-    }
-    if (randomlft02 < 1) {
-        alls[4].style.background = 'red';
-        statEr2();
-    }
-    if (randomrft02 < 1) {
-        alls[5].style.background = 'red';
-        statEr2();
-    }
-
-}
-func2();
-setInterval(func2, 5000);
-
-*/
-
-
+Obj732();
+setInterval(Obj732, 5000);
 //текущее время
 function getNowtime() {
     let now = new Date();
@@ -284,7 +350,6 @@ function getNowtime() {
     if (now.getDate() < 10) {
         date = "0" + date;
     }
-
     let hours = now.getHours();
     if (now.getHours() < 10) {
         hours = "0" + hours;
@@ -300,6 +365,54 @@ function getNowtime() {
     let nowTime = (`${date}-${month}-${year}   ${hours}:${minutes}:${seconds}`);
     return nowTime;
 }
+
+/*
+const tab = document.querySelectorAll('.tab');
+const tabContent = document.querySelectorAll('.tab__content');
+
+for (let i = 0; i < tab.length; i++) {
+    tab[i].addEventListener('click', func);
+    function func() {
+        for (let j = 0; j < tab.length; j++) {
+            tab[j].classList.remove('tab_active');
+            tabContent[j].classList.remove('tab__content_active');
+        }
+        tab[i].classList.add('tab_active');
+        tabContent[i].classList.add('tab__content_active');
+    }
+}*/
+
+//логика чекбоксов
+
+const input = document.querySelectorAll('.input');
+const cardHidden = document.querySelectorAll('.card');
+for (let i = 0; i < input.length; i++) {
+    input[i].addEventListener('click', func);
+    function func() {
+        for (let j = 0; j < input.length; j++) {
+
+            cardHidden[j].classList.add('card_hidden');
+        }
+        //
+        cardHidden[i].classList.remove('card_hidden');
+    }
+}
+
+/*const tab = document.querySelectorAll('.tab');
+const tabContent = document.querySelectorAll('.tab__content');
+
+for (let i = 0; i < tab.length; i++) {
+    tab[i].addEventListener('click', func);
+    function func() {
+        for (let j = 0; j < tab.length; j++) {
+            tab[j].classList.remove('tab_active');
+            tabContent[j].classList.remove('tab__content_active');
+        }
+        tab[i].classList.add('tab_active');
+        tabContent[i].classList.add('tab__content_active');
+    }
+}*/
+
 
 
 
