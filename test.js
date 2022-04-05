@@ -1,11 +1,11 @@
 //забираем коллекции
-const alls = document.querySelectorAll('.tiresD');
-const allsT = document.querySelectorAll('.tiresT');
 const time = document.querySelectorAll('.time');
 const stat = document.querySelectorAll('.bg_stat');
 
 //Объект1
 const Obj729 = () => {
+    const alls = document.querySelectorAll('.tiresD729');
+    const allsT = document.querySelectorAll('.tiresT729');
     time[0].textContent = getNowtime();
     //запускаем рандом и кладем значения в массив
     function mathD() {
@@ -42,22 +42,22 @@ const Obj729 = () => {
         3: '#3eb051'
     }
     //добавляем итог в нужный div
-    alls[0].style.background = objColor[gener(arrD[0])];
-    alls[0].textContent = arrD[0] + '\nатм';
-    alls[1].style.background = objColor[gener(arrD[1])];
-    alls[1].textContent = arrD[1] + '\nатм';
-    alls[2].style.background = objColor[gener(arrD[2])];
-    alls[2].textContent = arrD[2] + '\nатм';
-    alls[3].style.background = objColor[gener(arrD[3])];
-    alls[3].textContent = arrD[3] + '\nатм';
-    allsT[0].style.background = objColor[gener(arrT[0])];
-    allsT[0].textContent = arrT[0] + '°C';
-    allsT[1].style.background = objColor[gener(arrT[1])];
-    allsT[1].textContent = arrT[1] + '°C';
-    allsT[2].style.background = objColor[gener(arrT[2])];
-    allsT[2].textContent = arrT[2] + '°C';
-    allsT[3].style.background = objColor[gener(arrT[3])];
-    allsT[3].textContent = arrT[3] + '°C';
+    const logic729 = () => {
+        alls.forEach(function (elem, index) {
+            elem.textContent = arrD[index] + '\nатм';
+        })
+        allsT.forEach(function (elem, index) {
+            elem.textContent = arrT[index] + '°C';
+        })
+        alls.forEach(function (elem, index) {
+            elem.style.background = objColor[gener(arrD[index])];
+        })
+        allsT.forEach(function (elem, index) {
+            elem.style.background = objColor[gener(arrT[index])];
+        })
+    }
+    logic729();
+
     // добавляем статус машины
     const statGal = () => {
         stat[0].style.backgroundImage = "url(image/gal.png)";
@@ -77,6 +77,8 @@ setInterval(Obj729, 5000);
 
 //Объект 2
 const Obj730 = () => {
+    const alls = document.querySelectorAll('.tiresD730');
+    const allsT = document.querySelectorAll('.tiresT730');
     time[1].textContent = getNowtime();
     function mathD() {
         lft = Math.floor(Math.random() * 10);
@@ -113,30 +115,23 @@ const Obj730 = () => {
         2: '#9ba805',
         3: '#3eb051'
     }
-    alls[4].style.background = objColor[gener(arrD[0])];
-    alls[4].textContent = arrD[0] + '\nатм';
-    alls[5].style.background = objColor[gener(arrD[1])];
-    alls[5].textContent = arrD[1] + '\nатм';
-    alls[6].style.background = objColor[gener(arrD[2])];
-    alls[6].textContent = arrD[2] + '\nатм';
-    alls[7].style.background = objColor[gener(arrD[3])];
-    alls[7].textContent = arrD[3] + '\nатм';
-    alls[8].style.background = objColor[gener(arrD[4])];
-    alls[8].textContent = arrD[4] + '\nатм';
-    alls[9].style.background = objColor[gener(arrD[5])];
-    alls[9].textContent = arrD[5] + '\nатм';
-    allsT[4].style.background = objColor[gener(arrT[0])];
-    allsT[4].textContent = arrT[0] + '°C';
-    allsT[5].style.background = objColor[gener(arrT[1])];
-    allsT[5].textContent = arrT[1] + '°C';
-    allsT[6].style.background = objColor[gener(arrT[2])];
-    allsT[6].textContent = arrT[2] + '°C';
-    allsT[7].style.background = objColor[gener(arrT[3])];
-    allsT[7].textContent = arrT[3] + '°C';
-    allsT[8].style.background = objColor[gener(arrT[4])];
-    allsT[8].textContent = arrT[4] + '°C';
-    allsT[9].style.background = objColor[gener(arrT[5])];
-    allsT[9].textContent = arrT[5] + '°C';
+
+    const logic730 = () => {
+        alls.forEach(function (elem, index) {
+            elem.textContent = arrD[index] + '\nатм';
+        })
+        allsT.forEach(function (elem, index) {
+            elem.textContent = arrT[index] + '°C';
+        })
+        alls.forEach(function (elem, index) {
+            elem.style.background = objColor[gener(arrD[index])];
+        })
+        allsT.forEach(function (elem, index) {
+            elem.style.background = objColor[gener(arrT[index])];
+        })
+    }
+    logic730();
+
     const statGal = () => {
         stat[1].style.backgroundImage = "url(image/gal.png)";
     }
@@ -155,6 +150,8 @@ setInterval(Obj730, 5000);
 
 //Объект 3
 const Obj731 = () => {
+    const alls = document.querySelectorAll('.tiresD731');
+    const allsT = document.querySelectorAll('.tiresT731');
     time[2].textContent = getNowtime();
     function mathD() {
         lft = Math.floor(Math.random() * 10);
@@ -196,38 +193,23 @@ const Obj731 = () => {
         2: '#9ba805',
         3: '#3eb051'
     }
-    alls[10].style.background = objColor[gener(arrD[0])];
-    alls[10].textContent = arrD[0] + '\nатм';
-    alls[11].style.background = objColor[gener(arrD[1])];
-    alls[11].textContent = arrD[1] + '\nатм';
-    alls[12].style.background = objColor[gener(arrD[2])];
-    alls[12].textContent = arrD[2] + '\nатм';
-    alls[13].style.background = objColor[gener(arrD[3])];
-    alls[13].textContent = arrD[3] + '\nатм';
-    alls[14].style.background = objColor[gener(arrD[4])];
-    alls[14].textContent = arrD[4] + '\nатм';
-    alls[15].style.background = objColor[gener(arrD[5])];
-    alls[15].textContent = arrD[5] + '\nатм';
-    alls[16].style.background = objColor[gener(arrD[6])];
-    alls[16].textContent = arrD[6] + '\nатм';
-    alls[17].style.background = objColor[gener(arrD[7])];
-    alls[17].textContent = arrD[7] + '\nатм';
-    allsT[10].style.background = objColor[gener(arrT[0])];
-    allsT[10].textContent = arrT[0] + '°C';
-    allsT[11].style.background = objColor[gener(arrT[1])];
-    allsT[11].textContent = arrT[1] + '°C';
-    allsT[12].style.background = objColor[gener(arrT[2])];
-    allsT[12].textContent = arrT[2] + '°C';
-    allsT[13].style.background = objColor[gener(arrT[3])];
-    allsT[13].textContent = arrT[3] + '°C';
-    allsT[14].style.background = objColor[gener(arrT[4])];
-    allsT[14].textContent = arrT[4] + '°C';
-    allsT[15].style.background = objColor[gener(arrT[5])];
-    allsT[15].textContent = arrT[5] + '°C';
-    allsT[16].style.background = objColor[gener(arrD[6])];
-    allsT[16].textContent = arrT[6] + '°C';
-    allsT[17].style.background = objColor[gener(arrD[7])];
-    allsT[17].textContent = arrT[7] + '°C';
+
+    const logic731 = () => {
+        alls.forEach(function (elem, index) {
+            elem.textContent = arrD[index] + '\nатм';
+        })
+        allsT.forEach(function (elem, index) {
+            elem.textContent = arrT[index] + '°C';
+        })
+        alls.forEach(function (elem, index) {
+            elem.style.background = objColor[gener(arrD[index])];
+        })
+        allsT.forEach(function (elem, index) {
+            elem.style.background = objColor[gener(arrT[index])];
+        })
+    }
+    logic731();
+
     const statGal = () => {
         stat[2].style.backgroundImage = "url(image/gal.png)";
     }
@@ -248,6 +230,8 @@ setInterval(Obj731, 5000);
 
 //Объект 4
 const Obj732 = () => {
+    const alls = document.querySelectorAll('.tiresD732');
+    const allsT = document.querySelectorAll('.tiresT732');
     time[3].textContent = getNowtime();
     function mathD() {
         lft = Math.floor(Math.random() * 10);
@@ -289,38 +273,22 @@ const Obj732 = () => {
         2: '#9ba805',
         3: '#3eb051'
     }
-    alls[18].style.background = objColor[gener(arrD[0])];
-    alls[18].textContent = arrD[0] + '\nатм';
-    alls[19].style.background = objColor[gener(arrD[1])];
-    alls[19].textContent = arrD[1] + '\nатм';
-    alls[20].style.background = objColor[gener(arrD[2])];
-    alls[20].textContent = arrD[2] + '\nатм';
-    alls[21].style.background = objColor[gener(arrD[3])];
-    alls[21].textContent = arrD[3] + '\nатм';
-    alls[22].style.background = objColor[gener(arrD[4])];
-    alls[22].textContent = arrD[4] + '\nатм';
-    alls[23].style.background = objColor[gener(arrD[5])];
-    alls[23].textContent = arrD[5] + '\nатм';
-    alls[24].style.background = objColor[gener(arrD[6])];
-    alls[24].textContent = arrD[6] + '\nатм';
-    alls[25].style.background = objColor[gener(arrD[7])];
-    alls[25].textContent = arrD[7] + '\nатм';
-    allsT[18].style.background = objColor[gener(arrT[0])];
-    allsT[18].textContent = arrT[0] + '°C';
-    allsT[19].style.background = objColor[gener(arrT[1])];
-    allsT[19].textContent = arrT[1] + '°C';
-    allsT[20].style.background = objColor[gener(arrT[2])];
-    allsT[20].textContent = arrT[2] + '°C';
-    allsT[21].style.background = objColor[gener(arrT[3])];
-    allsT[21].textContent = arrT[3] + '°C';
-    allsT[22].style.background = objColor[gener(arrT[4])];
-    allsT[22].textContent = arrT[4] + '°C';
-    allsT[23].style.background = objColor[gener(arrT[5])];
-    allsT[23].textContent = arrT[5] + '°C';
-    allsT[24].style.background = objColor[gener(arrD[6])];
-    allsT[24].textContent = arrT[6] + '°C';
-    allsT[25].style.background = objColor[gener(arrD[7])];
-    allsT[25].textContent = arrT[7] + '°C';
+    const logic732 = () => {
+        alls.forEach(function (elem, index) {
+            elem.textContent = arrD[index] + '\nатм';
+        })
+        allsT.forEach(function (elem, index) {
+            elem.textContent = arrT[index] + '°C';
+        })
+        alls.forEach(function (elem, index) {
+            elem.style.background = objColor[gener(arrD[index])];
+        })
+        allsT.forEach(function (elem, index) {
+            elem.style.background = objColor[gener(arrT[index])];
+        })
+    }
+    logic732();
+
     const statGal = () => {
         stat[3].style.backgroundImage = "url(image/gal.png)";
     }
@@ -384,23 +352,23 @@ for (let i = 0; i < tab.length; i++) {
 
 //логика чекбоксов
 
+//логика чекбоксов
 function change() {
-    const checkboxes = document.getElementsByClassName('input');
+    const checkboxes = document.querySelectorAll('.input');
     const chekboxInputs = Array.from(checkboxes);
     const allAreUnselected = chekboxInputs.every(function (elem) {
         return !elem.checked;
     });
-    if (allAreUnselected) {
-        chekboxInputs.forEach(function (input) {
-            Array.from(document.querySelectorAll("." + input.getAttribute("rel"))).forEach(function (item) {
-                item.style.display = 'block';
-            });
-        });
-    }
-    else {
+    if (!allAreUnselected) {
         chekboxInputs.forEach(function (input) {
             Array.from(document.querySelectorAll("." + input.getAttribute("rel"))).forEach(function (item) {
                 item.style.display = input.checked ? 'block' : 'none';
+            });
+        });
+    } else {
+        chekboxInputs.forEach(function (input) {
+            Array.from(document.querySelectorAll("." + input.getAttribute("rel"))).forEach(function (item) {
+                item.style.display = 'block';
             });
         });
     }

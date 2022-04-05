@@ -65,6 +65,7 @@ td {
 .wrapper_containt {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   margin-top: 20px;
 }
 
@@ -126,10 +127,6 @@ td {
   font-family: Roboto;
   font-weight: 700;
   font-size: 1rem;
-  ;
-
-
-
 
 }
 
@@ -145,13 +142,11 @@ td {
   width: 255px;
   height: 400px;
   border: 2px solid lightgray;
-
+  margin: 5px 5px;
 
 }
 
-.card:nth-child(n+2) {
-  margin-left: 20px;
-}
+
 
 .container_2_4 {
   display: flex;
@@ -189,6 +184,14 @@ td {
   padding: 0 20px;
 }
 
+.container_2_4_4 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 350px;
+  background-image: url(../image/bg_shas3.png);
+  padding: 0 20px;
+}
 
 
 .title {
@@ -272,22 +275,4 @@ td {
 .time {
   font-size: 0.75rem;
 
-}
-
-@media (min-width: 1300px) and (max-width: 1699px) {
-  .card:nth-child(n+4) {
-    margin-top: 10px;
-    margin-left: 0;
-  }
-}
-
-@media (min-width: 270px) and (max-width: 1299px) {
-  .card:nth-child(n+3) {
-    margin-top: 10px;
-    margin-left: 0;
-  }
-
-  .card:nth-child(n+4) {
-    margin-left: 20px;
-  }
 }
