@@ -365,182 +365,40 @@ function getNowtime() {
     let nowTime = (`${date}-${month}-${year}   ${hours}:${minutes}:${seconds}`);
     return nowTime;
 }
-
-
-// логика чекбоксов
-const input = document.querySelectorAll('.input');
-const cardHidden = document.querySelectorAll('.card');
-const arrInput = Array.from(input);
-function showHide() {
-    for (let i = 0; i <= arrInput.length; i++) {
-        if (input[0].checked && !input[1].checked && !input[2].checked && !input[3].checked) {
-            cardHidden[1].classList.add('card_hidden');
-            cardHidden[2].classList.add('card_hidden');
-            cardHidden[3].classList.add('card_hidden');
-            cardHidden[0].classList.remove('card_hidden');
-        }
-        if (input[1].checked && !input[0].checked && !input[2].checked && !input[3].checked) {
-            cardHidden[0].classList.add('card_hidden');
-            cardHidden[2].classList.add('card_hidden');
-            cardHidden[3].classList.add('card_hidden');
-            cardHidden[1].classList.remove('card_hidden');
-        }
-        if (input[2].checked && !input[0].checked && !input[1].checked && !input[3].checked) {
-            cardHidden[0].classList.add('card_hidden');
-            cardHidden[1].classList.add('card_hidden');
-            cardHidden[3].classList.add('card_hidden');
-            cardHidden[2].classList.remove('card_hidden');
-        }
-        if (input[0].checked && input[1].checked && !input[2].checked && !input[3].checked) {
-            cardHidden[0].classList.remove('card_hidden');
-            cardHidden[1].classList.remove('card_hidden');
-            cardHidden[2].classList.add('card_hidden');
-            cardHidden[3].classList.add('card_hidden');
-        }
-        if (input[0].checked && input[2].checked && !input[1].checked && !input[3].checked) {
-            cardHidden[0].classList.remove('card_hidden');
-            cardHidden[2].classList.remove('card_hidden');
-            cardHidden[1].classList.add('card_hidden');
-            cardHidden[3].classList.add('card_hidden');
-        }
-        if (input[1].checked && input[2].checked && !input[0].checked && !input[3].checked) {
-            cardHidden[1].classList.remove('card_hidden');
-            cardHidden[2].classList.remove('card_hidden');
-            cardHidden[0].classList.add('card_hidden');
-            cardHidden[3].classList.add('card_hidden');
-        }
-        if (input[3].checked && !input[1].checked && !input[2].checked && !input[0].checked) {
-            cardHidden[1].classList.add('card_hidden');
-            cardHidden[2].classList.add('card_hidden');
-            cardHidden[0].classList.add('card_hidden');
-            cardHidden[3].classList.remove('card_hidden');
-        }
-        if (input[3].checked && input[1].checked && !input[2].checked && !input[0].checked) {
-            cardHidden[1].classList.remove('card_hidden');
-            cardHidden[2].classList.add('card_hidden');
-            cardHidden[0].classList.add('card_hidden');
-            cardHidden[3].classList.remove('card_hidden');
-        }
-        if (input[3].checked && input[2].checked && !input[1].checked && !input[0].checked) {
-            cardHidden[1].classList.add('card_hidden');
-            cardHidden[2].classList.remove('card_hidden');
-            cardHidden[0].classList.add('card_hidden');
-            cardHidden[3].classList.remove('card_hidden');
-        }
-        if (input[3].checked && input[0].checked && !input[1].checked && !input[2].checked) {
-            cardHidden[1].classList.add('card_hidden');
-            cardHidden[2].classList.add('card_hidden');
-            cardHidden[0].classList.remove('card_hidden');
-            cardHidden[3].classList.remove('card_hidden');
-        }
-        if (input[0].checked && input[1].checked && input[2].checked && !input[3].checked) {
-            cardHidden[1].classList.remove('card_hidden');
-            cardHidden[2].classList.remove('card_hidden');
-            cardHidden[0].classList.remove('card_hidden');
-            cardHidden[3].classList.add('card_hidden');
-        }
-        if (!input[0].checked && input[1].checked && input[2].checked && input[3].checked) {
-            cardHidden[1].classList.remove('card_hidden');
-            cardHidden[2].classList.remove('card_hidden');
-            cardHidden[0].classList.add('card_hidden');
-            cardHidden[3].classList.remove('card_hidden');
-        }
-        if (!input[1].checked && input[0].checked && input[2].checked && input[3].checked) {
-            cardHidden[1].classList.add('card_hidden');
-            cardHidden[2].classList.remove('card_hidden');
-            cardHidden[0].classList.remove('card_hidden');
-            cardHidden[3].classList.remove('card_hidden');
-        }
-        if (!input[2].checked && input[0].checked && input[1].checked && input[3].checked) {
-            cardHidden[1].classList.remove('card_hidden');
-            cardHidden[2].classList.add('card_hidden');
-            cardHidden[0].classList.remove('card_hidden');
-            cardHidden[3].classList.remove('card_hidden');
-        }
-        if (input[0].checked && input[1].checked && input[2].checked && input[3].checked ||
-            !input[0].checked && !input[1].checked && !input[2].checked && !input[3].checked) {
-            cardHidden[0].classList.remove('card_hidden');
-            cardHidden[1].classList.remove('card_hidden');
-            cardHidden[2].classList.remove('card_hidden');
-            cardHidden[3].classList.remove('card_hidden');
-        }
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-(function () {
-    alert('Привет, Wialon!');
-
-    let session = wialon.core.Session.getInstance();
-    session.initSession('https://hst-api.wialon.com');
-
-    let token = 'авторизационный токен';
-    session.loginToken(token, loginCallback);
-
-
-    function loginCallback(code) {
-        if (code) {
-            alert('Ошибка авторизации: ' + code);
-        } else {
-            alert('Авторизации прошла успешно');
-            let user = session.getCurrUser();
-            document.getElementById('username').innerHTML = user.getName();
-            printItems();
-        }
-    }
-
-
-    function printItems() {
-        let searchSpec = {
-            itemsType: "avl_unit", // тип искомых элементов системы Wialon
-            propName: "sys_name", // имя свойства, по которому будет осуществляться поиск
-            propValueMask: "*",   // значение свойства — могут быть использованы * | , > < =
-            sortType: "sys_name"  // имя свойства, по которому будет осуществляться сортировка ответа
-        };
-        let dataFlags = wialon.item.Item.dataFlag.base |        // флаг базовых свойств
-            wialon.item.Unit.dataFlag.lastMessage;  // флаг данных последнего сообщения
-
-        // запрос поиска объектов
-        session.searchItems(searchSpec, true, dataFlags, 0, 0, function (code, data) {
-            if (code) {
-                alert(wialon.core.Errors.getErrorText(code));
-                return;
-            }
-            // генерация таблицы данных
-            let table = '<table><tr><td>Unit</td><td colspan="3">Last message</td></tr>';
-            let pos;
-            for (let i = 0; i < data.totalItemsCount; i++) {
-                pos = data.items[i].getPosition();
-                table += '<tr><td>' + data.items[i].getName() + '</td>';
-                if (pos) {
-                    table += '<td>' + pos.y + '</td><td>' + pos.x + '</td><td>' +
-                        wialon.util.DateTime.formatTime(pos.t);
-                } else {
-                    table += '<td colspan="3">';
-                }
-                table += '</td></tr>';
-            }
-            table += '</table>';
-            document.querySelector("#units").innerHTML = table;
+//логика чекбоксов
+function change() {
+    const checkboxes = document.querySelectorAll('.input');
+    const chekboxInputs = Array.from(checkboxes);
+    const allAreUnselected = chekboxInputs.every(function (elem) {
+        return !elem.checked;
+    });
+    if (!allAreUnselected) {
+        chekboxInputs.forEach(function (input) {
+            Array.from(document.querySelectorAll("." + input.getAttribute("rel"))).forEach(function (item) {
+                item.style.display = input.checked ? 'block' : 'none';
+            });
+        });
+    } else {
+        chekboxInputs.forEach(function (input) {
+            Array.from(document.querySelectorAll("." + input.getAttribute("rel"))).forEach(function (item) {
+                item.style.display = 'block';
+            });
         });
     }
+}
+change();
 
-})();
 
-*/
+
+
+
+
+
+
+
+
+
+
+
+
+

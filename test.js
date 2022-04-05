@@ -384,6 +384,31 @@ for (let i = 0; i < tab.length; i++) {
 
 //логика чекбоксов
 
+function change() {
+    const checkboxes = document.getElementsByClassName('input');
+    const chekboxInputs = Array.from(checkboxes);
+    const allAreUnselected = chekboxInputs.every(function (elem) {
+        return !elem.checked;
+    });
+    if (allAreUnselected) {
+        chekboxInputs.forEach(function (input) {
+            Array.from(document.querySelectorAll("." + input.getAttribute("rel"))).forEach(function (item) {
+                item.style.display = 'block';
+            });
+        });
+    }
+    else {
+        chekboxInputs.forEach(function (input) {
+            Array.from(document.querySelectorAll("." + input.getAttribute("rel"))).forEach(function (item) {
+                item.style.display = input.checked ? 'block' : 'none';
+            });
+        });
+    }
+}
+change();
+
+
+/*
 const input = document.querySelectorAll('.input');
 const cardHidden = document.querySelectorAll('.card');
 for (let i = 0; i < input.length; i++) {
@@ -396,7 +421,7 @@ for (let i = 0; i < input.length; i++) {
         //
         cardHidden[i].classList.remove('card_hidden');
     }
-}
+}*/
 
 /*const tab = document.querySelectorAll('.tab');
 const tabContent = document.querySelectorAll('.tab__content');
