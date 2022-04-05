@@ -48,12 +48,17 @@ const Obj729 = () => {
         })
         allsT.forEach(function (elem, index) {
             elem.textContent = arrT[index] + '°C';
+
         })
         alls.forEach(function (elem, index) {
             elem.style.background = objColor[gener(arrD[index])];
+
+
+
         })
         allsT.forEach(function (elem, index) {
             elem.style.background = objColor[gener(arrT[index])];
+
         })
     }
     logic729();

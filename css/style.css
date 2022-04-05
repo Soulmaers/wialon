@@ -233,8 +233,10 @@ td {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
 
-
+.tires_link {
+  text-decoration: none;
 }
 
 .tiresD {
@@ -276,3 +278,4 @@ td {
   font-size: 0.75rem;
 
 }
+
