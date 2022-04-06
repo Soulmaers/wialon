@@ -425,14 +425,15 @@ function change() {
 }
 change();
 //проваливаемся в колесо
+
 const tires_link = document.querySelectorAll('.tires_link');
 const arrTireslink = Array.from(tires_link);
 arrTireslink.forEach(function (elem, index) {
     elem.addEventListener('click', tiresActive);
     function tiresActive() {
         card = document.querySelectorAll('.card');
-        card.forEach((elem) => {
-            elem.style.display = 'none'
+        card.forEach((item) => {
+            item.style.display = 'none'
         })
         if (parent = elem.closest('.c2_2')) {
             parent.style.display = 'block';
@@ -449,6 +450,12 @@ arrTireslink.forEach(function (elem, index) {
         if (parent = elem.closest('.c2_4_4')) {
             parent.style.display = 'block';
         }
+        arrTireslink.forEach(function (elem, index) {
+            tD = document.querySelectorAll('.tiresD');
+            tT = document.querySelectorAll('.tiresT');
+            elem = tD[index].classList.remove('tiresActiveD');
+            elem = tT[index].classList.remove('tiresActiveT');
+        })
         tD = document.querySelectorAll('.tiresD');
         tT = document.querySelectorAll('.tiresT');
         elem = tD[index].classList.add('tiresActiveD');
