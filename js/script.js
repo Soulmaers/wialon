@@ -424,30 +424,44 @@ function change() {
     }
 }
 change();
-
 //проваливаемся в колесо
-const tires_link = document.querySelector('.tires_link');
-tires_link.addEventListener('click', tiresActive)
-function tiresActive() {
-    alls = document.querySelectorAll('.tiresD729');
-    allsT = document.querySelectorAll('.tiresT729');
-    alls[0].classList.add('tiresActiveD');
-    allsT[0].classList.add('tiresActiveT');
-    check = document.querySelector('.check')
-    check.style.display = 'none';
-    wCA = document.querySelector('.wrapper_containt')
-    wCA.classList.add('wrapper_containt_active')
-    vT = document.querySelector('.vT')
-    vT.style.display = 'block';
-    c2_2_2 = document.querySelector('.c2_2_2')
-    c2_2_2.style.display = 'none';
-    c2_2_4 = document.querySelector('.c2_2_4')
-    c2_2_4.style.display = 'none';
-    c2_4_2 = document.querySelector('.c2_4_2')
-    c2_4_2.style.display = 'none';
-    c2_4_4 = document.querySelector('.c2_4_4')
-    c2_4_4.style.display = 'none';
-}
+const tires_link = document.querySelectorAll('.tires_link');
+const arrTireslink = Array.from(tires_link);
+arrTireslink.forEach(function (elem, index) {
+    elem.addEventListener('click', tiresActive);
+    function tiresActive() {
+        card = document.querySelectorAll('.card');
+        card.forEach((elem) => {
+            elem.style.display = 'none'
+        })
+        if (parent = elem.closest('.c2_2')) {
+            parent.style.display = 'block';
+        }
+        if (parent = elem.closest('.c2_2_2')) {
+            parent.style.display = 'block';
+        }
+        if (parent = elem.closest('.c2_4_2')) {
+            parent.style.display = 'block';
+        }
+        if (parent = elem.closest('.c2_2_4')) {
+            parent.style.display = 'block';
+        }
+        if (parent = elem.closest('.c2_4_4')) {
+            parent.style.display = 'block';
+        }
+        tD = document.querySelectorAll('.tiresD');
+        tT = document.querySelectorAll('.tiresT');
+        elem = tD[index].classList.add('tiresActiveD');
+        elem = tT[index].classList.add('tiresActiveT');
+        check = document.querySelector('.check')
+        check.style.display = 'none';
+        dataActive = document.querySelector('.dataActive')
+        dataActive.style.display = 'block';
+        wCA = document.querySelector('.wrapper_containt')
+        wCA.classList.add('wrapper_containt_active')
+    }
+});
+
 
 
 
