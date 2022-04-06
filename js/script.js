@@ -428,7 +428,7 @@ change();
 
 const tires_link = document.querySelectorAll('.tires_link');
 const arrTireslink = Array.from(tires_link);
-
+//проверяем нажатую ссылку на соответсвие классу родителя и убираем не активные дивы
 function around() {
     arrTireslink.forEach(function (elem) {
         elem.addEventListener('click', tiresActive2);
@@ -442,7 +442,6 @@ function around() {
                     card[3].style.display = 'none';
                     card[4].style.display = 'none';
                 }
-
                 if (card[1] = elem.closest('.c2_2_2')) {
                     card[1].style.display = 'block';
                     card[0].style.display = 'none';
@@ -475,13 +474,9 @@ function around() {
         };
     })
 }
-
 arrTireslink.forEach(function (elem, index) {
     elem.addEventListener('click', tiresActive);
-
     function tiresActive() {
-
-        around();
         arrTireslink.forEach(function (elem, index) {
             tD = document.querySelectorAll('.tiresD');
             tT = document.querySelectorAll('.tiresT');
@@ -499,6 +494,7 @@ arrTireslink.forEach(function (elem, index) {
         wCA = document.querySelector('.wrapper_containt')
         wCA.classList.add('wrapper_containt_active')
     }
+    around();
 });
 
 
