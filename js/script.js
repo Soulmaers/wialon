@@ -428,27 +428,46 @@ change();
 
 const tires_link = document.querySelectorAll('.tires_link');
 const arrTireslink = Array.from(tires_link);
+const card = document.querySelectorAll('.card');
 arrTireslink.forEach(function (elem, index) {
     elem.addEventListener('click', tiresActive);
     function tiresActive() {
-        card = document.querySelectorAll('.card');
-        card.forEach((item) => {
-            item.style.display = 'none'
-        })
-        if (parent = elem.closest('.c2_2')) {
-            parent.style.display = 'block';
-        }
-        if (parent = elem.closest('.c2_2_2')) {
-            parent.style.display = 'block';
-        }
-        if (parent = elem.closest('.c2_4_2')) {
-            parent.style.display = 'block';
-        }
-        if (parent = elem.closest('.c2_2_4')) {
-            parent.style.display = 'block';
-        }
-        if (parent = elem.closest('.c2_4_4')) {
-            parent.style.display = 'block';
+        for (let i = 0; i <= card.length; i++) {
+            if (card[0] = elem.closest('.c2_2')) {
+                card[0].style.display = 'block';
+                card[1].style.display = 'none';
+                card[2].style.display = 'none';
+                card[3].style.display = 'none';
+                card[4].style.display = 'none';
+            }
+            if (card[1] = elem.closest('.c2_2_2')) {
+                card[1].style.display = 'block';
+                card[0].style.display = 'none';
+                card[2].style.display = 'none';
+                card[3].style.display = 'none';
+                card[4].style.display = 'none';
+            }
+            if (card[2] = elem.closest('.c2_4_2')) {
+                card[2].style.display = 'block';
+                card[0].style.display = 'none';
+                card[1].style.display = 'none';
+                card[3].style.display = 'none';
+                card[4].style.display = 'none';
+            }
+            if (card[3] = elem.closest('.c2_2_4')) {
+                card[3].style.display = 'block';
+                card[0].style.display = 'none';
+                card[1].style.display = 'none';
+                card[2].style.display = 'none';
+                card[4].style.display = 'none';
+            }
+            if (card[4] = elem.closest('.c2_4_4')) {
+                card[4].style.display = 'block';
+                card[0].style.display = 'none';
+                card[1].style.display = 'none';
+                card[2].style.display = 'none';
+                card[3].style.display = 'none';
+            }
         }
         arrTireslink.forEach(function (elem, index) {
             tD = document.querySelectorAll('.tiresD');
@@ -458,8 +477,8 @@ arrTireslink.forEach(function (elem, index) {
         })
         tD = document.querySelectorAll('.tiresD');
         tT = document.querySelectorAll('.tiresT');
-        elem = tD[index].classList.add('tiresActiveD');
-        elem = tT[index].classList.add('tiresActiveT');
+        elem = tD[index].classList.toggle('tiresActiveD');
+        elem = tT[index].classList.toggle('tiresActiveT');
         check = document.querySelector('.check')
         check.style.display = 'none';
         dataActive = document.querySelector('.dataActive')
