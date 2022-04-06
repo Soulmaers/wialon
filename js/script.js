@@ -429,52 +429,59 @@ change();
 const tires_link = document.querySelectorAll('.tires_link');
 const arrTireslink = Array.from(tires_link);
 
+function around() {
+    arrTireslink.forEach(function (elem) {
+        elem.addEventListener('click', tiresActive2);
+        function tiresActive2() {
+            card = document.querySelectorAll('.card');
+            for (let i = 0; i <= card.length; i++) {
+                if (card[0] = elem.closest('.c2_2')) {
+                    card[0].style.display = 'block';
+                    card[1].style.display = 'none';
+                    card[2].style.display = 'none';
+                    card[3].style.display = 'none';
+                    card[4].style.display = 'none';
+                }
 
+                if (card[1] = elem.closest('.c2_2_2')) {
+                    card[1].style.display = 'block';
+                    card[0].style.display = 'none';
+                    card[2].style.display = 'none';
+                    card[3].style.display = 'none';
+                    card[4].style.display = 'none';
+                }
+                if (card[2] = elem.closest('.c2_4_2')) {
+                    card[2].style.display = 'block';
+                    card[0].style.display = 'none';
+                    card[1].style.display = 'none';
+                    card[3].style.display = 'none';
+                    card[4].style.display = 'none';
+                }
+                if (card[3] = elem.closest('.c2_2_4')) {
+                    card[3].style.display = 'block';
+                    card[0].style.display = 'none';
+                    card[1].style.display = 'none';
+                    card[2].style.display = 'none';
+                    card[4].style.display = 'none';
+                }
+                if (card[4] = elem.closest('.c2_4_4')) {
+                    card[4].style.display = 'block';
+                    card[0].style.display = 'none';
+                    card[1].style.display = 'none';
+                    card[2].style.display = 'none';
+                    card[3].style.display = 'none';
+                }
+            }
+        };
+    })
+}
 
 arrTireslink.forEach(function (elem, index) {
     elem.addEventListener('click', tiresActive);
 
     function tiresActive() {
-        card = document.querySelectorAll('.card');
-        for (let i = 0; i <= card.length; i++) {
-            if (card[0] = elem.closest('.c2_2')) {
-                card[0].style.display = 'block';
-                card[1].style.display = 'none';
-                card[2].style.display = 'none';
-                card[3].style.display = 'none';
-                card[4].style.display = 'none';
-            }
 
-            if (card[1] = elem.closest('.c2_2_2')) {
-                card[1].style.display = 'block';
-                card[0].style.display = 'none';
-                card[2].style.display = 'none';
-                card[3].style.display = 'none';
-                card[4].style.display = 'none';
-            }
-            if (card[2] = elem.closest('.c2_4_2')) {
-                card[2].style.display = 'block';
-                card[0].style.display = 'none';
-                card[1].style.display = 'none';
-                card[3].style.display = 'none';
-                card[4].style.display = 'none';
-            }
-            if (card[3] = elem.closest('.c2_2_4')) {
-                card[3].style.display = 'block';
-                card[0].style.display = 'none';
-                card[1].style.display = 'none';
-                card[2].style.display = 'none';
-                card[4].style.display = 'none';
-            }
-            if (card[4] = elem.closest('.c2_4_4')) {
-                card[4].style.display = 'block';
-                card[0].style.display = 'none';
-                card[1].style.display = 'none';
-                card[2].style.display = 'none';
-                card[3].style.display = 'none';
-            }
-        }
-
+        around();
         arrTireslink.forEach(function (elem, index) {
             tD = document.querySelectorAll('.tiresD');
             tT = document.querySelectorAll('.tiresT');
