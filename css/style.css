@@ -67,15 +67,18 @@ td {
   flex-wrap: wrap;
   justify-content: center;
   margin-top: 20px;
+
 }
 
 .check {
   width: 100%;
-
   margin: 0 auto;
+}
 
-
-
+.lft729 {
+  width: 30px;
+  height: 40px;
+  border: 3px solid orangered;
 }
 
 .card_hidden {
@@ -110,6 +113,13 @@ td {
 
 }
 
+.table_data {
+  text-align: center;
+  margin: 5px;
+  table-layout: fixed;
+  width: 259px;
+}
+
 .title_table {
   border: 1px solid gray;
   width: 33%;
@@ -127,7 +137,15 @@ td {
   font-family: Roboto;
   font-weight: 700;
   font-size: 1rem;
+}
 
+.tdd {
+  height: 20px;
+  background-color: #dfe7edf8;
+  font-family: Roboto;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 0 5px;
 }
 
 .bg_stat {
@@ -146,6 +164,9 @@ td {
 
 }
 
+.wrapper_containt_active {
+  justify-content: left;
+}
 
 
 .container_2_4 {
@@ -194,6 +215,8 @@ td {
 }
 
 
+
+
 .title {
   font-size: 1rem;
   text-align: center;
@@ -237,6 +260,7 @@ td {
 
 .tires_link {
   text-decoration: none;
+
 }
 
 .tiresD {
@@ -254,6 +278,7 @@ td {
   font-weight: 700;
   text-align: center;
 }
+
 
 .num {
   font-size: 0.8rem;
@@ -279,3 +304,64 @@ td {
 
 }
 
+.value_tires {
+  display: flex;
+  width: 259px;
+  justify-content: center;
+  margin: 5px;
+
+}
+
+.vT {
+  display: none;
+}
+
+.title_table_data {
+  width: 126.5px;
+  font-size: 1rem;
+  border: 1px solid gray;
+  text-align: center;
+  padding: 5px;
+  font-family: Roboto;
+  font-weight: 500;
+  color: gray;
+  background-color: lightgray;
+}
+
+.dataInstall {
+  border: 2px solid lightgray;
+  padding: 5px;
+  text-align: center;
+}
+
+.tiresActiveT {
+  width: 30px;
+  height: 40px;
+  border: 5px solid #e6fa0c;
+  border-radius: 0 0 50% 50%;
+  color: #fff;
+  background-color: gray;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.tiresActiveD {
+  width: 30px;
+  height: 40px;
+  border: 5px solid #e6fa0c;
+  border-radius: 50% 50% 0 0;
+  color: #fff;
+  background-color: gray;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-align: center;
+}

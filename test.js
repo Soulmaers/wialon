@@ -2,11 +2,36 @@
 const time = document.querySelectorAll('.time');
 const stat = document.querySelectorAll('.bg_stat');
 
+
+
+const tires_link = document.querySelector('.tires_link');
+tires_link.addEventListener('click', tiresActive)
+function tiresActive() {
+    alls = document.querySelectorAll('.tiresD729');
+    allsT = document.querySelectorAll('.tiresT729');
+    alls[0].classList.add('tiresActiveD');
+    allsT[0].classList.add('tiresActiveT');
+    check = document.querySelector('.check')
+    check.style.display = 'none';
+    vT = document.querySelector('.vT')
+    vT.style.display = 'block';
+    c2_2_2 = document.querySelector('.c2_2_2')
+    c2_2_2.style.display = 'none';
+    c2_2_4 = document.querySelector('.c2_2_4')
+    c2_2_4.style.display = 'none';
+    c2_4_2 = document.querySelector('.c2_4_2')
+    c2_4_2.style.display = 'none';
+    c2_4_4 = document.querySelector('.c2_4_4')
+    c2_4_4.style.display = 'none';
+}
+
+
 //Объект1
 const Obj729 = () => {
     const alls = document.querySelectorAll('.tiresD729');
     const allsT = document.querySelectorAll('.tiresT729');
     time[0].textContent = getNowtime();
+
     //запускаем рандом и кладем значения в массив
     function mathD() {
         lft = Math.floor(Math.random() * 10);
@@ -338,6 +363,8 @@ function getNowtime() {
     let nowTime = (`${date}-${month}-${year}   ${hours}:${minutes}:${seconds}`);
     return nowTime;
 }
+
+
 
 /*
 const tab = document.querySelectorAll('.tab');
