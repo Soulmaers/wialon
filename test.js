@@ -33,22 +33,17 @@ const Obj729 = () => {
     time[0].textContent = getNowtime();
 
     //запускаем рандом и кладем значения в массив
-    function mathD() {
+    /*function mathD() {
+
         lft = Math.floor(Math.random() * 10);
         rft = Math.floor(Math.random() * 10);
         lrt = Math.floor(Math.random() * 10);
         rrt = Math.floor(Math.random() * 10);
         return arrD = [lft, rft, lrt, rrt];
     }
-    mathD()
-    function mathT() {
-        lft = Math.floor(Math.random() * 10);
-        rft = Math.floor(Math.random() * 10);
-        lrt = Math.floor(Math.random() * 10);
-        rrt = Math.floor(Math.random() * 10);
-        return arrT = [lft, rft, lrt, rrt];
-    }
-    mathT()
+
+    mathD()*/
+  
     //проверяем условия
     function gener(el) {
         let generatedValue;

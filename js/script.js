@@ -1,28 +1,30 @@
 //забираем коллекции
 const time = document.querySelectorAll('.time');
 const stat = document.querySelectorAll('.bg_stat');
+
+//запускаем рандом
+function mathT() {
+    return Math.floor(Math.random() * 10);
+}
+mathT();
+function mathD() {
+    return Math.floor(Math.random() * 10);
+}
+mathD();
+function runTires() {
+    return Math.floor(Math.random() * 10000);
+}
+runTires();
+
 //Объект1
 const Obj729 = () => {
     const alls = document.querySelectorAll('.tiresD729');
     const allsT = document.querySelectorAll('.tiresT729');
     time[0].textContent = getNowtime();
-    //запускаем рандом и кладем значения в массив
-    function mathD() {
-        lft = Math.floor(Math.random() * 10);
-        rft = Math.floor(Math.random() * 10);
-        lrt = Math.floor(Math.random() * 10);
-        rrt = Math.floor(Math.random() * 10);
-        return arrD = [lft, rft, lrt, rrt];
-    }
-    mathD()
-    function mathT() {
-        lft = Math.floor(Math.random() * 10);
-        rft = Math.floor(Math.random() * 10);
-        lrt = Math.floor(Math.random() * 10);
-        rrt = Math.floor(Math.random() * 10);
-        return arrT = [lft, rft, lrt, rrt];
-    }
-    mathT()
+    //кладем рандомные значения в массив
+    const arrD = Array(4).fill(0).map(mathD);
+    const arrT = Array(4).fill(0).map(mathT);
+
     //проверяем условия
     function gener(el) {
         let generatedValue;
@@ -77,26 +79,8 @@ const Obj730 = () => {
     const alls = document.querySelectorAll('.tiresD730');
     const allsT = document.querySelectorAll('.tiresT730');
     time[1].textContent = getNowtime();
-    function mathD() {
-        lft = Math.floor(Math.random() * 10);
-        rft = Math.floor(Math.random() * 10);
-        lct = Math.floor(Math.random() * 10);
-        rct = Math.floor(Math.random() * 10);
-        lrt = Math.floor(Math.random() * 10);
-        rrt = Math.floor(Math.random() * 10);
-        return arrD = [lft, rft, lct, rct, lrt, rrt];
-    }
-    mathD();
-    function mathT() {
-        lft = Math.floor(Math.random() * 10);
-        rft = Math.floor(Math.random() * 10);
-        lct = Math.floor(Math.random() * 10);
-        rct = Math.floor(Math.random() * 10);
-        lrt = Math.floor(Math.random() * 10);
-        rrt = Math.floor(Math.random() * 10);
-        return arrT = [lft, rft, lct, rct, lrt, rrt];
-    }
-    mathT();
+    const arrD = Array(6).fill(0).map(mathD);
+    const arrT = Array(6).fill(0).map(mathT);
     function gener(el) {
         let generatedValue;
         if (el >= 2)
@@ -147,30 +131,8 @@ const Obj731 = () => {
     const alls = document.querySelectorAll('.tiresD731');
     const allsT = document.querySelectorAll('.tiresT731');
     time[2].textContent = getNowtime();
-    function mathD() {
-        lft = Math.floor(Math.random() * 10);
-        rft = Math.floor(Math.random() * 10);
-        lct = Math.floor(Math.random() * 10);
-        lcnt = Math.floor(Math.random() * 10);
-        lcvt = Math.floor(Math.random() * 10);
-        rct = Math.floor(Math.random() * 10);
-        lrt = Math.floor(Math.random() * 10);
-        rrt = Math.floor(Math.random() * 10);
-        return arrD = [lft, rft, lct, lcnt, lcvt, rct, lrt, rrt];
-    }
-    mathD();
-    function mathT() {
-        lft = Math.floor(Math.random() * 10);
-        rft = Math.floor(Math.random() * 10);
-        lcnt = Math.floor(Math.random() * 10);
-        lcvt = Math.floor(Math.random() * 10);
-        rcvt = Math.floor(Math.random() * 10);
-        rcnt = Math.floor(Math.random() * 10);
-        lrt = Math.floor(Math.random() * 10);
-        rrt = Math.floor(Math.random() * 10);
-        return arrT = [lft, rft, lcnt, lcvt, rcvt, rcnt, lrt, rrt];
-    }
-    mathT();
+    const arrD = Array(8).fill(0).map(mathD);
+    const arrT = Array(8).fill(0).map(mathT);
     function gener(el) {
         let generatedValue;
         if (el >= 2)
@@ -223,30 +185,8 @@ const Obj732 = () => {
     const alls = document.querySelectorAll('.tiresD732');
     const allsT = document.querySelectorAll('.tiresT732');
     time[3].textContent = getNowtime();
-    function mathD() {
-        lft = Math.floor(Math.random() * 10);
-        rft = Math.floor(Math.random() * 10);
-        lct = Math.floor(Math.random() * 10);
-        rct = Math.floor(Math.random() * 10);
-        lrnt = Math.floor(Math.random() * 10);
-        lrvt = Math.floor(Math.random() * 10);
-        rrvt = Math.floor(Math.random() * 10);
-        rrnt = Math.floor(Math.random() * 10);
-        return arrD = [lft, rft, lct, rct, lrnt, lrvt, rrvt, rrnt];
-    }
-    mathD();
-    function mathT() {
-        lft = Math.floor(Math.random() * 10);
-        rft = Math.floor(Math.random() * 10);
-        lct = Math.floor(Math.random() * 10);
-        rct = Math.floor(Math.random() * 10);
-        lrnt = Math.floor(Math.random() * 10);
-        lrvt = Math.floor(Math.random() * 10);
-        rrvt = Math.floor(Math.random() * 10);
-        rrnt = Math.floor(Math.random() * 10);
-        return arrT = [lft, rft, lct, rct, lrnt, lrvt, rrvt, rrnt];
-    }
-    mathT();
+    const arrD = Array(8).fill(0).map(mathD);
+    const arrT = Array(8).fill(0).map(mathT);
     function gener(el) {
         let generatedValue;
         if (el >= 2)
@@ -300,34 +240,8 @@ const Obj733 = () => {
     const alls = document.querySelectorAll('.tiresD733');
     const allsT = document.querySelectorAll('.tiresT733');
     time[4].textContent = getNowtime();
-    function mathD() {
-        lft = Math.floor(Math.random() * 10);
-        rft = Math.floor(Math.random() * 10);
-        lcnt = Math.floor(Math.random() * 10);
-        lcvt = Math.floor(Math.random() * 10);
-        rcvt = Math.floor(Math.random() * 10);
-        rnct = Math.floor(Math.random() * 10);
-        lrnt = Math.floor(Math.random() * 10);
-        lrvt = Math.floor(Math.random() * 10);
-        rrvt = Math.floor(Math.random() * 10);
-        rrnt = Math.floor(Math.random() * 10);
-        return arrD = [lft, rft, lcnt, lcvt, rcvt, rnct, lrnt, lrvt, rrvt, rrnt];
-    }
-    mathD();
-    function mathT() {
-        lft = Math.floor(Math.random() * 10);
-        rft = Math.floor(Math.random() * 10);
-        lcnt = Math.floor(Math.random() * 10);
-        lcvt = Math.floor(Math.random() * 10);
-        rcvt = Math.floor(Math.random() * 10);
-        rnct = Math.floor(Math.random() * 10);
-        lrnt = Math.floor(Math.random() * 10);
-        lrvt = Math.floor(Math.random() * 10);
-        rrvt = Math.floor(Math.random() * 10);
-        rrnt = Math.floor(Math.random() * 10);
-        return arrT = [lft, rft, lcnt, lcvt, rcvt, rnct, lrnt, lrvt, rrvt, rrnt];
-    }
-    mathT();
+    const arrD = Array(10).fill(0).map(mathD);
+    const arrT = Array(10).fill(0).map(mathT);
     function gener(el) {
         let generatedValue;
         if (el >= 2)
@@ -449,7 +363,6 @@ arrTireslink.forEach(function (elem, index) {
     }
     around();
 });
-
 //проверяем нажатую ссылку на соответсвие классу родителя и убираем не активные дивы
 function around() {
     arrTireslink.forEach(function (elem) {
@@ -496,33 +409,8 @@ function around() {
         };
     })
 }
-
-//рандом для пробега колеса
-function runTires() {
-    tires00 = Math.floor(Math.random() * 100000); tires01 = Math.floor(Math.random() * 100000);
-    tires02 = Math.floor(Math.random() * 100000); tires03 = Math.floor(Math.random() * 100000);
-    tires04 = Math.floor(Math.random() * 100000); tires05 = Math.floor(Math.random() * 100000);
-    tires06 = Math.floor(Math.random() * 100000); tires07 = Math.floor(Math.random() * 100000);
-    tires08 = Math.floor(Math.random() * 100000); tires09 = Math.floor(Math.random() * 100000);
-    tires10 = Math.floor(Math.random() * 100000); tires11 = Math.floor(Math.random() * 100000);
-    tires12 = Math.floor(Math.random() * 100000); tires13 = Math.floor(Math.random() * 100000);
-    tires14 = Math.floor(Math.random() * 100000); tires15 = Math.floor(Math.random() * 100000);
-    tires16 = Math.floor(Math.random() * 100000); tires17 = Math.floor(Math.random() * 100000);
-    tires18 = Math.floor(Math.random() * 100000); tires19 = Math.floor(Math.random() * 100000);
-    tires20 = Math.floor(Math.random() * 100000); tires21 = Math.floor(Math.random() * 100000);
-    tires22 = Math.floor(Math.random() * 100000); tires23 = Math.floor(Math.random() * 100000);
-    tires24 = Math.floor(Math.random() * 100000); tires25 = Math.floor(Math.random() * 100000);
-    tires26 = Math.floor(Math.random() * 100000); tires27 = Math.floor(Math.random() * 100000);
-    tires28 = Math.floor(Math.random() * 100000); tires29 = Math.floor(Math.random() * 100000);
-    tires30 = Math.floor(Math.random() * 100000); tires31 = Math.floor(Math.random() * 100000);
-    tires32 = Math.floor(Math.random() * 100000); tires33 = Math.floor(Math.random() * 100000);
-    tires34 = Math.floor(Math.random() * 100000); tires35 = Math.floor(Math.random() * 100000);
-    return runShine = [tires00, tires01, tires02, tires03, tires04, tires05, tires06, tires07,
-        tires08, tires09, tires10, tires11, tires12, tires13, tires14, tires15, tires16, tires17,
-        tires18, tires19, tires20, tires21, tires22, tires23, tires24, tires25, tires26, tires27,
-        tires28, tires29, tires30, tires31, tires32, tires33, tires34, tires35];
-}
-runTires();
+//кладем рандом для пробега колес в массив
+const runShine = Array(36).fill(0).map(runTires);
 const probeg = document.querySelector('.probeg');
 arrTireslink.forEach((elem, index) => {
     elem.addEventListener('click', tiresActivedatchik);
@@ -532,6 +420,7 @@ arrTireslink.forEach((elem, index) => {
     }
     tiresActivedatchik();
 });
+//рандомная дата
 function randomDate(start, end) {
     return new Date(start.getTime()
         + Math.random() * (end.getTime() - start.getTime()));
@@ -554,54 +443,24 @@ const date29 = randomDate(new Date(2010, 0, 1), new Date()); const date30 = rand
 const date31 = randomDate(new Date(2010, 0, 1), new Date()); const date32 = randomDate(new Date(2010, 0, 1), new Date());
 const date33 = randomDate(new Date(2010, 0, 1), new Date()); const date34 = randomDate(new Date(2010, 0, 1), new Date());
 const date35 = randomDate(new Date(2010, 0, 1), new Date()); const date36 = randomDate(new Date(2010, 0, 1), new Date());
-
-const date1 = (`${date01.getFullYear()}-${('0' + (date01.getMonth() + 1)).slice(-2)}-${('0' + date01.getDate()).slice(-2)}`);
-const date2 = (`${date02.getFullYear()}-${('0' + (date02.getMonth() + 1)).slice(-2)}-${('0' + date02.getDate()).slice(-2)}`);
-const date3 = (`${date03.getFullYear()}-${('0' + (date03.getMonth() + 1)).slice(-2)}-${('0' + date03.getDate()).slice(-2)}`);
-const date4 = (`${date04.getFullYear()}-${('0' + (date04.getMonth() + 1)).slice(-2)}-${('0' + date04.getDate()).slice(-2)}`);
-const date5 = (`${date05.getFullYear()}-${('0' + (date05.getMonth() + 1)).slice(-2)}-${('0' + date05.getDate()).slice(-2)}`);
-const date6 = (`${date06.getFullYear()}-${('0' + (date06.getMonth() + 1)).slice(-2)}-${('0' + date06.getDate()).slice(-2)}`);
-const date7 = (`${date07.getFullYear()}-${('0' + (date07.getMonth() + 1)).slice(-2)}-${('0' + date07.getDate()).slice(-2)}`);
-const date8 = (`${date08.getFullYear()}-${('0' + (date08.getMonth() + 1)).slice(-2)}-${('0' + date08.getDate()).slice(-2)}`);
-const date9 = (`${date09.getFullYear()}-${('0' + (date09.getMonth() + 1)).slice(-2)}-${('0' + date09.getDate()).slice(-2)}`);
-const date010 = (`${date10.getFullYear()}-${('0' + (date10.getMonth() + 1)).slice(-2)}-${('0' + date10.getDate()).slice(-2)}`);
-const date011 = (`${date11.getFullYear()}-${('0' + (date11.getMonth() + 1)).slice(-2)}-${('0' + date11.getDate()).slice(-2)}`);
-const date012 = (`${date12.getFullYear()}-${('0' + (date12.getMonth() + 1)).slice(-2)}-${('0' + date12.getDate()).slice(-2)}`);
-const date013 = (`${date13.getFullYear()}-${('0' + (date13.getMonth() + 1)).slice(-2)}-${('0' + date13.getDate()).slice(-2)}`);
-const date014 = (`${date14.getFullYear()}-${('0' + (date14.getMonth() + 1)).slice(-2)}-${('0' + date14.getDate()).slice(-2)}`);
-const date015 = (`${date15.getFullYear()}-${('0' + (date15.getMonth() + 1)).slice(-2)}-${('0' + date15.getDate()).slice(-2)}`);
-const date016 = (`${date16.getFullYear()}-${('0' + (date16.getMonth() + 1)).slice(-2)}-${('0' + date16.getDate()).slice(-2)}`);
-const date017 = (`${date17.getFullYear()}-${('0' + (date17.getMonth() + 1)).slice(-2)}-${('0' + date17.getDate()).slice(-2)}`);
-const date018 = (`${date18.getFullYear()}-${('0' + (date18.getMonth() + 1)).slice(-2)}-${('0' + date18.getDate()).slice(-2)}`);
-const date019 = (`${date19.getFullYear()}-${('0' + (date19.getMonth() + 1)).slice(-2)}-${('0' + date19.getDate()).slice(-2)}`);
-const date020 = (`${date20.getFullYear()}-${('0' + (date20.getMonth() + 1)).slice(-2)}-${('0' + date20.getDate()).slice(-2)}`);
-const date021 = (`${date21.getFullYear()}-${('0' + (date21.getMonth() + 1)).slice(-2)}-${('0' + date21.getDate()).slice(-2)}`);
-const date022 = (`${date22.getFullYear()}-${('0' + (date22.getMonth() + 1)).slice(-2)}-${('0' + date22.getDate()).slice(-2)}`);
-const date023 = (`${date23.getFullYear()}-${('0' + (date23.getMonth() + 1)).slice(-2)}-${('0' + date23.getDate()).slice(-2)}`);
-const date024 = (`${date24.getFullYear()}-${('0' + (date24.getMonth() + 1)).slice(-2)}-${('0' + date24.getDate()).slice(-2)}`);
-const date025 = (`${date25.getFullYear()}-${('0' + (date25.getMonth() + 1)).slice(-2)}-${('0' + date25.getDate()).slice(-2)}`);
-const date026 = (`${date26.getFullYear()}-${('0' + (date26.getMonth() + 1)).slice(-2)}-${('0' + date26.getDate()).slice(-2)}`);
-const date027 = (`${date27.getFullYear()}-${('0' + (date27.getMonth() + 1)).slice(-2)}-${('0' + date27.getDate()).slice(-2)}`);
-const date028 = (`${date28.getFullYear()}-${('0' + (date28.getMonth() + 1)).slice(-2)}-${('0' + date28.getDate()).slice(-2)}`);
-const date029 = (`${date29.getFullYear()}-${('0' + (date29.getMonth() + 1)).slice(-2)}-${('0' + date29.getDate()).slice(-2)}`);
-const date030 = (`${date30.getFullYear()}-${('0' + (date30.getMonth() + 1)).slice(-2)}-${('0' + date30.getDate()).slice(-2)}`);
-const date031 = (`${date31.getFullYear()}-${('0' + (date31.getMonth() + 1)).slice(-2)}-${('0' + date31.getDate()).slice(-2)}`);
-const date032 = (`${date32.getFullYear()}-${('0' + (date32.getMonth() + 1)).slice(-2)}-${('0' + date32.getDate()).slice(-2)}`);
-const date033 = (`${date33.getFullYear()}-${('0' + (date33.getMonth() + 1)).slice(-2)}-${('0' + date33.getDate()).slice(-2)}`);
-const date034 = (`${date34.getFullYear()}-${('0' + (date34.getMonth() + 1)).slice(-2)}-${('0' + date34.getDate()).slice(-2)}`);
-const date035 = (`${date35.getFullYear()}-${('0' + (date35.getMonth() + 1)).slice(-2)}-${('0' + date35.getDate()).slice(-2)}`);
-const date036 = (`${date36.getFullYear()}-${('0' + (date36.getMonth() + 1)).slice(-2)}-${('0' + date36.getDate()).slice(-2)}`);
-const arrDate = [date1, date2, date3, date4, date5, date6, date7, date8, date9, date010, date011,
-    date012, date013, date014, date015, date016, date017,
-    date018, date019, date020, date021, date022, date023, date024, date025, date026, date027,
-    date028, date029, date030, date031, date032, date033, date034, date035, date036];
-
-
+const arrDates = [date01, date02, date03, date04, date05, date06, date07, date08, date09, date10, date11,
+    date12, date13, date14, date15, date16, date17,
+    date18, date19, date20, date21, date22, date23, date24, date25, date26, date27,
+    date28, date29, date30, date31, date32, date33, date34, date35, date36];
+function dataVunc() {
+    arData = [];
+    arrDates.forEach((elem) => {
+        ar = (`${elem.getFullYear()}-${('0' + (elem.getMonth() + 1)).slice(-2)}-${('0' + elem.getDate()).slice(-2)}`);
+        arData.push(ar);
+        return arData;
+    })
+}
+dataVunc()
 const dataMade = document.querySelector('.data_made');
 arrTireslink.forEach((elem, index) => {
     elem.addEventListener('click', dataMadefunc);
     function dataMadefunc() {
-        elem = arrDate[index];
+        elem = arData[index];
         dataMade.textContent = elem;
     }
     dataMadefunc();
