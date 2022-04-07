@@ -360,6 +360,8 @@ arrTireslink.forEach(function (elem, index) {
         dataActive.style.display = 'block';
         wCA = document.querySelector('.wrapper_containt')
         wCA.classList.add('wrapper_containt_active')
+        grafik = document.querySelector('.grafik');
+        grafik.style.display = 'block';
     }
     around();
 });

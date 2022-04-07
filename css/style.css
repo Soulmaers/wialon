@@ -168,6 +168,15 @@ td {
   justify-content: left;
 }
 
+.grafik {
+  display: none;
+  width: 800px;
+  height: 404px;
+  background-color: lightgray;
+  border: 1px solid gray;
+  margin: 5px 5px;
+}
+
 
 .container_2_4 {
   display: flex;
