@@ -1,0 +1,27 @@
+.dash_card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    height: 500px;
+    border: 2px solid gray;
+}
+
+.wrapper_right_dash {
+    width: 70%;
+    display: flex;
+    padding: 20px;
+
+}
+
+.dash_title {
+    width: 100%;
+    height: 200px;
+    border: 2px solid gray;
+}
+
+.dash_board {
+    width: 100%;
+    height: 700px;
+    border: 2px solid gray;
+}
