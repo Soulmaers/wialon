@@ -536,12 +536,76 @@ function randomDate(start, end) {
     return new Date(start.getTime()
         + Math.random() * (end.getTime() - start.getTime()));
 }
-const myDate0 = randomDate(new Date(2010, 0, 1), new Date());
-const myDate1 = randomDate(new Date(2010, 0, 1), new Date());
-const myDate2 = randomDate(new Date(2010, 0, 1), new Date());
+const date01 = randomDate(new Date(2010, 0, 1), new Date()); const date02 = randomDate(new Date(2010, 0, 1), new Date());
+const date03 = randomDate(new Date(2010, 0, 1), new Date()); const date04 = randomDate(new Date(2010, 0, 1), new Date());
+const date05 = randomDate(new Date(2010, 0, 1), new Date()); const date06 = randomDate(new Date(2010, 0, 1), new Date());
+const date07 = randomDate(new Date(2010, 0, 1), new Date()); const date08 = randomDate(new Date(2010, 0, 1), new Date());
+const date09 = randomDate(new Date(2010, 0, 1), new Date()); const date10 = randomDate(new Date(2010, 0, 1), new Date());
+const date11 = randomDate(new Date(2010, 0, 1), new Date()); const date12 = randomDate(new Date(2010, 0, 1), new Date());
+const date13 = randomDate(new Date(2010, 0, 1), new Date()); const date14 = randomDate(new Date(2010, 0, 1), new Date());
+const date15 = randomDate(new Date(2010, 0, 1), new Date()); const date16 = randomDate(new Date(2010, 0, 1), new Date());
+const date17 = randomDate(new Date(2010, 0, 1), new Date()); const date18 = randomDate(new Date(2010, 0, 1), new Date());
+const date19 = randomDate(new Date(2010, 0, 1), new Date()); const date20 = randomDate(new Date(2010, 0, 1), new Date());
+const date21 = randomDate(new Date(2010, 0, 1), new Date()); const date22 = randomDate(new Date(2010, 0, 1), new Date());
+const date23 = randomDate(new Date(2010, 0, 1), new Date()); const date24 = randomDate(new Date(2010, 0, 1), new Date());
+const date25 = randomDate(new Date(2010, 0, 1), new Date()); const date26 = randomDate(new Date(2010, 0, 1), new Date());
+const date27 = randomDate(new Date(2010, 0, 1), new Date()); const date28 = randomDate(new Date(2010, 0, 1), new Date());
+const date29 = randomDate(new Date(2010, 0, 1), new Date()); const date30 = randomDate(new Date(2010, 0, 1), new Date());
+const date31 = randomDate(new Date(2010, 0, 1), new Date()); const date32 = randomDate(new Date(2010, 0, 1), new Date());
+const date33 = randomDate(new Date(2010, 0, 1), new Date()); const date34 = randomDate(new Date(2010, 0, 1), new Date());
+const date35 = randomDate(new Date(2010, 0, 1), new Date()); const date36 = randomDate(new Date(2010, 0, 1), new Date());
 
-const meDate0 = (`${myDate0.getFullYear()}-${('0' + (myDate0.getMonth() + 1)).slice(-2)}-${('0' + myDate0.getDate()).slice(-2)}`);
+const date1 = (`${date01.getFullYear()}-${('0' + (date01.getMonth() + 1)).slice(-2)}-${('0' + date01.getDate()).slice(-2)}`);
+const date2 = (`${date02.getFullYear()}-${('0' + (date02.getMonth() + 1)).slice(-2)}-${('0' + date02.getDate()).slice(-2)}`);
+const date3 = (`${date03.getFullYear()}-${('0' + (date03.getMonth() + 1)).slice(-2)}-${('0' + date03.getDate()).slice(-2)}`);
+const date4 = (`${date04.getFullYear()}-${('0' + (date04.getMonth() + 1)).slice(-2)}-${('0' + date04.getDate()).slice(-2)}`);
+const date5 = (`${date05.getFullYear()}-${('0' + (date05.getMonth() + 1)).slice(-2)}-${('0' + date05.getDate()).slice(-2)}`);
+const date6 = (`${date06.getFullYear()}-${('0' + (date06.getMonth() + 1)).slice(-2)}-${('0' + date06.getDate()).slice(-2)}`);
+const date7 = (`${date07.getFullYear()}-${('0' + (date07.getMonth() + 1)).slice(-2)}-${('0' + date07.getDate()).slice(-2)}`);
+const date8 = (`${date08.getFullYear()}-${('0' + (date08.getMonth() + 1)).slice(-2)}-${('0' + date08.getDate()).slice(-2)}`);
+const date9 = (`${date09.getFullYear()}-${('0' + (date09.getMonth() + 1)).slice(-2)}-${('0' + date09.getDate()).slice(-2)}`);
+const date010 = (`${date10.getFullYear()}-${('0' + (date10.getMonth() + 1)).slice(-2)}-${('0' + date10.getDate()).slice(-2)}`);
+const date011 = (`${date11.getFullYear()}-${('0' + (date11.getMonth() + 1)).slice(-2)}-${('0' + date11.getDate()).slice(-2)}`);
+const date012 = (`${date12.getFullYear()}-${('0' + (date12.getMonth() + 1)).slice(-2)}-${('0' + date12.getDate()).slice(-2)}`);
+const date013 = (`${date13.getFullYear()}-${('0' + (date13.getMonth() + 1)).slice(-2)}-${('0' + date13.getDate()).slice(-2)}`);
+const date014 = (`${date14.getFullYear()}-${('0' + (date14.getMonth() + 1)).slice(-2)}-${('0' + date14.getDate()).slice(-2)}`);
+const date015 = (`${date15.getFullYear()}-${('0' + (date15.getMonth() + 1)).slice(-2)}-${('0' + date15.getDate()).slice(-2)}`);
+const date016 = (`${date16.getFullYear()}-${('0' + (date16.getMonth() + 1)).slice(-2)}-${('0' + date16.getDate()).slice(-2)}`);
+const date017 = (`${date17.getFullYear()}-${('0' + (date17.getMonth() + 1)).slice(-2)}-${('0' + date17.getDate()).slice(-2)}`);
+const date018 = (`${date18.getFullYear()}-${('0' + (date18.getMonth() + 1)).slice(-2)}-${('0' + date18.getDate()).slice(-2)}`);
+const date019 = (`${date19.getFullYear()}-${('0' + (date19.getMonth() + 1)).slice(-2)}-${('0' + date19.getDate()).slice(-2)}`);
+const date020 = (`${date20.getFullYear()}-${('0' + (date20.getMonth() + 1)).slice(-2)}-${('0' + date20.getDate()).slice(-2)}`);
+const date021 = (`${date21.getFullYear()}-${('0' + (date21.getMonth() + 1)).slice(-2)}-${('0' + date21.getDate()).slice(-2)}`);
+const date022 = (`${date22.getFullYear()}-${('0' + (date22.getMonth() + 1)).slice(-2)}-${('0' + date22.getDate()).slice(-2)}`);
+const date023 = (`${date23.getFullYear()}-${('0' + (date23.getMonth() + 1)).slice(-2)}-${('0' + date23.getDate()).slice(-2)}`);
+const date024 = (`${date24.getFullYear()}-${('0' + (date24.getMonth() + 1)).slice(-2)}-${('0' + date24.getDate()).slice(-2)}`);
+const date025 = (`${date25.getFullYear()}-${('0' + (date25.getMonth() + 1)).slice(-2)}-${('0' + date25.getDate()).slice(-2)}`);
+const date026 = (`${date26.getFullYear()}-${('0' + (date26.getMonth() + 1)).slice(-2)}-${('0' + date26.getDate()).slice(-2)}`);
+const date027 = (`${date27.getFullYear()}-${('0' + (date27.getMonth() + 1)).slice(-2)}-${('0' + date27.getDate()).slice(-2)}`);
+const date028 = (`${date28.getFullYear()}-${('0' + (date28.getMonth() + 1)).slice(-2)}-${('0' + date28.getDate()).slice(-2)}`);
+const date029 = (`${date29.getFullYear()}-${('0' + (date29.getMonth() + 1)).slice(-2)}-${('0' + date29.getDate()).slice(-2)}`);
+const date030 = (`${date30.getFullYear()}-${('0' + (date30.getMonth() + 1)).slice(-2)}-${('0' + date30.getDate()).slice(-2)}`);
+const date031 = (`${date31.getFullYear()}-${('0' + (date31.getMonth() + 1)).slice(-2)}-${('0' + date31.getDate()).slice(-2)}`);
+const date032 = (`${date32.getFullYear()}-${('0' + (date32.getMonth() + 1)).slice(-2)}-${('0' + date32.getDate()).slice(-2)}`);
+const date033 = (`${date33.getFullYear()}-${('0' + (date33.getMonth() + 1)).slice(-2)}-${('0' + date33.getDate()).slice(-2)}`);
+const date034 = (`${date34.getFullYear()}-${('0' + (date34.getMonth() + 1)).slice(-2)}-${('0' + date34.getDate()).slice(-2)}`);
+const date035 = (`${date35.getFullYear()}-${('0' + (date35.getMonth() + 1)).slice(-2)}-${('0' + date35.getDate()).slice(-2)}`);
+const date036 = (`${date36.getFullYear()}-${('0' + (date36.getMonth() + 1)).slice(-2)}-${('0' + date36.getDate()).slice(-2)}`);
+const arrDate = [date1, date2, date3, date4, date5, date6, date7, date8, date9, date010, date011,
+    date012, date013, date014, date015, date016, date017,
+    date018, date019, date020, date021, date022, date023, date024, date025, date026, date027,
+    date028, date029, date030, date031, date032, date033, date034, date035, date036];
 
+
+const dataMade = document.querySelector('.data_made');
+arrTireslink.forEach((elem, index) => {
+    elem.addEventListener('click', dataMadefunc);
+    function dataMadefunc() {
+        elem = arrDate[index];
+        dataMade.textContent = elem;
+    }
+    dataMadefunc();
+});
 
 /*
 (function () {
