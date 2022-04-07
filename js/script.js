@@ -425,9 +425,31 @@ function change() {
 }
 change();
 //проваливаемся в колесо
-
 const tires_link = document.querySelectorAll('.tires_link');
 const arrTireslink = Array.from(tires_link);
+arrTireslink.forEach(function (elem, index) {
+    elem.addEventListener('click', tiresActive);
+    function tiresActive() {
+        arrTireslink.forEach(function (elem, index) {
+            tD = document.querySelectorAll('.tiresD');
+            tT = document.querySelectorAll('.tiresT');
+            elem = tD[index].classList.remove('tiresActiveD');
+            elem = tT[index].classList.remove('tiresActiveT');
+        })
+        tD = document.querySelectorAll('.tiresD');
+        tT = document.querySelectorAll('.tiresT');
+        elem = tD[index].classList.toggle('tiresActiveD');
+        elem = tT[index].classList.toggle('tiresActiveT');
+        check = document.querySelector('.check')
+        check.style.display = 'none';
+        dataActive = document.querySelector('.dataActive')
+        dataActive.style.display = 'block';
+        wCA = document.querySelector('.wrapper_containt')
+        wCA.classList.add('wrapper_containt_active')
+    }
+    around();
+});
+
 //проверяем нажатую ссылку на соответсвие классу родителя и убираем не активные дивы
 function around() {
     arrTireslink.forEach(function (elem) {
@@ -474,34 +496,45 @@ function around() {
         };
     })
 }
-arrTireslink.forEach(function (elem, index) {
-    elem.addEventListener('click', tiresActive);
-    function tiresActive() {
-        arrTireslink.forEach(function (elem, index) {
-            tD = document.querySelectorAll('.tiresD');
-            tT = document.querySelectorAll('.tiresT');
-            elem = tD[index].classList.remove('tiresActiveD');
-            elem = tT[index].classList.remove('tiresActiveT');
-        })
-        tD = document.querySelectorAll('.tiresD');
-        tT = document.querySelectorAll('.tiresT');
-        elem = tD[index].classList.toggle('tiresActiveD');
-        elem = tT[index].classList.toggle('tiresActiveT');
-        check = document.querySelector('.check')
-        check.style.display = 'none';
-        dataActive = document.querySelector('.dataActive')
-        dataActive.style.display = 'block';
-        wCA = document.querySelector('.wrapper_containt')
-        wCA.classList.add('wrapper_containt_active')
+
+//рандом для пробега колеса
+function runTires() {
+    tires00 = Math.floor(Math.random() * 100000); tires01 = Math.floor(Math.random() * 100000);
+    tires02 = Math.floor(Math.random() * 100000); tires03 = Math.floor(Math.random() * 100000);
+    tires04 = Math.floor(Math.random() * 100000); tires05 = Math.floor(Math.random() * 100000);
+    tires06 = Math.floor(Math.random() * 100000); tires07 = Math.floor(Math.random() * 100000);
+    tires08 = Math.floor(Math.random() * 100000); tires09 = Math.floor(Math.random() * 100000);
+    tires10 = Math.floor(Math.random() * 100000); tires11 = Math.floor(Math.random() * 100000);
+    tires12 = Math.floor(Math.random() * 100000); tires13 = Math.floor(Math.random() * 100000);
+    tires14 = Math.floor(Math.random() * 100000); tires15 = Math.floor(Math.random() * 100000);
+    tires16 = Math.floor(Math.random() * 100000); tires17 = Math.floor(Math.random() * 100000);
+    tires18 = Math.floor(Math.random() * 100000); tires19 = Math.floor(Math.random() * 100000);
+    tires20 = Math.floor(Math.random() * 100000); tires21 = Math.floor(Math.random() * 100000);
+    tires22 = Math.floor(Math.random() * 100000); tires23 = Math.floor(Math.random() * 100000);
+    tires24 = Math.floor(Math.random() * 100000); tires25 = Math.floor(Math.random() * 100000);
+    tires26 = Math.floor(Math.random() * 100000); tires27 = Math.floor(Math.random() * 100000);
+    tires28 = Math.floor(Math.random() * 100000); tires29 = Math.floor(Math.random() * 100000);
+    tires30 = Math.floor(Math.random() * 100000); tires31 = Math.floor(Math.random() * 100000);
+    tires32 = Math.floor(Math.random() * 100000); tires33 = Math.floor(Math.random() * 100000);
+    tires34 = Math.floor(Math.random() * 100000); tires35 = Math.floor(Math.random() * 100000);
+    return runShine = [tires00, tires01, tires02, tires03, tires04, tires05, tires06, tires07,
+        tires08, tires09, tires10, tires11, tires12, tires13, tires14, tires15, tires16, tires17,
+        tires18, tires19, tires20, tires21, tires22, tires23, tires24, tires25, tires26, tires27,
+        tires28, tires29, tires30, tires31, tires32, tires33, tires34, tires35];
+}
+runTires();
+
+
+const probeg = document.querySelector('.probeg');
+
+arrTireslink.forEach((elem, index) => {
+    elem.addEventListener('click', tiresActivedatchik);
+    function tiresActivedatchik() {
+        elem = runShine[index];
+        probeg.textContent = elem + ' ' + 'км';
     }
-    around();
+    tiresActivedatchik();
 });
-
-
-
-
-
-
 
 /*
 (function () {

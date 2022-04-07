@@ -337,7 +337,7 @@ td {
 .tiresActiveT {
   width: 30px;
   height: 40px;
-  border: 5px solid #e6fa0c;
+  border: 5px solid #fa0707d8;
   border-radius: 0 0 30% 30%;
   color: #fff;
   background-color: gray;
@@ -348,12 +348,13 @@ td {
   font-size: 0.8rem;
   font-weight: 700;
   text-align: center;
+  border-top: 1px solid #fa0707d8;
 }
 
 .tiresActiveD {
   width: 30px;
   height: 40px;
-  border: 5px solid #e6fa0c;
+  border: 5px solid #fa0707d8;
   border-radius: 30% 30% 0 0;
   color: #fff;
   background-color: gray;
@@ -364,4 +365,5 @@ td {
   font-size: 0.8rem;
   font-weight: 700;
   text-align: center;
+  border-bottom: 1px solid #fa0707d8;
 }
