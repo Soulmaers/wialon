@@ -523,10 +523,7 @@ function runTires() {
         tires28, tires29, tires30, tires31, tires32, tires33, tires34, tires35];
 }
 runTires();
-
-
 const probeg = document.querySelector('.probeg');
-
 arrTireslink.forEach((elem, index) => {
     elem.addEventListener('click', tiresActivedatchik);
     function tiresActivedatchik() {
@@ -535,6 +532,16 @@ arrTireslink.forEach((elem, index) => {
     }
     tiresActivedatchik();
 });
+function randomDate(start, end) {
+    return new Date(start.getTime()
+        + Math.random() * (end.getTime() - start.getTime()));
+}
+const myDate0 = randomDate(new Date(2010, 0, 1), new Date());
+const myDate1 = randomDate(new Date(2010, 0, 1), new Date());
+const myDate2 = randomDate(new Date(2010, 0, 1), new Date());
+
+const meDate0 = (`${myDate0.getFullYear()}-${('0' + (myDate0.getMonth() + 1)).slice(-2)}-${('0' + myDate0.getDate()).slice(-2)}`);
+
 
 /*
 (function () {
