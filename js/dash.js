@@ -19,8 +19,6 @@ const chart = new Chart(ctx, {
         }]
     }
 })
-
-
 const ctx2 = document.getElementById('myChart2').getContext('2d');
 const chart2 = new Chart(ctx2, {
     type: 'doughnut',
