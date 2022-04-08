@@ -2,12 +2,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 50%;
+    width: 540px;
+    border: 10px solid lightgray;
 
 }
 
 .wrapper_right_dash {
-    width: 70%;
+
     display: flex;
     flex-wrap: wrap;
     padding: 20px;
