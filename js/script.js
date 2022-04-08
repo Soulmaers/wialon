@@ -622,8 +622,43 @@ const chart2 = new Chart(ctx2, {
             ],
             hoverOffset: 4
         }]
+    },
+    options: {
+        title: {
+            display: true,
+            text: 'Recommended Daily Diet',
+            position: 'top',
+            fontSize: 16,
+            fontColor: '#111',
+            padding: 20
+        },
+        legend: {
+            display: true,
+            position: 'bottom',
+            labels: {
+                boxWidth: 20,
+                fontColor: '#111',
+                padding: 15
+            }
+        },
+        tooltips: {
+            enabled: false
+        },
+        plugins: {
+            datalabels: {
+                color: '#111',
+                textAlign: 'center',
+                font: {
+                    lineHeight: 1.6
+                },
+                formatter: function (value) {
+                    return value + '%';
+                }
+            }
+        }
     }
-})
+});
+
 const upDat = () => {
     chart2.data.datasets[0].data = arrDashdat;
     chart2.update();
