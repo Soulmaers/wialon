@@ -37,6 +37,11 @@ const myChart = new Chart(ctx, {
                 position: 'left',
                 min: 0,
                 max: 10,
+                ticks: {
+                    font: {
+                        size: 22,
+                    }
+                }
 
 
             },
@@ -44,7 +49,12 @@ const myChart = new Chart(ctx, {
                 type: 'linear',
                 position: 'right',
                 min: 0,
-                max: 10
+                max: 10,
+                ticks: {
+                    font: {
+                        size: 22,
+                    }
+                }
             }
         },
 
