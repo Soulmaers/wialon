@@ -1,3 +1,4 @@
+Chart.register(ChartDataLabels);
 //забираем коллекции
 const time = document.querySelectorAll('.time');
 const stat = document.querySelectorAll('.bg_stat');
@@ -576,8 +577,23 @@ chart = new Chart(ctx, {
             ],
             hoverOffset: 4
         }]
+    },
+    options: {
+        plugins: {
+            datalabels: {
+                color: '#423737',
+                textAlign: 'center',
+                font: {
+                    size: 20,
+                    lineHeight: 1.6
+                },
+                formatter: function (value) {
+                    return value + '%';
+                }
+            }
+        }
     }
-})
+});
 
 const upDav = () => {
     chart.data.datasets[0].data = arrDash;
@@ -624,31 +640,12 @@ const chart2 = new Chart(ctx2, {
         }]
     },
     options: {
-        title: {
-            display: true,
-            text: 'Recommended Daily Diet',
-            position: 'top',
-            fontSize: 16,
-            fontColor: '#111',
-            padding: 20
-        },
-        legend: {
-            display: true,
-            position: 'bottom',
-            labels: {
-                boxWidth: 20,
-                fontColor: '#111',
-                padding: 15
-            }
-        },
-        tooltips: {
-            enabled: false
-        },
         plugins: {
             datalabels: {
-                color: '#111',
+                color: '#423737',
                 textAlign: 'center',
                 font: {
+                    size: 20,
                     lineHeight: 1.6
                 },
                 formatter: function (value) {
