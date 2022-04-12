@@ -1,4 +1,4 @@
-Chart.register(ChartDataLabels);
+
 //забираем коллекции
 const time = document.querySelectorAll('.time');
 const stat = document.querySelectorAll('.bg_stat');
@@ -557,7 +557,7 @@ dashDav()
 setInterval(dashDav, 5000);
 
 
-
+Chart.register(ChartDataLabels);
 const ctx = document.getElementById('myChart').getContext('2d');
 chart = new Chart(ctx, {
     type: 'doughnut',
