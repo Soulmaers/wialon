@@ -1,41 +1,47 @@
 Chart.register(ChartDataLabels);
+const densityCanvas = document.getElementById("densityChart").getContext('2d');
 
+//Chart.defaults.global.defaultFontFamily = "Lato";
+//Chart.defaults.global.defaultFontSize = 18;
 
+var densityData = {
+    label: 'Давление',
+    data: [9, 5, 5, 3, 1, 2, 1, 6],
+    backgroundColor: 'rgba(0, 99, 132, 0.6)',
+    borderColor: 'rgba(0, 99, 132, 1)',
+    yAxisID: "y-axis-density"
+};
 
-const ctx = document.getElementById('myChart').getContext('2d');
-chart = new Chart(ctx, {
-    type: 'doughnut',
-    data: {
-        labels: [
-            'Большое отклонение',
-            'Незначительные отклонения',
-            'В Норме'
-        ],
-        datasets: [{
-            label: 'Дашбоард',
-            data: [10, 20, 50],
-            backgroundColor: [
-                '#e03636',
-                '#9ba805',
-                '#3eb051'
-            ],
-            hoverOffset: 4
+var gravityData = {
+    label: 'Температура',
+    data: [3, 8, 9, 3, 8, 9, 8, 2],
+    backgroundColor: 'rgba(99, 132, 0, 0.6)',
+    borderColor: 'rgba(99, 132, 0, 1)',
+    yAxisID: "y-axis-gravity"
+};
+
+var planetData = {
+    labels: ["Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь"],
+    datasets: [densityData, gravityData]
+};
+
+var chartOptions = {
+    scales: {
+        xAxes: [{
+            barPercentage: 1,
+            categoryPercentage: 0.6,
+
+        }],
+        yAxes: [{
+            id: "y-axis-density"
+        }, {
+            id: "y-axis-gravity"
         }]
-    },
-    options: {
-        plugins: {
-            datalabels: {
-                color: '#111',
-                textAlign: 'center',
-                fontWeight: 'bold',
-                font: {
-                    size: 20,
-                    lineHeight: 1.6,
-                },
-                formatter: function (value) {
-                    return value + '%';
-                }
-            }
-        }
     }
-})
+};
+
+var barChart = new Chart(densityCanvas, {
+    type: 'line',
+    data: planetData,
+    options: chartOptions
+});
