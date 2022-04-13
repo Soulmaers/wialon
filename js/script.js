@@ -469,6 +469,206 @@ arrTireslink.forEach((elem, index) => {
     dataMadefunc();
 });
 
+function randomDia() {
+    arrDalld = Array(36).fill(0).map(mathD);
+    arrDallt = Array(36).fill(0).map(mathT);
+    arrDalld.forEach((elem) => {
+        arrMassivD = [];
+        arrMassivD.push(elem);
+        return arrMassivD;
+    })
+
+}
+randomDia();
+setInterval(randomDia, 5000);
+
+
+//const runShine = Array(36).fill(0).map(runTires);
+//const probeg = document.querySelector('.probeg');
+arrTireslink.forEach((elem, index) => {
+    elem.addEventListener('click', tiresGrafik);
+    function tiresGrafik() {
+        elem = arrDalld[index];
+        elem = arrDallt[index];
+        davl = elem;
+        davlt = elem;
+    }
+    tiresGrafik();
+
+});
+Chart.register(ChartDataLabels);
+//const densityCanvas = document.getElementById("densityChart").getContext('2d');
+
+myChartg = new Chart(myChartg, {
+    type: 'line',
+    data: {
+        datasets: [{
+            data: arrDalld,
+            label: 'Давление',
+            fill: false,
+            borderColor: 'lightgreen',
+            yAxisID: 'left-y-axis'
+        }, {
+            data: arrDallt,
+            label: 'Температура',
+            fill: false,
+            borderColor: 'lightblue',
+            yAxisID: 'right-y-axis'
+        }],
+        labels: ['01.03', '02.03', '03.03', '04.03', '05.03', '06.03',
+            '07.03', '08.03', '08.03', '09.03', '10.03', '11.03',
+            '12.03', '13.03', '14.03', '15.03', '16.03', '17.03',
+            '18.03', '19.03', '20.03', '21.03', '22.03', '23.03']
+    },
+    options: {
+        plugins: {
+            legend: {
+                labels: {
+                    font: {
+                        size: 20,
+                    },
+                    color: 'gray'
+                }
+            }
+        },
+        scales: {
+            'left-y-axis': {
+                type: 'linear',
+                position: 'left',
+                min: 0,
+                max: 12,
+                ticks: {
+                    font: {
+                        size: 18,
+                    }
+                }
+            },
+            'right-y-axis': {
+                type: 'linear',
+                position: 'right',
+                min: 0,
+                max: 10,
+                ticks: {
+                    font: {
+                        size: 18,
+                    }
+                }
+            }
+        },
+    }
+
+});
+const upDia = () => {
+    myChartg.data.datasets[0].data = arrDalld;
+    myChartg.data.datasets[1].data = arrDallt;
+    myChartg.update();
+}
+setInterval(upDia, 5000);
+/*
+var speedCanvas = document.getElementById("speedChart");
+
+//Chart.defaults.global.defaultFontFamily = "Lato";
+//Chart.defaults.global.defaultFontSize = 18;
+
+var dataFirst = {
+    label: "Давление",
+    data: [8, 9, 7, 2, 2, 5, 4],
+    lineTension: 0,
+    fill: false,
+    borderColor: 'red'
+
+};
+
+var dataSecond = {
+    label: "Температура",
+    data: [2, 3, 6, 6, 7, 3, 5],
+    lineTension: 0,
+    fill: false,
+    borderColor: 'blue',
+    yAxisID: 'yAsis'
+};
+
+var speedData = {
+    labels: ["0s", "10s", "20s", "30s", "40s", "50s", "60s"],
+    datasets: [dataFirst, dataSecond]
+};
+
+var chartOptions = {
+    legend: {
+        display: true,
+        position: 'top',
+        labels: {
+            boxWidth: 80,
+            fontColor: 'black'
+        }
+    },
+
+    scales: {
+        myScale: {
+            position: 'right', // `axis` is determined by the position as `'y'`
+            min: 0,
+            max: 15
+        }
+
+    }
+};
+
+var lineChart = new Chart(speedCanvas, {
+    type: 'line',
+    data: speedData,
+    options: chartOptions
+});*/
+//Chart.defaults.global.defaultFontFamily = "Lato";
+//Chart.defaults.global.defaultFontSize = 18;
+
+
+
+/*var gravityData = {
+    label: 'Температура',
+    data: [3, 8, 9, 3, 8, 9, 8, 2],
+    backgroundColor: 'rgba(99, 132, 0, 0.6)',
+    borderColor: 'rgba(99, 132, 0, 1)',
+    yAxisID: "y-axis-gravity"
+};*/
+
+
+
+
+
+
+/*
+var barChart = new Chart(densityCanvas, {
+    type: 'line',
+    data: {
+        labels: ["Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь"],
+        datasets: [{
+            label: 'Давление',
+            data: [9, 5, 5, 3, 1, 2, 1, 6],
+            backgroundColor: 'rgba(0, 99, 132, 0.6)',
+            borderColor: 'rgba(0, 99, 132, 1)',
+            yAxisID: 'yAxis'
+        },
+        {
+            label: 'Температура',
+            data: [3, 8, 9, 3, 8, 9, 8, 2],
+            backgroundColor: 'rgba(99, 132, 0, 0.6)',
+            borderColor: 'rgba(99, 132, 0, 1)',
+            yAxisID2: 'yAxis2'
+        }],
+
+    },
+    options: {
+        scales: {
+            myScale: {
+                position: 'right', // `axis` is determined by the position as `'y'`
+                min: 0,
+                max: 15
+            }
+        }
+
+    }
+});*/
+
 /*
 (function () {
     alert('Привет, Wialon!');
@@ -531,7 +731,7 @@ arrTireslink.forEach((elem, index) => {
 
 */
 
-
+/*
 function dashDav() {
     const arrDall = Array(36).fill(0).map(mathD);
     countRed = 0;
@@ -558,6 +758,7 @@ setInterval(dashDav, 5000);
 
 
 Chart.register(ChartDataLabels);
+
 const ctx = document.getElementById('myChart').getContext('2d');
 chart = new Chart(ctx, {
     type: 'doughnut',
@@ -600,7 +801,6 @@ const upDav = () => {
     chart.update();
 }
 setInterval(upDav, 1000);
-
 
 function dashDat() {
     const arrDall = Array(36).fill(0).map(mathD);
@@ -661,3 +861,4 @@ const upDat = () => {
     chart2.update();
 }
 setInterval(upDat, 5000);
+*/

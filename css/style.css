@@ -171,8 +171,8 @@ td {
 .grafik {
   display: none;
   width: 800px;
-  height: 404px;
-  background-color: lightgray;
+  height: 450px;
+  background-color: #fff;
   border: 1px solid gray;
   margin: 5px 5px;
 }
