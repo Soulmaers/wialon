@@ -496,6 +496,54 @@ arrTireslink.forEach((elem, index) => {
     tiresGrafik();
 
 });
+
+
+//массивы колес со значениями
+const arrAll1 = [[], [], [], [], [], [], [], [], [], []];
+
+
+const tiresD = document.querySelectorAll('.tiresD');
+function go() {
+    arrDalld = Array(36).fill(0).map(mathD);
+
+
+
+    for (let i = 0; i <= arrDalld.length; i++) {
+        if (i == 0) {
+            arrAll1[0].push(arrDalld[i]);
+        } if (i == 1) {
+            arrAll1[1].push(arrDalld[i]);
+        }
+        if (i == 2) {
+            arrAll1[2].push(arrDalld[i]);
+        }
+        if (i == 3) {
+            arrAll1[3].push(arrDalld[i]);
+        }
+        if (i == 4) {
+            arrAll1[4].push(arrDalld[i]);
+        }
+        if (i == 5) {
+            arrAll1[5].push(arrDalld[i]);
+        }
+        if (i == 6) {
+            arrAll1[6].push(arrDalld[i]);
+        }
+        if (i == 7) {
+            arrAll1[7].push(arrDalld[i]);
+        }
+        if (i == 8) {
+            arrAll1[8].push(arrDalld[i]);
+        }
+        if (i == 9) {
+            arrAll1[9].push(arrDalld[i]);
+        }
+    }
+    return console.log(arrAll1);
+}
+go();
+//setInterval(go, 1000);
+
 Chart.register(ChartDataLabels);
 //const densityCanvas = document.getElementById("densityChart").getContext('2d');
 
@@ -503,7 +551,7 @@ myChartg = new Chart(myChartg, {
     type: 'line',
     data: {
         datasets: [{
-            data: arrDalld,
+            data: arrAll1[0],
             label: 'Давление',
             fill: false,
             borderColor: 'lightgreen',
@@ -559,7 +607,7 @@ myChartg = new Chart(myChartg, {
 
 });
 const upDia = () => {
-    myChartg.data.datasets[0].data = arrDalld;
+    myChartg.data.datasets[0].data = arrAll1[0];
     myChartg.data.datasets[1].data = arrDallt;
     myChartg.update();
 }
@@ -567,22 +615,6 @@ setInterval(upDia, 5000);
 
 
 
-const arrAll1 = [];
-const arrAll2 = [];
-
-const tiresD = document.querySelectorAll('.tiresD');
-function go() {
-    arrDalld = Array(36).fill(0).map(mathD);
-    for (let i = 0; i <= arrDalld.length; i++) {
-        if (i == 0) {
-            arrAll1.push(arrDalld[i]);
-        } if (i == 1)
-            arrAll2.push(arrDalld[i]);
-
-    }
-    return console.log(arrAll1, arrAll2);
-}
-go();
 function fn() {
     tiresD.forEach((elem) => {
         elem = arrAll1;
