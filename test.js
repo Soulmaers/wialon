@@ -1,4 +1,6 @@
 
+
+
 //текущее время
 function getNowtime() {
     let now = new Date();
@@ -421,229 +423,17 @@ arrTireslink.forEach((elem, index) => {
     tiresLinkfunc();
 });
 
+arrTime = [];
 function go() {
+    arrTime.push(getNowtime());
     arrDalld = Array(36).fill(0).map(math);
-    for (let i = 0; i <= arrDalld.length; i++) {
-        if (i == 0) {
-            arrAll1[0].push(arrDalld[i]);
-        }
-        if (i == 1) {
-            arrAll1[1].push(arrDalld[i]);
-        }
-        if (i == 2) {
-            arrAll1[2].push(arrDalld[i]);
-        }
-        if (i == 3) {
-            arrAll1[3].push(arrDalld[i]);
-        }
-        if (i == 4) {
-            arrAll1[4].push(arrDalld[i]);
-        }
-        if (i == 5) {
-            arrAll1[5].push(arrDalld[i]);
-        }
-        if (i == 6) {
-            arrAll1[6].push(arrDalld[i]);
-        }
-        if (i == 7) {
-            arrAll1[7].push(arrDalld[i]);
-        }
-        if (i == 8) {
-            arrAll1[8].push(arrDalld[i]);
-        }
-        if (i == 9) {
-            arrAll1[9].push(arrDalld[i]);
-        }
-        if (i == 10) {
-            arrAll1[10].push(arrDalld[i]);
-        }
-        if (i == 11) {
-            arrAll1[11].push(arrDalld[i]);
-        }
-        if (i == 12) {
-            arrAll1[12].push(arrDalld[i]);
-        }
-        if (i == 13) {
-            arrAll1[13].push(arrDalld[i]);
-        }
-        if (i == 14) {
-            arrAll1[14].push(arrDalld[i]);
-        }
-        if (i == 15) {
-            arrAll1[15].push(arrDalld[i]);
-        }
-        if (i == 16) {
-            arrAll1[16].push(arrDalld[i]);
-        }
-        if (i == 17) {
-            arrAll1[17].push(arrDalld[i]);
-        }
-        if (i == 18) {
-            arrAll1[18].push(arrDalld[i]);
-        }
-        if (i == 19) {
-            arrAll1[19].push(arrDalld[i]);
-        }
-        if (i == 20) {
-            arrAll1[20].push(arrDalld[i]);
-        }
-        if (i == 21) {
-            arrAll1[21].push(arrDalld[i]);
-        }
-        if (i == 22) {
-            arrAll1[22].push(arrDalld[i]);
-        }
-        if (i == 23) {
-            arrAll1[23].push(arrDalld[i]);
-        }
-        if (i == 24) {
-            arrAll1[24].push(arrDalld[i]);
-        }
-        if (i == 25) {
-            arrAll1[25].push(arrDalld[i]);
-        }
-        if (i == 26) {
-            arrAll1[26].push(arrDalld[i]);
-        }
-        if (i == 27) {
-            arrAll1[27].push(arrDalld[i]);
-        }
-        if (i == 28) {
-            arrAll1[28].push(arrDalld[i]);
-        }
-        if (i == 29) {
-            arrAll1[29].push(arrDalld[i]);
-        }
-        if (i == 30) {
-            arrAll1[30].push(arrDalld[i]);
-        }
-        if (i == 31) {
-            arrAll1[31].push(arrDalld[i]);
-        }
-        if (i == 32) {
-            arrAll1[32].push(arrDalld[i]);
-        }
-        if (i == 33) {
-            arrAll1[33].push(arrDalld[i]);
-        }
-        if (i == 34) {
-            arrAll1[34].push(arrDalld[i]);
-        }
-        if (i == 35) {
-            arrAll1[35].push(arrDalld[i]);
-        }
-    }
+    arrDalld.forEach((el, index) => {
+        arrAll1[index].push(el);
+    })
     arrDallt = Array(36).fill(0).map(math);
-    for (let i = 0; i <= arrDallt.length; i++) {
-        if (i == 0) {
-            arrAll2[0].push(arrDallt[i]);
-        }
-        if (i == 1) {
-            arrAll2[1].push(arrDallt[i]);
-        }
-        if (i == 2) {
-            arrAll2[2].push(arrDallt[i]);
-        }
-        if (i == 3) {
-            arrAll2[3].push(arrDallt[i]);
-        }
-        if (i == 4) {
-            arrAll2[4].push(arrDallt[i]);
-        }
-        if (i == 5) {
-            arrAll2[5].push(arrDallt[i]);
-        }
-        if (i == 6) {
-            arrAll2[6].push(arrDallt[i]);
-        }
-        if (i == 7) {
-            arrAll2[7].push(arrDallt[i]);
-        }
-        if (i == 8) {
-            arrAll2[8].push(arrDallt[i]);
-        }
-        if (i == 9) {
-            arrAll2[9].push(arrDallt[i]);
-        }
-        if (i == 10) {
-            arrAll2[10].push(arrDallt[i]);
-        }
-        if (i == 11) {
-            arrAll2[11].push(arrDallt[i]);
-        }
-        if (i == 12) {
-            arrAll2[12].push(arrDallt[i]);
-        }
-        if (i == 13) {
-            arrAll2[13].push(arrDallt[i]);
-        }
-        if (i == 14) {
-            arrAll2[14].push(arrDallt[i]);
-        }
-        if (i == 15) {
-            arrAll2[15].push(arrDallt[i]);
-        }
-        if (i == 16) {
-            arrAll2[16].push(arrDallt[i]);
-        }
-        if (i == 17) {
-            arrAll2[17].push(arrDallt[i]);
-        }
-        if (i == 18) {
-            arrAll2[18].push(arrDallt[i]);
-        }
-        if (i == 19) {
-            arrAll2[19].push(arrDallt[i]);
-        }
-        if (i == 20) {
-            arrAll2[20].push(arrDallt[i]);
-        }
-        if (i == 21) {
-            arrAll2[21].push(arrDallt[i]);
-        }
-        if (i == 22) {
-            arrAll2[22].push(arrDalld[i]);
-        }
-        if (i == 23) {
-            arrAll2[23].push(arrDallt[i]);
-        }
-        if (i == 24) {
-            arrAll2[24].push(arrDallt[i]);
-        }
-        if (i == 25) {
-            arrAll2[25].push(arrDallt[i]);
-        }
-        if (i == 26) {
-            arrAll2[26].push(arrDallt[i]);
-        }
-        if (i == 27) {
-            arrAll2[27].push(arrDallt[i]);
-        }
-        if (i == 28) {
-            arrAll2[28].push(arrDallt[i]);
-        }
-        if (i == 29) {
-            arrAll2[29].push(arrDallt[i]);
-        }
-        if (i == 30) {
-            arrAll2[30].push(arrDallt[i]);
-        }
-        if (i == 31) {
-            arrAll2[31].push(arrDallt[i]);
-        }
-        if (i == 32) {
-            arrAll2[32].push(arrDallt[i]);
-        }
-        if (i == 33) {
-            arrAll2[33].push(arrDallt[i]);
-        }
-        if (i == 34) {
-            arrAll2[34].push(arrDallt[i]);
-        }
-        if (i == 35) {
-            arrAll2[35].push(arrDallt[i]);
-        }
-    }
+    arrDallt.forEach((el, index) => {
+        arrAll2[index].push(el);
+    })
     return arrAll1, arrAll2;
 }
 go();
@@ -667,10 +457,7 @@ myChartg = new Chart(myChartg, {
             borderColor: 'lightblue',
             yAxisID: 'right-y-axis'
         }],
-        labels: ['01.03', '02.03', '03.03', '04.03', '05.03', '06.03',
-            '07.03', '08.03', '08.03', '09.03', '10.03', '11.03',
-            '12.03', '13.03', '14.03', '15.03', '16.03', '17.03',
-            '18.03', '19.03', '20.03', '21.03', '22.03', '23.03']
+        labels: arrTime
     },
     options: {
         plugins: {
