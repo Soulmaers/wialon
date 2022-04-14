@@ -1,21 +1,62 @@
 
+//текущее время
+function getNowtime() {
+    let now = new Date();
+    let year = now.getFullYear();
+    let month = now.getMonth();
+    if (now.getMonth() < 10) {
+        month = "0" + month;
+    }
+    let date = now.getDate();
+    if (now.getDate() < 10) {
+        date = "0" + date;
+    }
+    let hours = now.getHours();
+    if (now.getHours() < 10) {
+        hours = "0" + hours;
+    }
+    let minutes = now.getMinutes();
+    if (now.getMinutes() < 10) {
+        minutes = "0" + minutes;
+    }
+    let seconds = now.getSeconds();
+    if (now.getSeconds() < 10) {
+        seconds = "0" + seconds;
+    }
+    let nowTime = (`${date}-${month}-${year}   ${hours}:${minutes}:${seconds}`);
+    return nowTime;
+}
+
+
+//проверяем условия
+function gener(el) {
+    let generatedValue;
+    if (el >= 2)
+        generatedValue = 3;
+    if (el > 0 && el < 2)
+        generatedValue = 2;
+    if (el == 0)
+        generatedValue = 1;
+    return generatedValue;
+};
+//создаем объект где ключ-результат условия, а свойства - соответсующее условию значение
+const objColor = {
+    1: '#e03636',
+    2: '#9ba805',
+    3: '#3eb051'
+}
 //забираем коллекции
 const time = document.querySelectorAll('.time');
 const stat = document.querySelectorAll('.bg_stat');
 
 //запускаем рандом
-function mathT() {
+function math() {
     return Math.floor(Math.random() * 10);
 }
-
-function mathD() {
-    return Math.floor(Math.random() * 10);
-}
-
 function runTires() {
     return Math.floor(Math.random() * 10000);
 }
-runTires();
+
 
 //Объект1
 const Obj729 = () => {
@@ -23,26 +64,8 @@ const Obj729 = () => {
     const allsT = document.querySelectorAll('.tiresT729');
     time[0].textContent = getNowtime();
     //кладем рандомные значения в массив
-    const arrD = Array(4).fill(0).map(mathD);
-    const arrT = Array(4).fill(0).map(mathT);
-
-    //проверяем условия
-    function gener(el) {
-        let generatedValue;
-        if (el >= 2)
-            generatedValue = 3;
-        if (el > 0 && el < 2)
-            generatedValue = 2;
-        if (el == 0)
-            generatedValue = 1;
-        return generatedValue;
-    };
-    //создаем объект где ключ-результат условия, а свойства - соответсующее условию значение
-    const objColor = {
-        1: '#e03636',
-        2: '#9ba805',
-        3: '#3eb051'
-    }
+    const arrD = Array(4).fill(0).map(math);
+    const arrT = Array(4).fill(0).map(math);
     //добавляем итог в нужный div
     const logic729 = () => {
         alls.forEach(function (elem, index) {
@@ -80,23 +103,8 @@ const Obj730 = () => {
     const alls = document.querySelectorAll('.tiresD730');
     const allsT = document.querySelectorAll('.tiresT730');
     time[1].textContent = getNowtime();
-    const arrD = Array(6).fill(0).map(mathD);
-    const arrT = Array(6).fill(0).map(mathT);
-    function gener(el) {
-        let generatedValue;
-        if (el >= 2)
-            generatedValue = 3;
-        if (el > 0 && el < 2)
-            generatedValue = 2;
-        if (el == 0)
-            generatedValue = 1;
-        return generatedValue;
-    };
-    const objColor = {
-        1: '#e03636',
-        2: '#9ba805',
-        3: '#3eb051'
-    }
+    const arrD = Array(6).fill(0).map(math);
+    const arrT = Array(6).fill(0).map(math);
     const logic730 = () => {
         alls.forEach(function (elem, index) {
             elem.textContent = arrD[index] + '\nатм';
@@ -132,23 +140,8 @@ const Obj731 = () => {
     const alls = document.querySelectorAll('.tiresD731');
     const allsT = document.querySelectorAll('.tiresT731');
     time[2].textContent = getNowtime();
-    const arrD = Array(8).fill(0).map(mathD);
-    const arrT = Array(8).fill(0).map(mathT);
-    function gener(el) {
-        let generatedValue;
-        if (el >= 2)
-            generatedValue = 3;
-        if (el > 0 && el < 2)
-            generatedValue = 2;
-        if (el == 0)
-            generatedValue = 1;
-        return generatedValue;
-    };
-    const objColor = {
-        1: '#e03636',
-        2: '#9ba805',
-        3: '#3eb051'
-    }
+    const arrD = Array(8).fill(0).map(math);
+    const arrT = Array(8).fill(0).map(math);
     const logic731 = () => {
         alls.forEach(function (elem, index) {
             elem.textContent = arrD[index] + '\nатм';
@@ -186,23 +179,8 @@ const Obj732 = () => {
     const alls = document.querySelectorAll('.tiresD732');
     const allsT = document.querySelectorAll('.tiresT732');
     time[3].textContent = getNowtime();
-    const arrD = Array(8).fill(0).map(mathD);
-    const arrT = Array(8).fill(0).map(mathT);
-    function gener(el) {
-        let generatedValue;
-        if (el >= 2)
-            generatedValue = 3;
-        if (el > 0 && el < 2)
-            generatedValue = 2;
-        if (el == 0)
-            generatedValue = 1;
-        return generatedValue;
-    };
-    const objColor = {
-        1: '#e03636',
-        2: '#9ba805',
-        3: '#3eb051'
-    }
+    const arrD = Array(8).fill(0).map(math);
+    const arrT = Array(8).fill(0).map(math);
     const logic732 = () => {
         alls.forEach(function (elem, index) {
             elem.textContent = arrD[index] + '\nатм';
@@ -241,23 +219,8 @@ const Obj733 = () => {
     const alls = document.querySelectorAll('.tiresD733');
     const allsT = document.querySelectorAll('.tiresT733');
     time[4].textContent = getNowtime();
-    const arrD = Array(10).fill(0).map(mathD);
-    const arrT = Array(10).fill(0).map(mathT);
-    function gener(el) {
-        let generatedValue;
-        if (el >= 2)
-            generatedValue = 3;
-        if (el > 0 && el < 2)
-            generatedValue = 2;
-        if (el == 0)
-            generatedValue = 1;
-        return generatedValue;
-    };
-    const objColor = {
-        1: '#e03636',
-        2: '#9ba805',
-        3: '#3eb051'
-    }
+    const arrD = Array(10).fill(0).map(math);
+    const arrT = Array(10).fill(0).map(math);
     const logic733 = () => {
         alls.forEach(function (elem, index) {
             elem.textContent = arrD[index] + '\nатм';
@@ -290,33 +253,7 @@ const Obj733 = () => {
 }
 Obj733();
 setInterval(Obj733, 5000);
-//текущее время
-function getNowtime() {
-    let now = new Date();
-    let year = now.getFullYear();
-    let month = now.getMonth();
-    if (now.getMonth() < 10) {
-        month = "0" + month;
-    }
-    let date = now.getDate();
-    if (now.getDate() < 10) {
-        date = "0" + date;
-    }
-    let hours = now.getHours();
-    if (now.getHours() < 10) {
-        hours = "0" + hours;
-    }
-    let minutes = now.getMinutes();
-    if (now.getMinutes() < 10) {
-        minutes = "0" + minutes;
-    }
-    let seconds = now.getSeconds();
-    if (now.getSeconds() < 10) {
-        seconds = "0" + seconds;
-    }
-    let nowTime = (`${date}-${month}-${year}   ${hours}:${minutes}:${seconds}`);
-    return nowTime;
-}
+
 //логика чекбоксов
 function change() {
     const checkboxes = document.querySelectorAll('.input');
@@ -412,17 +349,6 @@ function around() {
         };
     })
 }
-//кладем рандом для пробега колес в массив
-const runShine = Array(36).fill(0).map(runTires);
-const probeg = document.querySelector('.probeg');
-arrTireslink.forEach((elem, index) => {
-    elem.addEventListener('click', tiresActivedatchik);
-    function tiresActivedatchik() {
-        elem = runShine[index];
-        probeg.textContent = elem + ' ' + 'км';
-    }
-    tiresActivedatchik();
-});
 //рандомная дата
 function randomDate(start, end) {
     return new Date(start.getTime()
@@ -459,59 +385,49 @@ function dataVunc() {
     })
 }
 dataVunc()
-const dataMade = document.querySelector('.data_made');
+
+const arrAll1 = [[], [], [], [], [], [], [], [], [],
+[], [], [], [], [], [], [], [], [], [], [], [], [],
+[], [], [], [], [], [], [], [], [], [], [], [], [], []];
+const arrAll2 = [[], [], [], [], [], [], [], [], [],
+[], [], [], [], [], [], [], [], [], [], [], [], [],
+[], [], [], [], [], [], [], [], [], [], [], [], [], []];
+
 arrTireslink.forEach((elem, index) => {
-    elem.addEventListener('click', dataMadefunc);
-    function dataMadefunc() {
-        elem = arData[index];
-        dataMade.textContent = elem;
+    elem.addEventListener('click', tiresLinkfunc);
+    function tiresLinkfunc() {
+        const dataMade = document.querySelector('.data_made');
+        const probeg = document.querySelector('.probeg');
+        const runShine = Array(36).fill(0).map(runTires);
+        function tiresActivedatchik() {
+            elem = runShine[index];
+            probeg.textContent = elem + ' ' + 'км';
+        }
+        tiresActivedatchik();
+        function dataMadefunc() {
+            elem = arData[index];
+            dataMade.textContent = elem;
+        }
+        dataMadefunc();
+        function tiresGrafik() {
+            elem = arrAll1[index];
+            davl = elem;
+            elem = arrAll2[index];
+            davl2 = elem;
+        }
+        tiresGrafik(arrAll1)
+        tiresGrafik(arrAll2)
     }
-    dataMadefunc();
+    tiresLinkfunc();
 });
 
-function randomDia() {
-    arrDalld = Array(36).fill(0).map(mathD);
-    arrDallt = Array(36).fill(0).map(mathT);
-    arrDalld.forEach((elem) => {
-        arrMassivD = [];
-        arrMassivD.push(elem);
-        return arrMassivD;
-    })
-
-}
-randomDia();
-setInterval(randomDia, 5000);
-
-
-//const runShine = Array(36).fill(0).map(runTires);
-//const probeg = document.querySelector('.probeg');
-arrTireslink.forEach((elem, index) => {
-    elem.addEventListener('click', tiresGrafik);
-    function tiresGrafik() {
-        elem = arrDalld[index];
-        elem = arrDallt[index];
-        davl = elem;
-        davlt = elem;
-    }
-    tiresGrafik();
-
-});
-
-
-//массивы колес со значениями
-const arrAll1 = [[], [], [], [], [], [], [], [], [], []];
-
-
-const tiresD = document.querySelectorAll('.tiresD');
 function go() {
-    arrDalld = Array(36).fill(0).map(mathD);
-
-
-
+    arrDalld = Array(36).fill(0).map(math);
     for (let i = 0; i <= arrDalld.length; i++) {
         if (i == 0) {
             arrAll1[0].push(arrDalld[i]);
-        } if (i == 1) {
+        }
+        if (i == 1) {
             arrAll1[1].push(arrDalld[i]);
         }
         if (i == 2) {
@@ -538,26 +454,214 @@ function go() {
         if (i == 9) {
             arrAll1[9].push(arrDalld[i]);
         }
+        if (i == 10) {
+            arrAll1[10].push(arrDalld[i]);
+        }
+        if (i == 11) {
+            arrAll1[11].push(arrDalld[i]);
+        }
+        if (i == 12) {
+            arrAll1[12].push(arrDalld[i]);
+        }
+        if (i == 13) {
+            arrAll1[13].push(arrDalld[i]);
+        }
+        if (i == 14) {
+            arrAll1[14].push(arrDalld[i]);
+        }
+        if (i == 15) {
+            arrAll1[15].push(arrDalld[i]);
+        }
+        if (i == 16) {
+            arrAll1[16].push(arrDalld[i]);
+        }
+        if (i == 17) {
+            arrAll1[17].push(arrDalld[i]);
+        }
+        if (i == 18) {
+            arrAll1[18].push(arrDalld[i]);
+        }
+        if (i == 19) {
+            arrAll1[19].push(arrDalld[i]);
+        }
+        if (i == 20) {
+            arrAll1[20].push(arrDalld[i]);
+        }
+        if (i == 21) {
+            arrAll1[21].push(arrDalld[i]);
+        }
+        if (i == 22) {
+            arrAll1[22].push(arrDalld[i]);
+        }
+        if (i == 23) {
+            arrAll1[23].push(arrDalld[i]);
+        }
+        if (i == 24) {
+            arrAll1[24].push(arrDalld[i]);
+        }
+        if (i == 25) {
+            arrAll1[25].push(arrDalld[i]);
+        }
+        if (i == 26) {
+            arrAll1[26].push(arrDalld[i]);
+        }
+        if (i == 27) {
+            arrAll1[27].push(arrDalld[i]);
+        }
+        if (i == 28) {
+            arrAll1[28].push(arrDalld[i]);
+        }
+        if (i == 29) {
+            arrAll1[29].push(arrDalld[i]);
+        }
+        if (i == 30) {
+            arrAll1[30].push(arrDalld[i]);
+        }
+        if (i == 31) {
+            arrAll1[31].push(arrDalld[i]);
+        }
+        if (i == 32) {
+            arrAll1[32].push(arrDalld[i]);
+        }
+        if (i == 33) {
+            arrAll1[33].push(arrDalld[i]);
+        }
+        if (i == 34) {
+            arrAll1[34].push(arrDalld[i]);
+        }
+        if (i == 35) {
+            arrAll1[35].push(arrDalld[i]);
+        }
     }
-    return console.log(arrAll1);
+    arrDallt = Array(36).fill(0).map(math);
+    for (let i = 0; i <= arrDallt.length; i++) {
+        if (i == 0) {
+            arrAll2[0].push(arrDallt[i]);
+        }
+        if (i == 1) {
+            arrAll2[1].push(arrDallt[i]);
+        }
+        if (i == 2) {
+            arrAll2[2].push(arrDallt[i]);
+        }
+        if (i == 3) {
+            arrAll2[3].push(arrDallt[i]);
+        }
+        if (i == 4) {
+            arrAll2[4].push(arrDallt[i]);
+        }
+        if (i == 5) {
+            arrAll2[5].push(arrDallt[i]);
+        }
+        if (i == 6) {
+            arrAll2[6].push(arrDallt[i]);
+        }
+        if (i == 7) {
+            arrAll2[7].push(arrDallt[i]);
+        }
+        if (i == 8) {
+            arrAll2[8].push(arrDallt[i]);
+        }
+        if (i == 9) {
+            arrAll2[9].push(arrDallt[i]);
+        }
+        if (i == 10) {
+            arrAll2[10].push(arrDallt[i]);
+        }
+        if (i == 11) {
+            arrAll2[11].push(arrDallt[i]);
+        }
+        if (i == 12) {
+            arrAll2[12].push(arrDallt[i]);
+        }
+        if (i == 13) {
+            arrAll2[13].push(arrDallt[i]);
+        }
+        if (i == 14) {
+            arrAll2[14].push(arrDallt[i]);
+        }
+        if (i == 15) {
+            arrAll2[15].push(arrDallt[i]);
+        }
+        if (i == 16) {
+            arrAll2[16].push(arrDallt[i]);
+        }
+        if (i == 17) {
+            arrAll2[17].push(arrDallt[i]);
+        }
+        if (i == 18) {
+            arrAll2[18].push(arrDallt[i]);
+        }
+        if (i == 19) {
+            arrAll2[19].push(arrDallt[i]);
+        }
+        if (i == 20) {
+            arrAll2[20].push(arrDallt[i]);
+        }
+        if (i == 21) {
+            arrAll2[21].push(arrDallt[i]);
+        }
+        if (i == 22) {
+            arrAll2[22].push(arrDalld[i]);
+        }
+        if (i == 23) {
+            arrAll2[23].push(arrDallt[i]);
+        }
+        if (i == 24) {
+            arrAll2[24].push(arrDallt[i]);
+        }
+        if (i == 25) {
+            arrAll2[25].push(arrDallt[i]);
+        }
+        if (i == 26) {
+            arrAll2[26].push(arrDallt[i]);
+        }
+        if (i == 27) {
+            arrAll2[27].push(arrDallt[i]);
+        }
+        if (i == 28) {
+            arrAll2[28].push(arrDallt[i]);
+        }
+        if (i == 29) {
+            arrAll2[29].push(arrDallt[i]);
+        }
+        if (i == 30) {
+            arrAll2[30].push(arrDallt[i]);
+        }
+        if (i == 31) {
+            arrAll2[31].push(arrDallt[i]);
+        }
+        if (i == 32) {
+            arrAll2[32].push(arrDallt[i]);
+        }
+        if (i == 33) {
+            arrAll2[33].push(arrDallt[i]);
+        }
+        if (i == 34) {
+            arrAll2[34].push(arrDallt[i]);
+        }
+        if (i == 35) {
+            arrAll2[35].push(arrDallt[i]);
+        }
+    }
+    return arrAll1, arrAll2;
 }
 go();
-//setInterval(go, 1000);
+setInterval(go, 5000);
 
+//графики
 Chart.register(ChartDataLabels);
-//const densityCanvas = document.getElementById("densityChart").getContext('2d');
-
 myChartg = new Chart(myChartg, {
     type: 'line',
     data: {
         datasets: [{
-            data: arrAll1[0],
+            data: davl,
             label: 'Давление',
             fill: false,
             borderColor: 'lightgreen',
             yAxisID: 'left-y-axis'
         }, {
-            data: arrDallt,
+            data: davl2,
             label: 'Температура',
             fill: false,
             borderColor: 'lightblue',
@@ -604,131 +708,12 @@ myChartg = new Chart(myChartg, {
             }
         },
     }
-
 });
 const upDia = () => {
-    myChartg.data.datasets[0].data = arrAll1[0];
-    myChartg.data.datasets[1].data = arrDallt;
+    myChartg.data.datasets[0].data = davl;
+    myChartg.data.datasets[1].data = davl2;
     myChartg.update();
 }
-setInterval(upDia, 5000);
+setInterval(upDia, 100);
 
 
-
-function fn() {
-    tiresD.forEach((elem) => {
-        elem = arrAll1;
-        af = elem;
-    })
-    return af;
-}
-fn();
-
-
-
-
-
-/*
-var speedCanvas = document.getElementById("speedChart");
-
-//Chart.defaults.global.defaultFontFamily = "Lato";
-//Chart.defaults.global.defaultFontSize = 18;
-
-var dataFirst = {
-    label: "Давление",
-    data: [8, 9, 7, 2, 2, 5, 4],
-    lineTension: 0,
-    fill: false,
-    borderColor: 'red'
-
-};
-
-var dataSecond = {
-    label: "Температура",
-    data: [2, 3, 6, 6, 7, 3, 5],
-    lineTension: 0,
-    fill: false,
-    borderColor: 'blue',
-    yAxisID: 'yAsis'
-};
-
-var speedData = {
-    labels: ["0s", "10s", "20s", "30s", "40s", "50s", "60s"],
-    datasets: [dataFirst, dataSecond]
-};
-
-var chartOptions = {
-    legend: {
-        display: true,
-        position: 'top',
-        labels: {
-            boxWidth: 80,
-            fontColor: 'black'
-        }
-    },
-
-    scales: {
-        myScale: {
-            position: 'right', // `axis` is determined by the position as `'y'`
-            min: 0,
-            max: 15
-        }
-
-    }
-};
-
-var lineChart = new Chart(speedCanvas, {
-    type: 'line',
-    data: speedData,
-    options: chartOptions
-});*/
-//Chart.defaults.global.defaultFontFamily = "Lato";
-//Chart.defaults.global.defaultFontSize = 18;
-
-
-
-/*var gravityData = {
-    label: 'Температура',
-    data: [3, 8, 9, 3, 8, 9, 8, 2],
-    backgroundColor: 'rgba(99, 132, 0, 0.6)',
-    borderColor: 'rgba(99, 132, 0, 1)',
-    yAxisID: "y-axis-gravity"
-};*/
-
-
-
-
-
-
-/*
-var barChart = new Chart(densityCanvas, {
-    type: 'line',
-    data: {
-        labels: ["Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь"],
-        datasets: [{
-            label: 'Давление',
-            data: [9, 5, 5, 3, 1, 2, 1, 6],
-            backgroundColor: 'rgba(0, 99, 132, 0.6)',
-            borderColor: 'rgba(0, 99, 132, 1)',
-            yAxisID: 'yAxis'
-        },
-        {
-            label: 'Температура',
-            data: [3, 8, 9, 3, 8, 9, 8, 2],
-            backgroundColor: 'rgba(99, 132, 0, 0.6)',
-            borderColor: 'rgba(99, 132, 0, 1)',
-            yAxisID2: 'yAxis2'
-        }],
-
-    },
-    options: {
-        scales: {
-            myScale: {
-                position: 'right', // `axis` is determined by the position as `'y'`
-                min: 0,
-                max: 15
-            }
-        }
-
-    }
-});*/

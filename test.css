@@ -264,10 +264,12 @@ td {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 .tires_link {
   text-decoration: none;
+
 
 }
 
