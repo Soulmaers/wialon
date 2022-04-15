@@ -55,10 +55,25 @@ const stat = document.querySelectorAll('.bg_stat');
 function math() {
     return Math.floor(Math.random() * 10);
 }
+
 function runTires() {
     return Math.floor(Math.random() * 10000);
 }
-
+const funcRandom = () => {
+    arrD = Array(36).fill(0).map(math);
+    arrT = Array(36).fill(0).map(math);
+    arr729D = arrD.slice(0, 4);
+    arr730D = arrD.slice(4, 10);
+    arr731D = arrD.slice(10, 18);
+    arr732D = arrD.slice(18, 26);
+    arr733D = arrD.slice(26, 36);
+    arr729T = arrT.slice(0, 4);
+    arr730T = arrT.slice(4, 10);
+    arr731T = arrT.slice(10, 18);
+    arr732T = arrT.slice(18, 26);
+    arr733T = arrT.slice(26, 36);
+}
+funcRandom()
 
 //Объект1
 const Obj729 = () => {
@@ -66,21 +81,22 @@ const Obj729 = () => {
     const allsT = document.querySelectorAll('.tiresT729');
     time[0].textContent = getNowtime();
     //кладем рандомные значения в массив
-    const arrD = Array(4).fill(0).map(math);
-    const arrT = Array(4).fill(0).map(math);
+    //const arrD = Array(4).fill(0).map(math);
+    // const arrT = Array(4).fill(0).map(math);
+    funcRandom();
     //добавляем итог в нужный div
     const logic729 = () => {
         alls.forEach(function (elem, index) {
-            elem.textContent = arrD[index] + '\nатм';
+            elem.textContent = arr729D[index] + '\nатм';
         })
         allsT.forEach(function (elem, index) {
-            elem.textContent = arrT[index] + '°C';
+            elem.textContent = arr729T[index] + '°C';
         })
         alls.forEach(function (elem, index) {
-            elem.style.background = objColor[gener(arrD[index])];
+            elem.style.background = objColor[gener(arr729D[index])];
         })
         allsT.forEach(function (elem, index) {
-            elem.style.background = objColor[gener(arrT[index])];
+            elem.style.background = objColor[gener(arr729T[index])];
         })
     }
     logic729();
@@ -91,8 +107,8 @@ const Obj729 = () => {
     const statEr = () => {
         stat[0].style.backgroundImage = "url(image/er.png)";
     }
-    if (arrD[0] >= 2 && arrD[1] >= 2 && arrD[2] >= 2 && arrD[3] >= 2 &&
-        arrT[0] >= 2 && arrT[1] >= 2 && arrT[2] >= 2 && arrT[3] >= 2) {
+    if (arr729D[0] >= 2 && arr729D[1] >= 2 && arr729D[2] >= 2 && arr729D[3] >= 2 &&
+        arr729T[0] >= 2 && arr729T[1] >= 2 && arr729T[2] >= 2 && arr729T[3] >= 2) {
         statGal();
     } else {
         statEr();

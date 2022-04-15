@@ -27,203 +27,203 @@ function math() {
 function runTires() {
     return Math.floor(Math.random() * 10000);
 }
+const funcRandom = () => {
+    arrD = Array(36).fill(0).map(math);
+    arrT = Array(36).fill(0).map(math);
+    arr729D = arrD.slice(0, 4);
+    arr730D = arrD.slice(4, 10);
+    arr731D = arrD.slice(10, 18);
+    arr732D = arrD.slice(18, 26);
+    arr733D = arrD.slice(26, 36);
+    arr729T = arrT.slice(0, 4);
+    arr730T = arrT.slice(4, 10);
+    arr731T = arrT.slice(10, 18);
+    arr732T = arrT.slice(18, 26);
+    arr733T = arrT.slice(26, 36);
+    arrDalld = arrD.slice(0, 36);
+    arrDallt = arrT.slice(0, 36);
+    //Объект1
+    const Obj729 = () => {
+        const alls = document.querySelectorAll('.tiresD729');
+        const allsT = document.querySelectorAll('.tiresT729');
+        time[0].textContent = getNowtime();
+        //добавляем итог в нужный div
+        const logic729 = () => {
+            alls.forEach(function (elem, index) {
+                elem.textContent = arr729D[index] + '\nатм';
+            })
+            allsT.forEach(function (elem, index) {
+                elem.textContent = arr729T[index] + '°C';
+            })
+            alls.forEach(function (elem, index) {
+                elem.style.background = objColor[gener(arr729D[index])];
+            })
+            allsT.forEach(function (elem, index) {
+                elem.style.background = objColor[gener(arr729T[index])];
+            })
+        }
+        logic729();
+        // добавляем статус машины
+        const statGal = () => {
+            stat[0].style.backgroundImage = "url(image/gal.png)";
+        }
+        const statEr = () => {
+            stat[0].style.backgroundImage = "url(image/er.png)";
+        }
+        if (arr729D[0] >= 2 && arr729D[1] >= 2 && arr729D[2] >= 2 && arr729D[3] >= 2 &&
+            arr729T[0] >= 2 && arr729T[1] >= 2 && arr729T[2] >= 2 && arr729T[3] >= 2) {
+            statGal();
+        } else {
+            statEr();
+        }
+    }
+    Obj729();
+    //Объект 2
+    const Obj730 = () => {
+        const alls = document.querySelectorAll('.tiresD730');
+        const allsT = document.querySelectorAll('.tiresT730');
+        time[1].textContent = getNowtime();
+        const logic730 = () => {
+            alls.forEach(function (elem, index) {
+                elem.textContent = arr730D[index] + '\nатм';
+            })
+            allsT.forEach(function (elem, index) {
+                elem.textContent = arr730T[index] + '°C';
+            })
+            alls.forEach(function (elem, index) {
+                elem.style.background = objColor[gener(arr730D[index])];
+            })
+            allsT.forEach(function (elem, index) {
+                elem.style.background = objColor[gener(arr730T[index])];
+            })
+        }
+        logic730();
+        const statGal = () => {
+            stat[1].style.backgroundImage = "url(image/gal.png)";
+        }
+        const statEr = () => {
+            stat[1].style.backgroundImage = "url(image/er.png)";
+        }
+        if (arr730D[0] >= 2 && arr730D[1] >= 2 && arr730D[2] >= 2 && arr730D[3] >= 2 && arr730D[4] >= 2 && arr730D[5] >= 2 &&
+            arr730T[0] >= 2 && arr730T[1] >= 2 && arr730T[2] >= 2 && arr730T[3] >= 2 && arr730T[4] >= 2 && arr730T[5] >= 2) {
+            statGal();
+        } else {
+            statEr();
+        }
+    }
+    Obj730();
+    //Объект 3
+    const Obj731 = () => {
+        const alls = document.querySelectorAll('.tiresD731');
+        const allsT = document.querySelectorAll('.tiresT731');
+        time[2].textContent = getNowtime();
+        const logic731 = () => {
+            alls.forEach(function (elem, index) {
+                elem.textContent = arr731D[index] + '\nатм';
+            })
+            allsT.forEach(function (elem, index) {
+                elem.textContent = arr731T[index] + '°C';
+            })
+            alls.forEach(function (elem, index) {
+                elem.style.background = objColor[gener(arr731D[index])];
+            })
+            allsT.forEach(function (elem, index) {
+                elem.style.background = objColor[gener(arr731T[index])];
+            })
+        }
+        logic731();
+        const statGal = () => {
+            stat[2].style.backgroundImage = "url(image/gal.png)";
+        }
+        const statEr = () => {
+            stat[2].style.backgroundImage = "url(image/er.png)";
+        }
+        if (arr731D[0] >= 2 && arr731D[1] >= 2 && arr731D[2] >= 2 && arr731D[3] >= 2 && arr731D[4] >= 2
+            && arr731D[5] >= 2 && arr731D[6] >= 2 && arr731D[7] >= 2 &&
+            arr731T[0] >= 2 && arr731T[1] >= 2 && arr731T[2] >= 2 && arr731T[3] >= 2 && arr731T[4] >= 2
+            && arr731T[5] >= 2 && arr731T[6] >= 2 && arr731T[7] >= 2) {
+            statGal();
+        } else {
+            statEr();
+        }
+    }
+    Obj731();
+    //Объект 4
+    const Obj732 = () => {
+        const alls = document.querySelectorAll('.tiresD732');
+        const allsT = document.querySelectorAll('.tiresT732');
+        time[3].textContent = getNowtime();
+        const logic732 = () => {
+            alls.forEach(function (elem, index) {
+                elem.textContent = arr732D[index] + '\nатм';
+            })
+            allsT.forEach(function (elem, index) {
+                elem.textContent = arr732T[index] + '°C';
+            })
+            alls.forEach(function (elem, index) {
+                elem.style.background = objColor[gener(arr732D[index])];
+            })
+            allsT.forEach(function (elem, index) {
+                elem.style.background = objColor[gener(arr732T[index])];
+            })
+        }
+        logic732();
+        const statGal = () => {
+            stat[3].style.backgroundImage = "url(image/gal.png)";
+        }
+        const statEr = () => {
+            stat[3].style.backgroundImage = "url(image/er.png)";
+        }
+        if (arr732D[0] >= 2 && arr732D[1] >= 2 && arr732D[2] >= 2 && arr732D[3] >= 2 && arr732D[4] >= 2
+            && arr732D[5] >= 2 && arr732D[6] >= 2 && arr732D[7] >= 2 &&
+            arr732T[0] >= 2 && arr732T[1] >= 2 && arr732T[2] >= 2 && arr732T[3] >= 2 && arr732T[4] >= 2
+            && arr732T[5] >= 2 && arr732T[6] >= 2 && arr732T[7] >= 2) {
+            statGal();
+        } else {
+            statEr();
+        }
+    }
+    Obj732();
+    //Объект 5
+    const Obj733 = () => {
+        const alls = document.querySelectorAll('.tiresD733');
+        const allsT = document.querySelectorAll('.tiresT733');
+        time[4].textContent = getNowtime();
+        const logic733 = () => {
+            alls.forEach(function (elem, index) {
+                elem.textContent = arr733D[index] + '\nатм';
+            })
+            allsT.forEach(function (elem, index) {
+                elem.textContent = arr733T[index] + '°C';
+            })
+            alls.forEach(function (elem, index) {
+                elem.style.background = objColor[gener(arr733D[index])];
+            })
+            allsT.forEach(function (elem, index) {
+                elem.style.background = objColor[gener(arr733T[index])];
+            })
+        }
+        logic733();
+        const statGal = () => {
+            stat[4].style.backgroundImage = "url(image/gal.png)";
+        }
+        const statEr = () => {
+            stat[4].style.backgroundImage = "url(image/er.png)";
+        }
+        if (arr733D[0] >= 2 && arr733D[1] >= 2 && arr733D[2] >= 2 && arr733D[3] >= 2 && arr733D[4] >= 2
+            && arr733D[5] >= 2 && arr733D[6] >= 2 && arr733D[7] >= 2 && arr733D[8] >= 2 && arr733D[9] >= 2 &&
+            arr733T[0] >= 2 && arr733T[1] >= 2 && arr733T[2] >= 2 && arr733T[3] >= 2 && arr733T[4] >= 2
+            && arr733T[5] >= 2 && arr733T[6] >= 2 && arr733T[7] >= 2 && arr733T[8] >= 2 && arr733T[9] >= 2) {
+            statGal();
+        } else {
+            statEr();
+        }
+    }
+    Obj733();
+}
+funcRandom();
+setInterval(funcRandom, 5000)
 
-
-//Объект1
-const Obj729 = () => {
-    const alls = document.querySelectorAll('.tiresD729');
-    const allsT = document.querySelectorAll('.tiresT729');
-    time[0].textContent = getNowtime();
-    //кладем рандомные значения в массив
-    const arrD = Array(4).fill(0).map(math);
-    const arrT = Array(4).fill(0).map(math);
-    //добавляем итог в нужный div
-    const logic729 = () => {
-        alls.forEach(function (elem, index) {
-            elem.textContent = arrD[index] + '\nатм';
-        })
-        allsT.forEach(function (elem, index) {
-            elem.textContent = arrT[index] + '°C';
-        })
-        alls.forEach(function (elem, index) {
-            elem.style.background = objColor[gener(arrD[index])];
-        })
-        allsT.forEach(function (elem, index) {
-            elem.style.background = objColor[gener(arrT[index])];
-        })
-    }
-    logic729();
-    // добавляем статус машины
-    const statGal = () => {
-        stat[0].style.backgroundImage = "url(image/gal.png)";
-    }
-    const statEr = () => {
-        stat[0].style.backgroundImage = "url(image/er.png)";
-    }
-    if (arrD[0] >= 2 && arrD[1] >= 2 && arrD[2] >= 2 && arrD[3] >= 2 &&
-        arrT[0] >= 2 && arrT[1] >= 2 && arrT[2] >= 2 && arrT[3] >= 2) {
-        statGal();
-    } else {
-        statEr();
-    }
-}
-Obj729();
-setInterval(Obj729, 5000);
-//Объект 2
-const Obj730 = () => {
-    const alls = document.querySelectorAll('.tiresD730');
-    const allsT = document.querySelectorAll('.tiresT730');
-    time[1].textContent = getNowtime();
-    const arrD = Array(6).fill(0).map(math);
-    const arrT = Array(6).fill(0).map(math);
-    const logic730 = () => {
-        alls.forEach(function (elem, index) {
-            elem.textContent = arrD[index] + '\nатм';
-        })
-        allsT.forEach(function (elem, index) {
-            elem.textContent = arrT[index] + '°C';
-        })
-        alls.forEach(function (elem, index) {
-            elem.style.background = objColor[gener(arrD[index])];
-        })
-        allsT.forEach(function (elem, index) {
-            elem.style.background = objColor[gener(arrT[index])];
-        })
-    }
-    logic730();
-    const statGal = () => {
-        stat[1].style.backgroundImage = "url(image/gal.png)";
-    }
-    const statEr = () => {
-        stat[1].style.backgroundImage = "url(image/er.png)";
-    }
-    if (arrD[0] >= 2 && arrD[1] >= 2 && arrD[2] >= 2 && arrD[3] >= 2 && arrD[4] >= 2 && arrD[5] >= 2 &&
-        arrT[0] >= 2 && arrT[1] >= 2 && arrT[2] >= 2 && arrT[3] >= 2 && arrT[4] >= 2 && arrT[5] >= 2) {
-        statGal();
-    } else {
-        statEr();
-    }
-}
-Obj730();
-setInterval(Obj730, 5000);
-//Объект 3
-const Obj731 = () => {
-    const alls = document.querySelectorAll('.tiresD731');
-    const allsT = document.querySelectorAll('.tiresT731');
-    time[2].textContent = getNowtime();
-    const arrD = Array(8).fill(0).map(math);
-    const arrT = Array(8).fill(0).map(math);
-    const logic731 = () => {
-        alls.forEach(function (elem, index) {
-            elem.textContent = arrD[index] + '\nатм';
-        })
-        allsT.forEach(function (elem, index) {
-            elem.textContent = arrT[index] + '°C';
-        })
-        alls.forEach(function (elem, index) {
-            elem.style.background = objColor[gener(arrD[index])];
-        })
-        allsT.forEach(function (elem, index) {
-            elem.style.background = objColor[gener(arrT[index])];
-        })
-    }
-    logic731();
-    const statGal = () => {
-        stat[2].style.backgroundImage = "url(image/gal.png)";
-    }
-    const statEr = () => {
-        stat[2].style.backgroundImage = "url(image/er.png)";
-    }
-    if (arrD[0] >= 2 && arrD[1] >= 2 && arrD[2] >= 2 && arrD[3] >= 2 && arrD[4] >= 2
-        && arrD[5] >= 2 && arrD[6] >= 2 && arrD[7] >= 2 &&
-        arrT[0] >= 2 && arrT[1] >= 2 && arrT[2] >= 2 && arrT[3] >= 2 && arrT[4] >= 2
-        && arrT[5] >= 2 && arrD[6] >= 2 && arrD[7] >= 2) {
-        statGal();
-    } else {
-        statEr();
-    }
-}
-Obj731();
-setInterval(Obj731, 5000);
-//Объект 4
-const Obj732 = () => {
-    const alls = document.querySelectorAll('.tiresD732');
-    const allsT = document.querySelectorAll('.tiresT732');
-    time[3].textContent = getNowtime();
-    const arrD = Array(8).fill(0).map(math);
-    const arrT = Array(8).fill(0).map(math);
-    const logic732 = () => {
-        alls.forEach(function (elem, index) {
-            elem.textContent = arrD[index] + '\nатм';
-        })
-        allsT.forEach(function (elem, index) {
-            elem.textContent = arrT[index] + '°C';
-        })
-        alls.forEach(function (elem, index) {
-            elem.style.background = objColor[gener(arrD[index])];
-        })
-        allsT.forEach(function (elem, index) {
-            elem.style.background = objColor[gener(arrT[index])];
-        })
-    }
-    logic732();
-    const statGal = () => {
-        stat[3].style.backgroundImage = "url(image/gal.png)";
-    }
-    const statEr = () => {
-        stat[3].style.backgroundImage = "url(image/er.png)";
-    }
-    if (arrD[0] >= 2 && arrD[1] >= 2 && arrD[2] >= 2 && arrD[3] >= 2 && arrD[4] >= 2
-        && arrD[5] >= 2 && arrD[6] >= 2 && arrD[7] >= 2 &&
-        arrT[0] >= 2 && arrT[1] >= 2 && arrT[2] >= 2 && arrT[3] >= 2 && arrT[4] >= 2
-        && arrT[5] >= 2 && arrD[6] >= 2 && arrD[7] >= 2) {
-        statGal();
-    } else {
-        statEr();
-    }
-}
-Obj732();
-setInterval(Obj732, 5000);
-
-//Объект 5
-const Obj733 = () => {
-    const alls = document.querySelectorAll('.tiresD733');
-    const allsT = document.querySelectorAll('.tiresT733');
-    time[4].textContent = getNowtime();
-    const arrD = Array(10).fill(0).map(math);
-    const arrT = Array(10).fill(0).map(math);
-    const logic733 = () => {
-        alls.forEach(function (elem, index) {
-            elem.textContent = arrD[index] + '\nатм';
-        })
-        allsT.forEach(function (elem, index) {
-            elem.textContent = arrT[index] + '°C';
-        })
-        alls.forEach(function (elem, index) {
-            elem.style.background = objColor[gener(arrD[index])];
-        })
-        allsT.forEach(function (elem, index) {
-            elem.style.background = objColor[gener(arrT[index])];
-        })
-    }
-    logic733();
-    const statGal = () => {
-        stat[4].style.backgroundImage = "url(image/gal.png)";
-    }
-    const statEr = () => {
-        stat[4].style.backgroundImage = "url(image/er.png)";
-    }
-    if (arrD[0] >= 2 && arrD[1] >= 2 && arrD[2] >= 2 && arrD[3] >= 2 && arrD[4] >= 2
-        && arrD[5] >= 2 && arrD[6] >= 2 && arrD[7] >= 2 && arrD[8] >= 2 && arrD[9] >= 2 &&
-        arrT[0] >= 2 && arrT[1] >= 2 && arrT[2] >= 2 && arrT[3] >= 2 && arrT[4] >= 2
-        && arrT[5] >= 2 && arrD[6] >= 2 && arrD[7] >= 2 && arrT[8] >= 2 && arrT[9] >= 2) {
-        statGal();
-    } else {
-        statEr();
-    }
-}
-Obj733();
-setInterval(Obj733, 5000);
 //текущее время
 function getNowtime() {
     let now = new Date();
@@ -253,15 +253,6 @@ function getNowtime() {
 }
 function getNowtime1() {
     let now = new Date();
-    let year = now.getFullYear();
-    let month = now.getMonth();
-    if (now.getMonth() < 10) {
-        month = "0" + month;
-    }
-    let date = now.getDate();
-    if (now.getDate() < 10) {
-        date = "0" + date;
-    }
     let hours = now.getHours();
     if (now.getHours() < 10) {
         hours = "0" + hours;
@@ -442,11 +433,9 @@ arrTireslink.forEach((elem, index) => {
 arrTime = [];
 function go() {
     arrTime.push(getNowtime1());
-    arrDalld = Array(36).fill(0).map(math);
     arrDalld.forEach((el, index) => {
         arrAll1[index].push(el);
     })
-    arrDallt = Array(36).fill(0).map(math);
     arrDallt.forEach((el, index) => {
         arrAll2[index].push(el);
     })
@@ -506,6 +495,13 @@ myChartg = new Chart(myChartg, {
                 ticks: {
                     font: {
                         size: 18,
+                    }
+                }
+            },
+            x: {
+                ticks: {
+                    font: {
+                        size: 10
                     }
                 }
             }
