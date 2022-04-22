@@ -70,6 +70,7 @@ const funcRandom = () => {
         const statEr = () => {
             stat[0].style.backgroundImage = "url(image/er.png)";
         }
+
         if (arr729D[0] >= 2 && arr729D[1] >= 2 && arr729D[2] >= 2 && arr729D[3] >= 2 &&
             arr729T[0] >= 2 && arr729T[1] >= 2 && arr729T[2] >= 2 && arr729T[3] >= 2) {
             statGal();
